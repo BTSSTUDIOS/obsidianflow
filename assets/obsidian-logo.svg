@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" fill="none">
+  <defs>
+    <linearGradient id="obsidianGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="obsidianDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <filter id="neonFilter" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark Background Plate -->
+  <rect width="160" height="160" rx="36" fill="#030305" />
+  <rect width="158" height="158" x="1" y="1" rx="35" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+
+  <!-- Left Obsidian Crystal Shard -->
+  <polygon
+    points="70,28 22,80 70,132 58,80"
+    fill="url(#obsidianGlow)"
+    filter="url(#neonFilter)"
+  />
+
+  <!-- Right Obsidian Crystal Shard -->
+  <polygon
+    points="90,28 138,80 90,132 102,80"
+    fill="url(#obsidianDark)"
+    filter="url(#neonFilter)"
+  />
+</svg>

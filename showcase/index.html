@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-composition-id="obsidianflow-showcase"
+  data-width="1920"
+  data-height="1080"
+  data-fps="30"
+  data-duration="6s"
+>
+<head>
+  <meta charset="utf-8" />
+  <title>ObsidianFlow Hero Showcase</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="../packages/core/dist/runtime.js"></script>
+</head>
+<body>
+  <!-- Ambient background glow layers -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Main Clip -->
+  <div class="clip" id="showcase-clip" data-start="0s" data-duration="6s" data-track="main">
+    <div class="container">
+      
+      <!-- Top Eyebrow Badge -->
+      <div class="brand-badge">
+        <span class="pulse-dot"></span>
+        <span>The AI-Native Video Rendering Engine</span>
+      </div>
+
+      <!-- Logo & Brand Header -->
+      <div class="logo-container">
+        <!-- Obsidian Dual-Crystal Shards Mark -->
+        <svg class="shards-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="shardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#c084fc" />
+              <stop offset="100%" stop-color="#6366f1" />
+            </linearGradient>
+            <linearGradient id="shardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#818cf8" />
+              <stop offset="100%" stop-color="#a855f7" />
+            </linearGradient>
+            <filter id="shardGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="6" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+          <!-- Left Crystal Shard -->
+          <polygon
+            class="shard-left"
+            points="44,14 12,50 44,86 36,50"
+            fill="url(#shardGrad1)"
+            filter="url(#shardGlow)"
+          />
+          <!-- Right Crystal Shard -->
+          <polygon
+            class="shard-right"
+            points="56,14 88,50 56,86 64,50"
+            fill="url(#shardGrad2)"
+            filter="url(#shardGlow)"
+          />
+        </svg>
+
+        <h1 class="brand-title">ObsidianFlow</h1>
+      </div>
+
+      <!-- Tagline -->
+      <p class="tagline">
+        <strong>Write HTML. Render video.</strong> Built for digital directors & AI agents.
+      </p>
+
+      <!-- Glassmorphism Code & Engine Status Card -->
+      <div class="demo-card">
+        <div class="card-header">
+          <div class="window-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="window-title">scene-01.html — ObsidianFlow 30 FPS Renderer</span>
+        </div>
+
+        <div class="card-body">
+          <div class="code-snippet">
+            <div><span class="token-tag">&lt;html</span> <span class="token-attr">data-width</span>=<span class="token-string">"1920"</span> <span class="token-attr">data-fps</span>=<span class="token-string">"30"</span> <span class="token-attr">data-duration</span>=<span class="token-string">"10s"</span><span class="token-tag">&gt;</span></div>
+            <div>&nbsp;&nbsp;<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-string">"clip"</span> <span class="token-attr">data-start</span>=<span class="token-string">"0s"</span> <span class="token-attr">data-duration</span>=<span class="token-string">"5s"</span><span class="token-tag">&gt;</span></div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="token-tag">&lt;video</span> <span class="token-attr">src</span>=<span class="token-string">"shot-01.mp4"</span> <span class="token-attr">data-generated-by</span>=<span class="token-string">"veo-3.1"</span><span class="token-tag">&gt;&lt;/video&gt;</span></div>
+            <div>&nbsp;&nbsp;<span class="token-tag">&lt;/div&gt;</span></div>
+            <div><span class="token-tag">&lt;/html&gt;</span></div>
+          </div>
+
+          <div class="render-badge-col">
+            <div class="pill-badge active">⚡ 100% DETERMINISTIC</div>
+            <div class="pill-badge">🎬 HEADLESS CHROME</div>
+            <div class="pill-badge">🚀 FFMPEG IMAGE2PIPE</div>
+          </div>
+        </div>
+
+        <!-- Render Progress Scrubber -->
+        <div class="card-footer">
+          <div class="scrubber-track">
+            <div class="scrubber-fill"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    if (window.NativeTimelineAdapter) {
+      const tl = new window.NativeTimelineAdapter();
+
+      // 0s - 1.2s: Initial emergence of badge and shards
+      tl.fromTo('.brand-badge', { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.8, ease: 'easeOutCubic' }, 0.2);
+      tl.fromTo('.shard-left', { opacity: 0, x: -30, scale: 0.8 }, { opacity: 1, x: 0, scale: 1, duration: 1.0, ease: 'easeOutCubic' }, 0.4);
+      tl.fromTo('.shard-right', { opacity: 0, x: 30, scale: 0.8 }, { opacity: 1, x: 0, scale: 1, duration: 1.0, ease: 'easeOutCubic' }, 0.4);
+      
+      // 0.6s - 1.8s: Brand title and tagline animation
+      tl.fromTo('.brand-title', { opacity: 0, y: 25 }, { opacity: 1, y: 0, duration: 1.0, ease: 'easeOutCubic' }, 0.6);
+      tl.fromTo('.tagline', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.9, ease: 'easeOutCubic' }, 0.9);
+
+      // 1.2s - 2.5s: Demo card emergence
+      tl.fromTo('.demo-card', { opacity: 0, y: 40, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 1.1, ease: 'easeOutCubic' }, 1.2);
+
+      // Scrubber fill progress from 1.5s to 5.2s
+      tl.fromTo('.scrubber-fill', { width: '0%' }, { width: '100%', duration: 3.6, ease: 'easeInOutCubic' }, 1.5);
+
+      // Badges pulse
+      tl.fromTo('.render-badge-col', { opacity: 0.6 }, { opacity: 1, duration: 1.0, ease: 'easeInOutSine' }, 2.0);
+
+      // Seamless end fade for smooth GIF looping
+      tl.to('.container', { opacity: 0.95, duration: 0.8, ease: 'easeInOutQuad' }, 5.2);
+
+      if (window.__obsidianflow) {
+        window.__obsidianflow.registerTimeline('obsidianflow-hero', tl);
+      }
+    }
+  </script>
+</body>
+</html>

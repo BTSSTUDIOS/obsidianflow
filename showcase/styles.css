@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1920px;
+  height: 1080px;
+  background: #030305;
+  color: #ededed;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background Ambient Lighting */
+.ambient-glow-1 {
+  position: absolute;
+  width: 900px;
+  height: 600px;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, rgba(99, 102, 241, 0.08) 45%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.ambient-glow-2 {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* Subtle grid overlay */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 80%);
+  pointer-events: none;
+}
+
+.clip {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+}
+
+/* Logo & Mark */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+.shards-svg {
+  width: 90px;
+  height: 90px;
+  filter: drop-shadow(0 0 25px rgba(139, 92, 246, 0.8));
+}
+
+.brand-title {
+  font-size: 84px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 45%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 40px rgba(139, 92, 246, 0.4));
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  font-size: 15px;
+  letter-spacing: 0.18em;
+  color: #c4b5fd;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #a855f7;
+  box-shadow: 0 0 10px #a855f7;
+}
+
+.tagline {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #94a3b8;
+  margin-bottom: 44px;
+}
+
+.tagline strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Glassmorphism Code & Demo Card */
+.demo-card {
+  width: 960px;
+  background: rgba(15, 15, 24, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 50px rgba(139, 92, 246, 0.12);
+  backdrop-filter: blur(24px);
+  overflow: hidden;
+  text-align: left;
+}
+
+.card-header {
+  height: 48px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 10px;
+}
+
+.window-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot.red { background: #ef4444; }
+.dot.yellow { background: #f59e0b; }
+.dot.green { background: #10b981; }
+
+.window-title {
+  margin-left: 14px;
+  font-size: 13px;
+  color: #64748b;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.card-body {
+  padding: 26px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.code-snippet {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.token-tag { color: #f43f5e; }
+.token-attr { color: #c084fc; }
+.token-string { color: #38bdf8; }
+.token-text { color: #e2e8f0; }
+
+.render-badge-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.pill-badge {
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-family: ui-monospace, monospace;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #c4b5fd;
+}
+
+.pill-badge.active {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.4);
+  color: #4ade80;
+}
+
+.card-footer {
+  padding: 14px 36px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.scrubber-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  position: relative;
+  overflow: hidden;
+}
+
+.scrubber-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #8b5cf6, #38bdf8);
+  border-radius: 9999px;
+  box-shadow: 0 0 12px #8b5cf6;
+}
