@@ -97,10 +97,10 @@ body {
 }
 
 .title-obsidian {
-  background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 60%, #94a3b8 100%);
+  background: linear-gradient(135deg, #f3e8ff 0%, #d8b4fe 25%, #c084fc 55%, #9333ea 85%, #6b21a8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.3));
+  filter: drop-shadow(0 0 35px rgba(192, 132, 252, 0.75));
 }
 
 .title-flow {

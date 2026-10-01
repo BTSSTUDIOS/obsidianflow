@@ -22,7 +22,7 @@
     </linearGradient>
   </defs>
 
-  <!-- Facets Group -->
+  <!-- Facets Group with Uniform Clean Seams -->
   <g stroke="#090514" stroke-width="1.8" stroke-linejoin="round">
     <!-- Left Wing (Obsidian Facets) -->
     <polygon points="34,26 60,54 44,54" fill="url(#obsidianCrown)"/>
@@ -30,7 +30,7 @@
     <polygon points="12,54 44,54 60,114" fill="#3b0764"/>
     <polygon points="44,54 60,54 60,114" fill="url(#obsidianInner)"/>
 
-    <!-- Center Table Facet -->
+    <!-- Center Table Facet: Beautiful Unified Triangle -->
     <polygon points="34,26 86,26 60,54" fill="url(#obsidianTable)"/>
 
     <!-- Right Wing (Obsidian Facets) -->
@@ -39,8 +39,4 @@
     <polygon points="60,54 76,54 60,114" fill="url(#obsidianInner)"/>
     <polygon points="76,54 108,54 60,114" fill="url(#obsidianOuter)"/>
   </g>
-
-  <!-- Specular Center Spine & Crown Highlights -->
-  <line x1="60" y1="26" x2="60" y2="114" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
-  <line x1="34" y1="26" x2="86" y2="26" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
 </svg>

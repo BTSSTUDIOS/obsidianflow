@@ -17,9 +17,4 @@
     <!-- Left Face Obsidian Purple -->
     <polygon points="14,14 60,56 54,112" fill="#6b21a8"/>
   </g>
-
-  <!-- Center Specular Ridges -->
-  <line x1="14" y1="14" x2="60" y2="56" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
-  <line x1="60" y1="56" x2="54" y2="112" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
-  <line x1="60" y1="56" x2="88" y2="32" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
 </svg>
