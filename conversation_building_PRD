@@ -1,0 +1,11 @@
+5. Engine Build Time
+Phase 1 (core engine + CLI + basic producer) is realistically 2-3 days of focused work, not 1. Here's why:
+
+Day 1: Core types, parser, linter, runtime
+Day 2: Puppeteer capture engine, FFmpeg encoder, producer pipeline
+Day 3: CLI commands, templates, testing, README
+I can start building right now and we'll have npx obsidianflow render working
+
+
+
+

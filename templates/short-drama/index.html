@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-composition-id="short-drama-scene"
+  data-width="1920"
+  data-height="1080"
+  data-fps="30"
+  data-duration="15s"
+>
+<head>
+  <meta charset="utf-8" />
+  <title>The Obsidian Protocol</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="../../packages/core/dist/runtime.js"></script>
+</head>
+<body>
+  <!-- Scene 1: Prologue Title Card (0s - 5s) -->
+  <div class="clip scene" id="scene-prologue" data-start="0s" data-duration="5s" data-track="video-main">
+    <div class="letterbox top"></div>
+    <div class="scene-content center">
+      <div class="chapter-number">SCENE I</div>
+      <h1 class="main-title">THE ASHES OF NEO-TOKYO</h1>
+      <p class="logline">When the seismic core fractured, the only warning was silence.</p>
+    </div>
+    <div class="letterbox bottom"></div>
+  </div>
+
+  <!-- Transition 1: Lava Flow -->
+  <of-transition
+    type="lava-flow"
+    data-start="4.2s"
+    data-duration="1.2s"
+    data-from="scene-prologue"
+    data-to="scene-dialogue"
+  ></of-transition>
+
+  <!-- Scene 2: Character Dialogue (5s - 10s) -->
+  <div class="clip scene" id="scene-dialogue" data-start="5s" data-duration="5s" data-track="video-main">
+    <div class="letterbox top"></div>
+    <div class="character-backdrop">
+      <div class="character-glow"></div>
+      <div class="character-label">COMMANDER VALERIE CHEN • ORBITAL RELAY</div>
+    </div>
+
+    <!-- Dialogue Subtitle Overlay -->
+    <div class="dialogue-box" data-start="5.5s" data-duration="4.0s">
+      <p class="dialogue-speaker">VALERIE</p>
+      <p class="dialogue-line">“The volcanic pressure isn’t stabilizing. We have less than sixty seconds before total subterranean breach.”</p>
+    </div>
+    <div class="letterbox bottom"></div>
+  </div>
+
+  <!-- Transition 2: Volcanic Wipe -->
+  <of-transition
+    type="volcanic-wipe"
+    data-start="9.2s"
+    data-duration="1.2s"
+    data-from="scene-dialogue"
+    data-to="scene-climax"
+  ></of-transition>
+
+  <!-- Scene 3: Climax & Resolution (10s - 15s) -->
+  <div class="clip scene" id="scene-climax" data-start="10s" data-duration="5s" data-track="video-main">
+    <div class="letterbox top"></div>
+    <div class="climax-stage">
+      <div class="countdown-label">BREACH IMMINENT</div>
+      <h2 class="climax-alert">SYSTEM LOCKDOWN ENGAGED</h2>
+      <div class="hud-status">CONTAINMENT STATUS: CRITICAL</div>
+    </div>
+    <div class="letterbox bottom"></div>
+  </div>
+
+  <script>
+    if (window.NativeTimelineAdapter) {
+      const tl = new window.NativeTimelineAdapter();
+
+      // Scene 1 animations
+      tl.fromTo('#scene-prologue .chapter-number', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 1.0, ease: 'easeOutCubic' }, 0.5);
+      tl.fromTo('#scene-prologue .main-title', { opacity: 0, y: 25 }, { opacity: 1, y: 0, duration: 1.2, ease: 'easeOutCubic' }, 0.8);
+      tl.fromTo('#scene-prologue .logline', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 1.0, ease: 'easeOutCubic' }, 1.4);
+      tl.to('#scene-prologue', { opacity: 0, duration: 0.8, ease: 'easeInCubic' }, 4.2);
+
+      // Scene 2 animations
+      tl.fromTo('#scene-dialogue', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'easeOutCubic' }, 4.8);
+      tl.fromTo('#scene-dialogue .dialogue-box', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'easeOutQuad' }, 5.5);
+      tl.to('#scene-dialogue', { opacity: 0, duration: 0.8, ease: 'easeInCubic' }, 9.2);
+
+      // Scene 3 animations
+      tl.fromTo('#scene-climax', { opacity: 0, scale: 1.05 }, { opacity: 1, scale: 1.0, duration: 0.8, ease: 'easeOutCubic' }, 9.8);
+      tl.fromTo('#scene-climax .climax-alert', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.0, ease: 'easeOutCubic' }, 10.5);
+      tl.to('#scene-climax', { opacity: 0, duration: 1.0, ease: 'easeInCubic' }, 14.0);
+
+      if (window.__obsidianflow) {
+        window.__obsidianflow.registerTimeline('short-drama-scene', tl);
+      }
+    }
+  </script>
+</body>
+</html>

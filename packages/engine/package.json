@@ -1,0 +1,29 @@
+{
+  "name": "@obsidianflow/engine",
+  "version": "0.1.0",
+  "description": "Headless Puppeteer frame-by-frame deterministic capture engine for ObsidianFlow",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo",
+    "test": "node --test dist/**/*.test.js || true"
+  },
+  "dependencies": {
+    "@obsidianflow/core": "*",
+    "puppeteer": "^24.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  },
+  "author": "BIDKAR RAMOS <btsstudiosla@gmail.com>",
+  "license": "Apache-2.0"
+}

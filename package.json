@@ -1,0 +1,25 @@
+{
+  "name": "obsidianflow-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "AI-native video rendering framework and CLI for deterministic MP4 videos from HTML/CSS",
+  "author": "BIDKAR RAMOS <btsstudiosla@gmail.com>",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/btsstudios/obsidianflow.git"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run --workspaces --if-present build",
+    "test": "npm run --workspaces --if-present test",
+    "lint": "npm run --workspaces --if-present lint",
+    "clean": "npm run --workspaces --if-present clean"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.0",
+    "typescript": "^5.7.0"
+  }
+}

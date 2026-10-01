@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-composition-id="blank-scene"
+  data-width="1920"
+  data-height="1080"
+  data-fps="30"
+  data-duration="10s"
+>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ObsidianFlow Blank Template</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="../../packages/core/dist/runtime.js"></script>
+</head>
+<body>
+  <!-- Scene Clip (0s - 10s) -->
+  <div class="clip" id="title-clip" data-start="0s" data-duration="10s" data-track="main-title">
+    <div class="stage">
+      <div class="logo-mark">🌋</div>
+      <h1 class="title">OBSIDIANFLOW</h1>
+      <p class="subtitle">AI-Native Video Engine</p>
+      <div class="badge">1080P • 30 FPS • DETERMINISTIC</div>
+    </div>
+  </div>
+
+  <script>
+    // Register deterministic animation timeline
+    if (window.NativeTimelineAdapter) {
+      const tl = new window.NativeTimelineAdapter();
+      // Animate logo and title entrance
+      tl.fromTo('.logo-mark', { opacity: 0, y: -30, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: 'easeOutCubic' }, 0.5);
+      tl.fromTo('.title', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.0, ease: 'easeOutCubic' }, 1.0);
+      tl.fromTo('.subtitle', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 1.0, ease: 'easeOutCubic' }, 1.4);
+      tl.fromTo('.badge', { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.8, ease: 'easeOutQuad' }, 2.0);
+
+      // Subtle pulse and exit transition
+      tl.to('.stage', { opacity: 0, scale: 0.96, duration: 1.2, ease: 'easeInCubic' }, 8.5);
+
+      if (window.__obsidianflow) {
+        window.__obsidianflow.registerTimeline('blank-scene', tl);
+      }
+    }
+  </script>
+</body>
+</html>

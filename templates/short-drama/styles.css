@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1920px;
+  height: 1080px;
+  background: #020204;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.clip.scene {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cinematic Letterboxing */
+.letterbox {
+  position: absolute;
+  width: 100%;
+  height: 72px;
+  background: #000000;
+  z-index: 100;
+}
+.letterbox.top { top: 0; }
+.letterbox.bottom { bottom: 0; }
+
+/* Scene 1: Prologue */
+#scene-prologue {
+  background: radial-gradient(circle at 50% 50%, #200a08 0%, #080303 60%, #000000 100%);
+}
+
+.chapter-number {
+  font-size: 20px;
+  letter-spacing: 0.4em;
+  color: #ff6633;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.main-title {
+  font-size: 72px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  background: linear-gradient(180deg, #ffffff 0%, #dcdcdc 50%, #a0a0a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.9));
+}
+
+.logline {
+  font-size: 24px;
+  color: #9ca3af;
+  margin-top: 24px;
+  letter-spacing: 0.08em;
+  font-style: italic;
+  max-width: 800px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Scene 2: Dialogue */
+#scene-dialogue {
+  background: radial-gradient(circle at 60% 40%, #0d1624 0%, #060a12 60%, #010204 100%);
+}
+
+.character-backdrop {
+  position: absolute;
+  top: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.character-glow {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 150, 255, 0.25) 0%, transparent 70%);
+  filter: blur(20px);
+}
+
+.character-label {
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 0.25em;
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.dialogue-box {
+  position: absolute;
+  bottom: 120px;
+  width: 1200px;
+  padding: 30px 48px;
+  background: rgba(10, 15, 25, 0.85);
+  border-left: 4px solid #3b82f6;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+}
+
+.dialogue-speaker {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #60a5fa;
+  margin-bottom: 10px;
+}
+
+.dialogue-line {
+  font-size: 30px;
+  line-height: 1.4;
+  color: #f3f4f6;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Scene 3: Climax */
+#scene-climax {
+  background: radial-gradient(circle at 50% 50%, #300808 0%, #150202 55%, #000000 100%);
+}
+
+.countdown-label {
+  font-size: 22px;
+  letter-spacing: 0.4em;
+  color: #ef4444;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.climax-alert {
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  color: #ffffff;
+  text-shadow: 0 0 40px rgba(239, 68, 68, 0.8);
+  text-align: center;
+}
+
+.hud-status {
+  margin-top: 36px;
+  padding: 12px 32px;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  font-size: 18px;
+  letter-spacing: 0.3em;
+  border-radius: 4px;
+  text-align: center;
+}

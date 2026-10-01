@@ -1,0 +1,29 @@
+{
+  "name": "obsidianflow",
+  "version": "0.1.0",
+  "description": "CLI tool for ObsidianFlow - Deterministic AI-native video rendering from HTML/CSS",
+  "type": "module",
+  "bin": {
+    "obsidianflow": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && chmod +x ./dist/cli.js",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo"
+  },
+  "dependencies": {
+    "@obsidianflow/core": "*",
+    "@obsidianflow/engine": "*",
+    "@obsidianflow/producer": "*",
+    "commander": "^13.1.0",
+    "picocolors": "^1.1.1",
+    "ora": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  },
+  "author": "BIDKAR RAMOS <btsstudiosla@gmail.com>",
+  "license": "Apache-2.0"
+}
