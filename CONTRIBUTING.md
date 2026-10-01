@@ -107,4 +107,4 @@ Add your rule to `LINT_RULES` in `packages/core/src/linter.ts`. Follow the rule 
 ## 💬 Community & Support
 
 Join our community on Discord: [https://discord.gg/dgwcQrmqF](https://discord.gg/dgwcQrmqF)  
-For questions or security concerns: `btsstudiosla@gmail.com`
+For questions or security concerns: `bidkar@gulp.wtf`

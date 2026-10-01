@@ -12,7 +12,7 @@ Do NOT build the Obsidian Studio web app (which lives in a separate repository).
 Project Location: `/home/b1337/Desktop/OBSIDIAN_FLOW`
 Target GitHub Repo: `https://github.com/btsstudios/obsidianflow`
 License: Apache 2.0
-Git Author: BIDKAR RAMOS <btsstudiosla@gmail.com>
+Git Author: BIDKAR RAMOS <bidkar@gulp.wtf>
 
 ### Deliverables:
 1. **Monorepo Root**: `package.json` (npm workspaces), `turbo.json`, `LICENSE` (Apache 2.0), `README.md`.

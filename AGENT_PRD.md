@@ -2,7 +2,7 @@
 
 > **Target Directory**: `/home/b1337/Desktop/OBSIDIAN_FLOW`  
 > **Repository Target**: `https://github.com/btsstudios/obsidianflow`  
-> **Author**: BTS Studios (`BIDKAR RAMOS <btsstudiosla@gmail.com>`)  
+> **Author**: BTS Studios (`BIDKAR RAMOS <bidkar@gulp.wtf>`)  
 > **License**: Apache 2.0  
 > **Primary Goal**: Build the standalone open-source **ObsidianFlow Engine & CLI Monorepo** (competing with Remotion and HeyGen HyperFrames) for turning HTML/CSS and seekable animations into deterministic MP4 videos.
 

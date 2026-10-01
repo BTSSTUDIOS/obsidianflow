@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "description": "AI-native video rendering framework and CLI for deterministic MP4 videos from HTML/CSS",
-  "author": "BIDKAR RAMOS <btsstudiosla@gmail.com>",
+  "author": "BIDKAR RAMOS <bidkar@gulp.wtf>",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",

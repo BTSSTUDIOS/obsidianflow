@@ -41,8 +41,25 @@ OBSIDIAN FLOW is an open-source, AI-native framework for turning standard web te
 - **Make videos agentically**: LLMs author HTML and CSS natively. AI coding agents (Claude, Cursor, Antigravity) script, animate, and generate complete video productions using built-in agent skills.
 - **Render deterministically**: Frame-by-frame timeline seeking via headless Chrome and direct FFmpeg `image2pipe` streaming. No dropped frames, no wall-clock timing jitter.
 - **Compose with standard web tech**: Use CSS keyframes, SVG, WebGL, and seekable timelines (Native, GSAP, WAAPI) with simple HTML `data-*` attributes.
-- **Mix multi-track audio with ducking**: Automated FFmpeg audio filtergraphs apply volume curves, fades, and dynamic sidechain ducking under dialogue.
 - **Validate before rendering**: Over 30 static analysis checks catch timing overflows, non-deterministic timers, and missing media before invoking the renderer.
+
+---
+
+## ⚔️ Why OBSIDIAN FLOW?
+
+A direct comparison of how **OBSIDIAN FLOW** improves upon existing programmatic video rendering solutions:
+
+| Capability | **OBSIDIAN FLOW** 🌋 | **Remotion** ⚛️ | **HeyGen HyperFrames** ⚡ |
+| :--- | :--- | :--- | :--- |
+| **Composition Language** | **Native HTML5 + `data-*`**<br>*(Zero framework lock-in)* | React JSX only<br>*(Requires learning custom components)* | HTML + GSAP timeline |
+| **AI Agent Native** | **100% Native**<br>*(LLMs write raw HTML & CSS naturally)* | Complex<br>*(LLM must learn Remotion React hooks)* | Script + GSAP timeline |
+| **Rendering Core** | **Headless Chrome + direct FFmpeg pipe**<br>*(Deterministic frame-by-frame streaming)* | Headless Chrome + React frame step | Headless Chrome + FFmpeg |
+| **Animation Engines** | **Multi-Adapter**:<br>• Native Keyframes (0 deps)<br>• GSAP Timeline<br>• Web Animations API (WAAPI)<br>• Three.js | React state & `useCurrentFrame()` only | GSAP timeline only |
+| **Audio Mixing & Ducking** | **Built-in FFmpeg sidechain ducking**<br>*(Auto-ducks music under dialogue)* | Manual `<Audio>` components<br>*(No built-in ducking)* | Audio filtergraph |
+| **Pre-Render Linter** | **30+ Static Checks (OF001–OF039)**<br>*(Timing, determinism, media, codecs)* | None built-in<br>*(Errors caught during render)* | Static checks |
+| **Agent CLI Interop** | **Full `--json` on all commands**<br>*(Machine-readable for coding agents)* | Human-focused CLI | Developer CLI |
+| **Open Source License** | **Apache 2.0**<br>*(100% Free for commercial & enterprise use)* | **Restrictive Company License**<br>*(Paid license required for teams > 3)* | Apache 2.0 |
+| **Collaboration Ready** | **Firestore Real-time CRDT Sync**<br>*(Built for multiplayer video editing)* | Local dev preview | Local audit player |
 
 ---
 
@@ -274,7 +291,7 @@ OBSIDIAN FLOW includes native skills for AI coding agents (Claude, Cursor, Antig
 ## 📜 License & Attribution
 
 - **License**: Apache 2.0
-- **Author**: BIDKAR RAMOS (`btsstudiosla@gmail.com`)
+- **Author**: BIDKAR RAMOS (`bidkar@gulp.wtf`)
 - **Organization**: BTS Studios
 - **Repository**: [https://github.com/btsstudios/obsidianflow](https://github.com/btsstudios/obsidianflow)
 - **Discord**: [https://discord.gg/dgwcQrmqF](https://discord.gg/dgwcQrmqF)

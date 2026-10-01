@@ -24,6 +24,6 @@
     "@types/node": "^22.10.1",
     "typescript": "^5.7.2"
   },
-  "author": "BIDKAR RAMOS <btsstudiosla@gmail.com>",
+  "author": "BIDKAR RAMOS <bidkar@gulp.wtf>",
   "license": "Apache-2.0"
 }
