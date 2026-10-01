@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <linearGradient id="oPrismTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3e8ff"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="oPrismRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7e22ce"/>
+    </linearGradient>
+  </defs>
+
+  <g stroke="#0a0a0f" stroke-width="2" stroke-linejoin="round">
+    <!-- Top Face Lavender Specular -->
+    <polygon points="14,14 88,32 60,56" fill="url(#oPrismTop)"/>
+    <!-- Top Right Face Bright Amethyst -->
+    <polygon points="88,32 108,50 60,56" fill="url(#oPrismRight)"/>
+    <!-- Bottom Right Face Deep Purple -->
+    <polygon points="108,50 54,112 60,56" fill="#581c87"/>
+    <!-- Left Face Midnight Obsidian -->
+    <polygon points="14,14 60,56 54,112" fill="#3b0764"/>
+  </g>
+
+  <!-- Center Specular Ridges -->
+  <line x1="14" y1="14" x2="60" y2="56" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="60" y1="56" x2="54" y2="112" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="60" y1="56" x2="88" y2="32" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <linearGradient id="badgeRimGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="50%" stop-color="#ff5500"/>
+      <stop offset="100%" stop-color="#ffb700"/>
+    </linearGradient>
+
+    <!-- Lava Gradients -->
+    <linearGradient id="bLavaTable" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffb91"/>
+      <stop offset="60%" stop-color="#ffa600"/>
+      <stop offset="100%" stop-color="#ff4500"/>
+    </linearGradient>
+    <linearGradient id="bLavaInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9900"/>
+      <stop offset="100%" stop-color="#d91400"/>
+    </linearGradient>
+
+    <!-- Obsidian Gradients -->
+    <linearGradient id="bObsidianTable" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3e8ff"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="bObsidianInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#6b21a8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle Tile with Dual Purple & Lava Rim -->
+  <rect x="6" y="6" width="108" height="108" rx="26" fill="#090514" stroke="url(#badgeRimGlow)" stroke-width="2.2"/>
+
+  <!-- Centered Diamond -->
+  <g transform="translate(10, 10) scale(0.83)">
+    <!-- Left Wing (Obsidian) -->
+    <polygon points="34,26 60,54 44,54" fill="url(#bObsidianInner)"/>
+    <polygon points="34,26 12,54 44,54" fill="#7e22ce"/>
+    <polygon points="12,54 44,54 60,114" fill="#4c1d95"/>
+    <polygon points="44,54 60,54 60,114" fill="url(#bObsidianInner)"/>
+
+    <!-- Table Split -->
+    <polygon points="34,26 60,26 60,54" fill="url(#bObsidianTable)"/>
+    <polygon points="60,26 86,26 60,54" fill="url(#bLavaTable)"/>
+
+    <!-- Right Wing (Lava) -->
+    <polygon points="86,26 60,54 76,54" fill="#ffb700"/>
+    <polygon points="86,26 76,54 108,54" fill="#ff7700"/>
+    <polygon points="60,54 76,54 60,114" fill="url(#bLavaInner)"/>
+    <polygon points="76,54 108,54 60,114" fill="#990000"/>
+
+    <!-- Spine Highlights -->
+    <line x1="60" y1="26" x2="60" y2="114" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"/>
+    <line x1="34" y1="26" x2="86" y2="26" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <polyline points="12,54 60,54 108,54" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/>
+  </g>
+</svg>

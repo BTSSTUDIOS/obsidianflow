@@ -1,24 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
   <defs>
-    <!-- Drop Shadow / Glow -->
-    <filter id="pureSpearShadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="rgba(147, 51, 234, 0.4)"/>
-    </filter>
+    <!-- Obsidian Amethyst Gradients -->
+    <linearGradient id="obsidianTable" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3e8ff"/>
+      <stop offset="100%" stop-color="#d8b4fe"/>
+    </linearGradient>
+
+    <linearGradient id="obsidianCrown" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+
+    <linearGradient id="obsidianInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9333ea"/>
+      <stop offset="100%" stop-color="#6b21a8"/>
+    </linearGradient>
+
+    <linearGradient id="obsidianOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7e22ce"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </linearGradient>
   </defs>
 
-  <g filter="url(#pureSpearShadow)">
-    <!-- Left Facet Upper: Deep Royal Violet -->
-    <polygon points="60,12 24,70 60,94" fill="#7e22ce" stroke="#0e0717" stroke-width="1.6" stroke-linejoin="round"/>
-    <!-- Left Facet Base: Midnight Obsidian -->
-    <polygon points="24,70 42,118 60,94" fill="#4c1d95" stroke="#0e0717" stroke-width="1.6" stroke-linejoin="round"/>
+  <!-- Facets Group -->
+  <g stroke="#090514" stroke-width="1.8" stroke-linejoin="round">
+    <!-- Left Wing (Obsidian Facets) -->
+    <polygon points="34,26 60,54 44,54" fill="url(#obsidianCrown)"/>
+    <polygon points="34,26 12,54 44,54" fill="url(#obsidianOuter)"/>
+    <polygon points="12,54 44,54 60,114" fill="#3b0764"/>
+    <polygon points="44,54 60,54 60,114" fill="url(#obsidianInner)"/>
 
-    <!-- Right Facet Upper: Bright Lavender Purple -->
-    <polygon points="60,12 96,70 60,94" fill="#c084fc" stroke="#0e0717" stroke-width="1.6" stroke-linejoin="round"/>
-    <!-- Right Facet Base: Vibrant Amethyst -->
-    <polygon points="96,70 78,118 60,94" fill="#9333ea" stroke="#0e0717" stroke-width="1.6" stroke-linejoin="round"/>
+    <!-- Center Table Facet -->
+    <polygon points="34,26 86,26 60,54" fill="url(#obsidianTable)"/>
 
-    <!-- Center Specular Razor Spine -->
-    <line x1="60" y1="12" x2="60" y2="114" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
-    <polyline points="24,70 60,94 96,70" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linejoin="round"/>
+    <!-- Right Wing (Obsidian Facets) -->
+    <polygon points="86,26 60,54 76,54" fill="#c084fc"/>
+    <polygon points="86,26 76,54 108,54" fill="url(#obsidianCrown)"/>
+    <polygon points="60,54 76,54 60,114" fill="url(#obsidianInner)"/>
+    <polygon points="76,54 108,54 60,114" fill="url(#obsidianOuter)"/>
   </g>
+
+  <!-- Specular Center Spine & Crown Highlights -->
+  <line x1="60" y1="26" x2="60" y2="114" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="34" y1="26" x2="86" y2="26" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
 </svg>

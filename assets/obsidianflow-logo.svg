@@ -1,33 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
   <defs>
-    <!-- Glowing Molten Lava Gradient -->
-    <linearGradient id="spearLava" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#fff275"/>
-      <stop offset="25%" stop-color="#ffb700"/>
-      <stop offset="65%" stop-color="#ff4500"/>
-      <stop offset="100%" stop-color="#c91800"/>
+    <!-- Lava Table Gradient -->
+    <linearGradient id="ofLavaTable" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffb91"/>
+      <stop offset="60%" stop-color="#ffa600"/>
+      <stop offset="100%" stop-color="#ff4500"/>
     </linearGradient>
 
-    <!-- Drop Shadow / Glow -->
-    <filter id="spearShadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="rgba(255, 69, 0, 0.45)"/>
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(192, 132, 252, 0.35)"/>
-    </filter>
+    <!-- Lava Inner Pavilion Gradient -->
+    <linearGradient id="ofLavaInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9900"/>
+      <stop offset="100%" stop-color="#d91400"/>
+    </linearGradient>
+
+    <!-- Lava Outer Pavilion Gradient -->
+    <linearGradient id="ofLavaOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff5500"/>
+      <stop offset="100%" stop-color="#990000"/>
+    </linearGradient>
+
+    <!-- Obsidian Amethyst Gradient -->
+    <linearGradient id="ofObsidianTable" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3e8ff"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <linearGradient id="ofObsidianInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#6b21a8"/>
+    </linearGradient>
+
+    <linearGradient id="ofObsidianOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7e22ce"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </linearGradient>
   </defs>
 
-  <g filter="url(#spearShadow)">
-    <!-- Left Facet Upper: Royal Purple -->
-    <polygon points="60,12 24,70 60,94" fill="#7e22ce" stroke="#0e0717" stroke-width="1.6" stroke-linejoin="round"/>
-    <!-- Left Facet Base: Midnight Obsidian Purple -->
-    <polygon points="24,70 42,118 60,94" fill="#4c1d95" stroke="#0e0717" stroke-width="1.6" stroke-linejoin="round"/>
+  <!-- Facets Group -->
+  <g stroke="#090514" stroke-width="1.8" stroke-linejoin="round">
+    <!-- Left Wing (Obsidian Purple Facets) -->
+    <!-- Left Crown Star -->
+    <polygon points="34,26 60,54 44,54" fill="url(#ofObsidianInner)"/>
+    <!-- Left Crown Bevel -->
+    <polygon points="34,26 12,54 44,54" fill="url(#ofObsidianOuter)"/>
+    <!-- Left Pavilion Outer -->
+    <polygon points="12,54 44,54 60,114" fill="#3b0764"/>
+    <!-- Left Pavilion Inner -->
+    <polygon points="44,54 60,54 60,114" fill="url(#ofObsidianInner)"/>
 
-    <!-- Right Facet Upper: Glowing Molten Lava -->
-    <polygon points="60,12 96,70 60,94" fill="url(#spearLava)" stroke="#0e0717" stroke-width="1.6" stroke-linejoin="round"/>
-    <!-- Right Facet Base: Deep Magma Crimson -->
-    <polygon points="96,70 78,118 60,94" fill="#d91b00" stroke="#0e0717" stroke-width="1.6" stroke-linejoin="round"/>
+    <!-- Center Table Facet: Split Amethyst & Molten Lava -->
+    <polygon points="34,26 60,26 60,54" fill="url(#ofObsidianTable)"/>
+    <polygon points="60,26 86,26 60,54" fill="url(#ofLavaTable)"/>
 
-    <!-- Center Specular Razor Spine -->
-    <line x1="60" y1="12" x2="60" y2="114" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
-    <polyline points="24,70 60,94 96,70" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linejoin="round"/>
+    <!-- Right Wing (Molten Lava Facets) -->
+    <!-- Right Crown Star -->
+    <polygon points="86,26 60,54 76,54" fill="#ffb700"/>
+    <!-- Right Crown Bevel -->
+    <polygon points="86,26 76,54 108,54" fill="#ff7700"/>
+    <!-- Right Pavilion Inner -->
+    <polygon points="60,54 76,54 60,114" fill="url(#ofLavaInner)"/>
+    <!-- Right Pavilion Outer -->
+    <polygon points="76,54 108,54 60,114" fill="url(#ofLavaOuter)"/>
   </g>
+
+  <!-- Specular Center Spine & Crown Highlights -->
+  <line x1="60" y1="26" x2="60" y2="114" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="34" y1="26" x2="86" y2="26" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
 </svg>

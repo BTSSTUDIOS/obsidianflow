@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <linearGradient id="cPrismLava" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff275"/>
+      <stop offset="40%" stop-color="#ff9900"/>
+      <stop offset="100%" stop-color="#ff3700"/>
+    </linearGradient>
+  </defs>
+
+  <g stroke="#0a0a0f" stroke-width="2" stroke-linejoin="round">
+    <!-- Top Face Glowing Gold / Lava -->
+    <polygon points="14,14 88,32 60,56" fill="url(#cPrismLava)"/>
+    <!-- Top Right Face Searing Orange -->
+    <polygon points="88,32 108,50 60,56" fill="#ff5500"/>
+    <!-- Bottom Right Face Magma Crimson -->
+    <polygon points="108,50 54,112 60,56" fill="#c91800"/>
+    <!-- Left Face Obsidian Purple -->
+    <polygon points="14,14 60,56 54,112" fill="#6b21a8"/>
+  </g>
+
+  <!-- Center Specular Ridges -->
+  <line x1="14" y1="14" x2="60" y2="56" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="60" y1="56" x2="54" y2="112" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="60" y1="56" x2="88" y2="32" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+</svg>
