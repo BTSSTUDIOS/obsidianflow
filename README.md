@@ -1,6 +1,6 @@
 <p align="center">
   <br />
-  <img src="./assets/obsidianflow-logo.svg" width="130" alt="OBSIDIAN FLOW Logo" />
+  <img src="./assets/obsidianflow-logo.svg" width="100" alt="OBSIDIAN FLOW Logo" />
   <h1 align="center">OBSIDIAN FLOW</h1>
   <p align="center">
     <strong>Deterministic AI-Native Video Rendering Engine from HTML &amp; CSS</strong>
@@ -16,15 +16,16 @@
 </p>
 
 <p align="center">
-  <strong>Write HTML. Render video. Built for agents.</strong>
+  <strong>Write HTML. Render video. Built for the agent era.</strong>
 </p>
 
 <p align="center">
   <a href="#-quickstart">Quickstart</a> •
+  <a href="#-video-creation">Video Creation</a> •
   <a href="#-the-composition-format">Format</a> •
   <a href="#-cli-commands">CLI</a> •
   <a href="#-static-linter-rules-of001---of039">Linter</a> •
-  <a href="#-ai-agent-skills">Skills</a>
+  <a href="https://discord.gg/dgwcQrmqF">Discord</a>
 </p>
 
 <p align="center">
@@ -33,15 +34,19 @@
 
 ---
 
-## 🌟 Overview
+## 🌟 Video Creation in the Agent Era
 
-**OBSIDIAN FLOW** is an open-source, AI-native video rendering framework designed to turn standard web technologies (HTML, CSS, SVG, WebGL, animations) into deterministic, frame-accurate MP4 videos.
+OBSIDIAN FLOW is an open-source, AI-native framework for turning standard web technologies (HTML, CSS, SVG, WebGL, animations) into deterministic, frame-accurate MP4 videos.
 
-Unlike video frameworks that require custom JavaScript-heavy component ecosystems, **OBSIDIAN FLOW** uses **native HTML5 documents annotated with `data-*` attributes**. Because modern Large Language Models (LLMs) author HTML and CSS natively, AI agents can generate cinematic compositions, subtitles, motion graphics, and audio layers effortlessly.
+- **Make videos agentically**: LLMs author HTML and CSS natively. AI coding agents (Claude, Cursor, Antigravity) script, animate, and generate complete video productions using built-in agent skills.
+- **Render deterministically**: Frame-by-frame timeline seeking via headless Chrome and direct FFmpeg `image2pipe` streaming. No dropped frames, no wall-clock timing jitter.
+- **Compose with standard web tech**: Use CSS keyframes, SVG, WebGL, and seekable timelines (Native, GSAP, WAAPI) with simple HTML `data-*` attributes.
+- **Mix multi-track audio with ducking**: Automated FFmpeg audio filtergraphs apply volume curves, fades, and dynamic sidechain ducking under dialogue.
+- **Validate before rendering**: Over 30 static analysis checks catch timing overflows, non-deterministic timers, and missing media before invoking the renderer.
 
 ---
 
-## 🏛 Architecture
+## 🏛 Monorepo Architecture
 
 ```
 /home/b1337/Desktop/OBSIDIAN_FLOW/
@@ -260,7 +265,7 @@ All commands accept `--json` for machine-to-machine communication with AI coding
 
 ## 🤖 AI Agent Skills
 
-ObsidianFlow includes native skills for AI coding agents (Claude, Cursor, Antigravity, GitHub Copilot):
+OBSIDIAN FLOW includes native skills for AI coding agents (Claude, Cursor, Antigravity, GitHub Copilot):
 - [`skills/obsidianflow-core/SKILL.md`](skills/obsidianflow-core/SKILL.md) — Teaches agents composition structure, timing, determinism, and timeline registration.
 - [`skills/obsidianflow-audio/SKILL.md`](skills/obsidianflow-audio/SKILL.md) — Teaches agents multi-track audio layering, automated ducking, and sound design.
 
@@ -272,3 +277,4 @@ ObsidianFlow includes native skills for AI coding agents (Claude, Cursor, Antigr
 - **Author**: BIDKAR RAMOS (`btsstudiosla@gmail.com`)
 - **Organization**: BTS Studios
 - **Repository**: [https://github.com/btsstudios/obsidianflow](https://github.com/btsstudios/obsidianflow)
+- **Discord**: [https://discord.gg/dgwcQrmqF](https://discord.gg/dgwcQrmqF)

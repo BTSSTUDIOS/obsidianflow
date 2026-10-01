@@ -1,143 +1,64 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="200" height="240" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140" fill="none">
   <defs>
-    <!-- Obsidian Black Facet Gradients -->
-    <linearGradient id="flowObsidianLeft" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1c162b"/>
-      <stop offset="50%" stop-color="#0b0813"/>
-      <stop offset="100%" stop-color="#030206"/>
-    </linearGradient>
-    <linearGradient id="flowObsidianRight" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#2a203c"/>
-      <stop offset="50%" stop-color="#120e20"/>
-      <stop offset="100%" stop-color="#040308"/>
-    </linearGradient>
-
-    <!-- Top Cap Facet Gradients with subtle purple tint -->
-    <linearGradient id="flowTopLeft" x1="50%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#58487b"/>
-      <stop offset="60%" stop-color="#211a33"/>
-      <stop offset="100%" stop-color="#0e0b16"/>
-    </linearGradient>
-    <linearGradient id="flowTopRight" x1="50%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#7c68ab"/>
-      <stop offset="50%" stop-color="#2f2549"/>
-      <stop offset="100%" stop-color="#130e20"/>
-    </linearGradient>
-
-    <!-- Purple Obsidian Refraction Gradients -->
-    <linearGradient id="flowPurpleBottomLeft" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#d8b4fe"/>
-      <stop offset="40%" stop-color="#a855f7"/>
-      <stop offset="75%" stop-color="#6b21a8"/>
-      <stop offset="100%" stop-color="#2e1065"/>
-    </linearGradient>
-    <linearGradient id="flowPurpleBottomRight" x1="100%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#e9d5ff"/>
-      <stop offset="35%" stop-color="#c084fc"/>
-      <stop offset="70%" stop-color="#7e22ce"/>
-      <stop offset="100%" stop-color="#3b0764"/>
-    </linearGradient>
-    <linearGradient id="flowPurpleEdge" x1="0%" y1="50%" x2="100%" y2="50%">
-      <stop offset="0%" stop-color="#c084fc"/>
-      <stop offset="50%" stop-color="#9333ea"/>
-      <stop offset="100%" stop-color="#581c87"/>
-    </linearGradient>
-
-    <!-- Molten Lava Core Fissure Gradients -->
-    <linearGradient id="flowLavaCore" x1="50%" y1="0%" x2="50%" y2="100%">
+    <!-- Molten Lava Flow Gradient -->
+    <linearGradient id="lavaFacet" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#fff275"/>
       <stop offset="25%" stop-color="#ffb700"/>
-      <stop offset="60%" stop-color="#ff5500"/>
-      <stop offset="100%" stop-color="#d91b00"/>
-    </linearGradient>
-    <linearGradient id="flowLavaVein" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffa600"/>
-      <stop offset="60%" stop-color="#ff3b00"/>
-      <stop offset="100%" stop-color="#990000"/>
+      <stop offset="65%" stop-color="#ff4500"/>
+      <stop offset="100%" stop-color="#c91800"/>
     </linearGradient>
 
-    <!-- Specular White Rim Highlight -->
-    <linearGradient id="flowRimSpecular" x1="50%" y1="0%" x2="50%" y2="100%">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
-      <stop offset="40%" stop-color="rgba(255,255,255,0.3)"/>
-      <stop offset="85%" stop-color="rgba(216,180,254,0.7)"/>
-      <stop offset="100%" stop-color="#ffedd5"/>
-    </linearGradient>
-
-    <!-- Lava Bloom Filter -->
-    <filter id="flowLavaBloom" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5" result="blur1"/>
-      <feGaussianBlur stdDeviation="12" result="blur2"/>
-      <feMerge>
-        <feMergeNode in="blur2"/>
-        <feMergeNode in="blur1"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <!-- Subtle Drop Shadow -->
+    <filter id="iconShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="rgba(147, 51, 234, 0.4)"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(255, 69, 0, 0.3)"/>
     </filter>
   </defs>
 
-  <!-- Dark Obsidian Canvas Backdrop -->
-  <rect width="200" height="240" rx="40" fill="#030305"/>
-  <rect width="198" height="238" x="1" y="1" rx="39" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
-
-  <!-- Background Warm/Cool Dual Ambient Glow -->
-  <circle cx="100" cy="180" r="45" fill="rgba(168, 85, 247, 0.25)" filter="url(#flowLavaBloom)"/>
-  <circle cx="100" cy="120" r="32" fill="rgba(255, 69, 0, 0.28)" filter="url(#flowLavaBloom)"/>
-
-  <!-- ================= CRYSTAL FACETS ================= -->
-  
-  <!-- 1. Top Point Pyramid Facets -->
-  <polygon points="100,16 62,64 100,82" fill="url(#flowTopLeft)"/>
-  <polygon points="100,16 138,64 100,82" fill="url(#flowTopRight)"/>
-  <polygon points="100,16 62,64 56,84" fill="#1b1528"/>
-  <polygon points="100,16 138,64 144,84" fill="#2d2342"/>
-
-  <!-- 2. Main Vertical Column Facets (Onyx Black) -->
-  <polygon points="62,64 100,82 100,160 62,176" fill="url(#flowObsidianLeft)"/>
-  <polygon points="138,64 100,82 100,160 138,176" fill="url(#flowObsidianRight)"/>
-
-  <!-- Outer Side Vertical Bevels (Purple Glass Sheen) -->
-  <polygon points="56,84 62,64 62,176 56,160" fill="#161026"/>
-  <polygon points="56,84 62,64 62,176 56,160" fill="url(#flowPurpleEdge)" opacity="0.4"/>
-  <polygon points="144,84 138,64 138,176 144,160" fill="#201734"/>
-  <polygon points="144,84 138,64 138,176 144,160" fill="url(#flowPurpleEdge)" opacity="0.5"/>
-
-  <!-- 3. Bottom Tapering Pyramid Facets (Purple Obsidian Refraction) -->
-  <polygon points="62,176 100,160 100,224" fill="url(#flowPurpleBottomLeft)"/>
-  <polygon points="138,176 100,160 100,224" fill="url(#flowPurpleBottomRight)"/>
-  <polygon points="56,160 62,176 100,224" fill="#581c87" opacity="0.85"/>
-  <polygon points="144,160 138,176 100,224" fill="#7e22ce" opacity="0.9"/>
-
-  <!-- ================= MOLTEN LAVA MAGMA FISSURE ================= -->
-  <g filter="url(#flowLavaBloom)">
-    <!-- Central Magma River through Ridge -->
-    <path
-      d="M100,48 Q94,76 104,102 T96,140 L100,172 Q106,140 100,102 T104,76 Z"
-      fill="url(#flowLavaCore)"
+  <g filter="url(#iconShadow)">
+    <!-- 1. Top Point Facet (Light Lavender) -->
+    <polygon
+      points="60,8 90,46 60,60 30,46"
+      fill="#c084fc"
+      stroke="#180e29"
+      stroke-width="1.8"
+      stroke-linejoin="round"
     />
-    <!-- Glowing Magma Veins fracturing into facets -->
-    <path
-      d="M98,88 L78,98 M102,114 L126,124 M100,136 L82,148 M102,98 L122,88"
-      stroke="url(#flowLavaVein)"
-      stroke-width="2.8"
-      stroke-linecap="round"
+
+    <!-- 2. Mid Right Facet (Vibrant Royal Violet) -->
+    <polygon
+      points="90,46 104,86 60,96 60,60"
+      fill="#9333ea"
+      stroke="#180e29"
+      stroke-width="1.8"
+      stroke-linejoin="round"
     />
-    <!-- Hot Core Accent -->
-    <ellipse cx="100" cy="102" rx="2.5" ry="14" fill="#ffffff" opacity="0.9"/>
+
+    <!-- 3. Mid Left Facet (Deep Amethyst Purple) -->
+    <polygon
+      points="30,46 60,60 60,96 16,86"
+      fill="#7e22ce"
+      stroke="#180e29"
+      stroke-width="1.8"
+      stroke-linejoin="round"
+    />
+
+    <!-- 4. Bottom Right Facet (Dark Obsidian Purple) -->
+    <polygon
+      points="104,86 82,120 60,130 60,96"
+      fill="#4c1d95"
+      stroke="#180e29"
+      stroke-width="1.8"
+      stroke-linejoin="round"
+    />
+
+    <!-- 5. Bottom Left Facet: THE MOLTEN LAVA FLOW (Energy Core) -->
+    <polygon
+      points="16,86 60,96 60,130 38,120"
+      fill="url(#lavaFacet)"
+      stroke="#180e29"
+      stroke-width="1.8"
+      stroke-linejoin="round"
+    />
   </g>
-
-  <!-- ================= SPECULAR GLASS BEVELS & RIDGES ================= -->
-  <!-- Outer Perimeter Glass Outline -->
-  <polygon
-    points="100,16 138,64 144,84 144,160 138,176 100,224 62,176 56,160 56,84 62,64"
-    stroke="url(#flowRimSpecular)"
-    stroke-width="1.6"
-    stroke-linejoin="round"
-  />
-
-  <!-- Internal Facet Edge Ridges (Platinum & Purple Highlights) -->
-  <polyline points="62,64 100,82 138,64" stroke="rgba(255,255,255,0.6)" stroke-width="1.4"/>
-  <polyline points="62,176 100,160 138,176" stroke="rgba(233,213,255,0.85)" stroke-width="1.6"/>
-  <line x1="100" y1="160" x2="100" y2="224" stroke="#f3e8ff" stroke-width="1.8"/>
-  <line x1="100" y1="16" x2="100" y2="48" stroke="rgba(255,255,255,0.7)" stroke-width="1.2"/>
 </svg>
