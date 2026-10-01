@@ -1,7 +1,7 @@
 <p align="center">
   <br />
-  <img src="./assets/obsidian-logo.svg" width="110" alt="ObsidianFlow Logo" />
-  <h1 align="center">ObsidianFlow</h1>
+  <img src="./assets/obsidianflow-logo.svg" width="130" alt="OBSIDIAN FLOW Logo" />
+  <h1 align="center">OBSIDIAN FLOW</h1>
   <p align="center">
     <strong>Deterministic AI-Native Video Rendering Engine from HTML &amp; CSS</strong>
   </p>
@@ -12,7 +12,7 @@
   <a href="https://www.npmjs.com/package/obsidianflow"><img src="https://img.shields.io/npm/dm/obsidianflow?style=flat&color=22c55e&label=downloads" alt="npm downloads" /></a>
   <a href="https://github.com/btsstudios/obsidianflow/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-3b82f6?style=flat" alt="license" /></a>
   <img src="https://img.shields.io/badge/node-%3E%3D20-22c55e?style=flat" alt="node version" />
-  <a href="https://discord.gg/btsstudios"><img src="https://img.shields.io/badge/Discord-Join-5865F2?style=flat&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://discord.gg/dgwcQrmqF"><img src="https://img.shields.io/badge/Discord-Join-5865F2?style=flat&logo=discord&logoColor=white" alt="Discord" /></a>
 </p>
 
 <p align="center">
@@ -28,16 +28,16 @@
 </p>
 
 <p align="center">
-  <img src="./assets/showcase.gif" width="100%" alt="ObsidianFlow Showcase Demo" style="border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.7);" />
+  <img src="./assets/showcase.gif" width="100%" alt="OBSIDIAN FLOW Showcase Demo" style="border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.7);" />
 </p>
 
 ---
 
 ## 🌟 Overview
 
-**ObsidianFlow** is an open-source, AI-native video rendering framework designed to turn standard web technologies (HTML, CSS, SVG, WebGL, animations) into deterministic, frame-accurate MP4 videos.
+**OBSIDIAN FLOW** is an open-source, AI-native video rendering framework designed to turn standard web technologies (HTML, CSS, SVG, WebGL, animations) into deterministic, frame-accurate MP4 videos.
 
-Unlike video frameworks that require custom JavaScript-heavy component ecosystems, ObsidianFlow uses **native HTML5 documents annotated with `data-*` attributes**. Because modern Large Language Models (LLMs) author HTML and CSS natively, AI agents can generate cinematic compositions, subtitles, motion graphics, and audio layers effortlessly.
+Unlike video frameworks that require custom JavaScript-heavy component ecosystems, **OBSIDIAN FLOW** uses **native HTML5 documents annotated with `data-*` attributes**. Because modern Large Language Models (LLMs) author HTML and CSS natively, AI agents can generate cinematic compositions, subtitles, motion graphics, and audio layers effortlessly.
 
 ---
 

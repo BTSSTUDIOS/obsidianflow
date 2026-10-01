@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <defs>
+    <!-- Obsidian Facet Gradients -->
+    <linearGradient id="obsidianFacet1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#24242e"/>
+      <stop offset="60%" stop-color="#121217"/>
+      <stop offset="100%" stop-color="#08080a"/>
+    </linearGradient>
+    <linearGradient id="obsidianFacet2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#32323f"/>
+      <stop offset="50%" stop-color="#181820"/>
+      <stop offset="100%" stop-color="#0c0c10"/>
+    </linearGradient>
+    <linearGradient id="obsidianFacet3" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#1c1c24"/>
+      <stop offset="100%" stop-color="#050507"/>
+    </linearGradient>
+
+    <!-- Molten Lava Core Gradients -->
+    <linearGradient id="lavaCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff3b00"/>
+      <stop offset="35%" stop-color="#ff7300"/>
+      <stop offset="70%" stop-color="#ffb700"/>
+      <stop offset="100%" stop-color="#fff275"/>
+    </linearGradient>
+    <linearGradient id="lavaVein" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d91b00"/>
+      <stop offset="50%" stop-color="#ff5500"/>
+      <stop offset="100%" stop-color="#ffa600"/>
+    </linearGradient>
+
+    <!-- Lava Glow Filter -->
+    <filter id="lavaGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="blur1"/>
+      <feGaussianBlur stdDeviation="14" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark Obsidian Base Container -->
+  <rect width="200" height="200" rx="44" fill="#030305"/>
+  <rect width="198" height="198" x="1" y="1" rx="43" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+
+  <!-- Left Facet Outer -->
+  <polygon points="100,20 52,65 52,135 100,180 82,140 76,68" fill="url(#obsidianFacet1)"/>
+  
+  <!-- Right Facet Outer -->
+  <polygon points="100,20 148,65 148,135 100,180 118,140 124,68" fill="url(#obsidianFacet2)"/>
+
+  <!-- Top Prism Tip -->
+  <polygon points="100,20 76,68 100,54 124,68" fill="url(#obsidianFacet3)"/>
+  
+  <!-- Bottom Prism Base -->
+  <polygon points="100,180 82,140 100,152 118,140" fill="#09090c"/>
+
+  <!-- Specular Chrome Edge Highlights -->
+  <polyline points="100,20 52,65 52,135 100,180" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-linecap="round"/>
+  <polyline points="100,20 148,65 148,135 100,180" stroke="rgba(255,255,255,0.14)" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Molten Lava Magma Fissure / Seam Core -->
+  <g filter="url(#lavaGlow)">
+    <!-- Central Fissure River -->
+    <path
+      d="M100,54 Q92,72 104,95 T96,128 L100,152 Q108,128 100,95 T106,72 Z"
+      fill="url(#lavaCore)"
+    />
+    <!-- Radiating Lava Veins -->
+    <path
+      d="M96,82 L72,90 M104,110 L126,118 M102,96 L124,84 M98,122 L76,132"
+      stroke="url(#lavaVein)"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+  </g>
+</svg>

@@ -1,38 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
   <defs>
-    <linearGradient id="obsidianGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#c084fc"/>
-      <stop offset="50%" stop-color="#8b5cf6"/>
-      <stop offset="100%" stop-color="#6366f1"/>
+    <!-- Pure Monolithic Obsidian Shading -->
+    <linearGradient id="pureFacetLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c2c36"/>
+      <stop offset="50%" stop-color="#14141a"/>
+      <stop offset="100%" stop-color="#08080b"/>
     </linearGradient>
-    <linearGradient id="obsidianDark" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#a855f7"/>
-      <stop offset="100%" stop-color="#4f46e5"/>
+    <linearGradient id="pureFacetRight" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3c3c4a"/>
+      <stop offset="50%" stop-color="#1e1e26"/>
+      <stop offset="100%" stop-color="#0b0b0f"/>
     </linearGradient>
-    <filter id="neonFilter" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <linearGradient id="pureCenterPlate" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#181820"/>
+      <stop offset="100%" stop-color="#040406"/>
+    </linearGradient>
+
+    <!-- Specular Platinum Glint -->
+    <linearGradient id="platinumSpecular" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.6)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.1)"/>
+    </linearGradient>
   </defs>
 
-  <!-- Dark Background Plate -->
-  <rect width="160" height="160" rx="36" fill="#030305" />
-  <rect width="158" height="158" x="1" y="1" rx="35" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+  <!-- Container -->
+  <rect width="200" height="200" rx="44" fill="#030305"/>
+  <rect width="198" height="198" x="1" y="1" rx="43" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
 
-  <!-- Left Obsidian Crystal Shard -->
-  <polygon
-    points="70,28 22,80 70,132 58,80"
-    fill="url(#obsidianGlow)"
-    filter="url(#neonFilter)"
-  />
+  <!-- Left Outer Facet -->
+  <polygon points="100,22 52,66 52,134 100,178 76,140 76,60" fill="url(#pureFacetLeft)"/>
 
-  <!-- Right Obsidian Crystal Shard -->
-  <polygon
-    points="90,28 138,80 90,132 102,80"
-    fill="url(#obsidianDark)"
-    filter="url(#neonFilter)"
-  />
+  <!-- Right Outer Facet -->
+  <polygon points="100,22 148,66 148,134 100,178 124,140 124,60" fill="url(#pureFacetRight)"/>
+
+  <!-- Center Monolith Face -->
+  <polygon points="100,22 76,60 76,140 100,178 124,140 124,60" fill="url(#pureCenterPlate)"/>
+
+  <!-- Crisp Platinum Bevel Edges -->
+  <polyline points="100,22 52,66 52,134 100,178" stroke="url(#platinumSpecular)" stroke-width="1.8" stroke-linecap="round"/>
+  <polyline points="100,22 148,66 148,134 100,178" stroke="rgba(255,255,255,0.2)" stroke-width="1.2" stroke-linecap="round"/>
+  <polyline points="100,22 76,60 76,140 100,178" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/>
+  <polyline points="100,22 124,60 124,140 100,178" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
 </svg>
