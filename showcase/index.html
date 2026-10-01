@@ -9,7 +9,7 @@
 >
 <head>
   <meta charset="utf-8" />
-  <title>ObsidianFlow Hero Showcase</title>
+  <title>OBSIDIAN FLOW Showcase</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="../packages/core/dist/runtime.js"></script>
 </head>
@@ -31,44 +31,112 @@
 
       <!-- Logo & Brand Header -->
       <div class="logo-container">
-        <!-- Obsidian Dual-Crystal Shards Mark -->
-        <svg class="shards-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Double-Terminated Obsidian Crystal with Purple Refraction & Lava Core -->
+        <svg class="crystal-svg" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <linearGradient id="shardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#c084fc" />
-              <stop offset="100%" stop-color="#6366f1" />
+            <linearGradient id="scObsLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1c162b"/>
+              <stop offset="50%" stop-color="#0b0813"/>
+              <stop offset="100%" stop-color="#030206"/>
             </linearGradient>
-            <linearGradient id="shardGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#818cf8" />
-              <stop offset="100%" stop-color="#a855f7" />
+            <linearGradient id="scObsRight" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#2a203c"/>
+              <stop offset="50%" stop-color="#120e20"/>
+              <stop offset="100%" stop-color="#040308"/>
             </linearGradient>
-            <filter id="shardGlow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="6" result="blur" />
-              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            <linearGradient id="scTopLeft" x1="50%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#58487b"/>
+              <stop offset="60%" stop-color="#211a33"/>
+              <stop offset="100%" stop-color="#0e0b16"/>
+            </linearGradient>
+            <linearGradient id="scTopRight" x1="50%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7c68ab"/>
+              <stop offset="50%" stop-color="#2f2549"/>
+              <stop offset="100%" stop-color="#130e20"/>
+            </linearGradient>
+            <linearGradient id="scPurpleBottomLeft" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#d8b4fe"/>
+              <stop offset="40%" stop-color="#a855f7"/>
+              <stop offset="75%" stop-color="#6b21a8"/>
+              <stop offset="100%" stop-color="#2e1065"/>
+            </linearGradient>
+            <linearGradient id="scPurpleBottomRight" x1="100%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="#e9d5ff"/>
+              <stop offset="35%" stop-color="#c084fc"/>
+              <stop offset="70%" stop-color="#7e22ce"/>
+              <stop offset="100%" stop-color="#3b0764"/>
+            </linearGradient>
+            <linearGradient id="scLavaCore" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stop-color="#fff275"/>
+              <stop offset="25%" stop-color="#ffb700"/>
+              <stop offset="60%" stop-color="#ff5500"/>
+              <stop offset="100%" stop-color="#d91b00"/>
+            </linearGradient>
+            <linearGradient id="scRimSpecular" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+              <stop offset="40%" stop-color="rgba(255,255,255,0.3)"/>
+              <stop offset="85%" stop-color="rgba(216,180,254,0.7)"/>
+              <stop offset="100%" stop-color="#ffedd5"/>
+            </linearGradient>
+            <filter id="scLavaBloom" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="6" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
             </filter>
           </defs>
-          <!-- Left Crystal Shard -->
+
+          <!-- Top Pyramid Facets -->
+          <polygon points="100,16 62,64 100,82" fill="url(#scTopLeft)"/>
+          <polygon points="100,16 138,64 100,82" fill="url(#scTopRight)"/>
+          <polygon points="100,16 62,64 56,84" fill="#1b1528"/>
+          <polygon points="100,16 138,64 144,84" fill="#2d2342"/>
+
+          <!-- Main Vertical Column Facets -->
+          <polygon points="62,64 100,82 100,160 62,176" fill="url(#scObsLeft)"/>
+          <polygon points="138,64 100,82 100,160 138,176" fill="url(#scObsRight)"/>
+
+          <!-- Purple Bottom Facets (Onyx Mirror Purple Refraction) -->
+          <polygon points="62,176 100,160 100,224" fill="url(#scPurpleBottomLeft)"/>
+          <polygon points="138,176 100,160 100,224" fill="url(#scPurpleBottomRight)"/>
+          <polygon points="56,160 62,176 100,224" fill="#581c87" opacity="0.85"/>
+          <polygon points="144,160 138,176 100,224" fill="#7e22ce" opacity="0.9"/>
+
+          <!-- Molten Lava Core Fissure -->
+          <g filter="url(#scLavaBloom)">
+            <path
+              d="M100,48 Q94,76 104,102 T96,140 L100,172 Q106,140 100,102 T104,76 Z"
+              fill="url(#scLavaCore)"
+            />
+            <path
+              d="M98,88 L78,98 M102,114 L126,124 M100,136 L82,148 M102,98 L122,88"
+              stroke="#ff7700"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+          </g>
+
+          <!-- Specular Crystal Bevels -->
           <polygon
-            class="shard-left"
-            points="44,14 12,50 44,86 36,50"
-            fill="url(#shardGrad1)"
-            filter="url(#shardGlow)"
+            points="100,16 138,64 144,84 144,160 138,176 100,224 62,176 56,160 56,84 62,64"
+            stroke="url(#scRimSpecular)"
+            stroke-width="1.8"
+            stroke-linejoin="round"
           />
-          <!-- Right Crystal Shard -->
-          <polygon
-            class="shard-right"
-            points="56,14 88,50 56,86 64,50"
-            fill="url(#shardGrad2)"
-            filter="url(#shardGlow)"
-          />
+          <polyline points="62,176 100,160 138,176" stroke="rgba(233,213,255,0.85)" stroke-width="1.8"/>
+          <line x1="100" y1="160" x2="100" y2="224" stroke="#f3e8ff" stroke-width="2"/>
         </svg>
 
-        <h1 class="brand-title">ObsidianFlow</h1>
+        <h1 class="brand-title">
+          <span class="title-obsidian">OBSIDIAN</span>
+          <span class="title-flow">FLOW</span>
+        </h1>
       </div>
 
       <!-- Tagline -->
       <p class="tagline">
-        <strong>Write HTML. Render video.</strong> Built for digital directors & AI agents.
+        <strong>Write HTML. Render video.</strong> Built for digital directors &amp; AI agents.
       </p>
 
       <!-- Glassmorphism Code & Engine Status Card -->
@@ -79,7 +147,7 @@
             <span class="dot yellow"></span>
             <span class="dot green"></span>
           </div>
-          <span class="window-title">scene-01.html — ObsidianFlow 30 FPS Renderer</span>
+          <span class="window-title">scene-01.html — OBSIDIAN FLOW 30 FPS Renderer</span>
         </div>
 
         <div class="card-body">
@@ -113,13 +181,13 @@
     if (window.NativeTimelineAdapter) {
       const tl = new window.NativeTimelineAdapter();
 
-      // 0s - 1.2s: Initial emergence of badge and shards
+      // 0s - 1.2s: Initial emergence of badge and crystal
       tl.fromTo('.brand-badge', { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.8, ease: 'easeOutCubic' }, 0.2);
-      tl.fromTo('.shard-left', { opacity: 0, x: -30, scale: 0.8 }, { opacity: 1, x: 0, scale: 1, duration: 1.0, ease: 'easeOutCubic' }, 0.4);
-      tl.fromTo('.shard-right', { opacity: 0, x: 30, scale: 0.8 }, { opacity: 1, x: 0, scale: 1, duration: 1.0, ease: 'easeOutCubic' }, 0.4);
+      tl.fromTo('.crystal-svg', { opacity: 0, scale: 0.8, y: -20 }, { opacity: 1, scale: 1, y: 0, duration: 1.1, ease: 'easeOutCubic' }, 0.3);
       
       // 0.6s - 1.8s: Brand title and tagline animation
-      tl.fromTo('.brand-title', { opacity: 0, y: 25 }, { opacity: 1, y: 0, duration: 1.0, ease: 'easeOutCubic' }, 0.6);
+      tl.fromTo('.title-obsidian', { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.9, ease: 'easeOutCubic' }, 0.5);
+      tl.fromTo('.title-flow', { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.9, ease: 'easeOutCubic' }, 0.7);
       tl.fromTo('.tagline', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.9, ease: 'easeOutCubic' }, 0.9);
 
       // 1.2s - 2.5s: Demo card emergence

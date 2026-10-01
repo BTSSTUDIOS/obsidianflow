@@ -81,20 +81,33 @@ body {
   margin-bottom: 24px;
 }
 
-.shards-svg {
-  width: 90px;
-  height: 90px;
-  filter: drop-shadow(0 0 25px rgba(139, 92, 246, 0.8));
+.crystal-svg {
+  width: 76px;
+  height: 92px;
+  filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.65)) drop-shadow(0 0 15px rgba(255, 69, 0, 0.5));
 }
 
 .brand-title {
-  font-size: 84px;
+  font-size: 80px;
   font-weight: 900;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 45%, #818cf8 100%);
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.title-obsidian {
+  background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 60%, #94a3b8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 40px rgba(139, 92, 246, 0.4));
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.3));
+}
+
+.title-flow {
+  background: linear-gradient(135deg, #ff3b00 0%, #ff8000 50%, #ffc800 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 35px rgba(255, 69, 0, 0.7));
 }
 
 .brand-badge {
