@@ -7,7 +7,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/btsstudios/obsidianflow.git"
+    "url": "git+https://github.com/btsstudios/obsidianflow.git"
   },
   "workspaces": [
     "packages/*"
@@ -17,7 +17,7 @@
     "test": "npm run --workspaces --if-present test",
     "lint": "npm run --workspaces --if-present lint",
     "clean": "npm run --workspaces --if-present clean",
-    "publish:packages": "npm publish --workspace=packages/core --access public && npm publish --workspace=packages/engine --access public && npm publish --workspace=packages/producer --access public && npm publish --workspace=packages/cli --access public"
+    "publish:packages": "node scripts/publish.mjs"
   },
   "devDependencies": {
     "turbo": "^2.4.0",
