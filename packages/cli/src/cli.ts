@@ -5,13 +5,23 @@ import { initCommand } from './commands/init.js';
 import { lintCommand } from './commands/lint.js';
 import { checkCommand } from './commands/check.js';
 import { renderCommand } from './commands/render.js';
+import { skillCommand } from './commands/skill.js';
 
 const program = new Command();
 
 program
   .name('obsidianflow')
-  .description('🌋 ObsidianFlow — Deterministic AI-Native Video Rendering Engine from HTML & CSS')
+  .description('🌋 OBSIDIAN FLOW — Deterministic AI-Native Video Rendering Engine from HTML & CSS')
   .version('0.1.0');
+
+program
+  .command('skill [action]')
+  .description('Manage OBSIDIAN FLOW skills for AI agents (Claude, Cursor, Antigravity)')
+  .option('-i, --install', 'Install skills via npx skills add')
+  .option('-g, --global', 'Install globally for all projects')
+  .option('-a, --agent <agent>', 'Target specific AI agent')
+  .option('--json', 'Output machine-readable JSON')
+  .action(skillCommand);
 
 program
   .command('init')
@@ -49,3 +59,4 @@ program
   .action(renderCommand);
 
 program.parse(process.argv);
+

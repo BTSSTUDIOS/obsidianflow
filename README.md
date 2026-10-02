@@ -13,6 +13,7 @@
   <a href="https://github.com/btsstudios/obsidianflow/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-3b82f6?style=flat" alt="license" /></a>
   <img src="https://img.shields.io/badge/node-%3E%3D20-22c55e?style=flat" alt="node version" />
   <a href="https://discord.gg/dgwcQrmqF"><img src="https://img.shields.io/badge/Discord-Join-5865F2?style=flat&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="#-install-ai-agent-skills"><img src="https://img.shields.io/badge/Skills-Add%20to%20Agents-f97316?style=flat&logo=openai&logoColor=white" alt="Install Skills" /></a>
 </p>
 
 <p align="center">
@@ -20,6 +21,11 @@
 </p>
 
 <p align="center">
+  <code>$ npx skills add btsstudios/obsidianflow --full-depth</code>
+</p>
+
+<p align="center">
+  <a href="#-install-ai-agent-skills">Agent Skills</a> •
   <a href="#-quickstart">Quickstart</a> •
   <a href="#-video-creation">Video Creation</a> •
   <a href="#-the-composition-format">Format</a> •
@@ -31,6 +37,28 @@
 <p align="center">
   <img src="./assets/showcase.gif" width="100%" alt="OBSIDIAN FLOW Showcase Demo" style="border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.7);" />
 </p>
+
+---
+
+## 🤖 Install AI Agent Skills
+
+Let AI agents compose deterministic videos by writing code. Install the official **OBSIDIAN FLOW** skills into your AI coding assistant (**Claude Code**, **Cursor**, **Antigravity**, **Windsurf**, **GitHub Copilot**, **Cline**, **OpenHands**) with one command:
+
+```bash
+npx skills add btsstudios/obsidianflow --full-depth
+```
+
+Or install directly via the OBSIDIAN FLOW CLI:
+
+```bash
+npx obsidianflow skill install
+```
+
+| Skill | Description |
+| :--- | :--- |
+| **`obsidianflow`** | Master skill for autonomous video generation, HTML/CSS layout, deterministic animations & render commands |
+| **`obsidianflow-core`** | Composition AST, timing attributes (`data-*`), seekable master clocks, and frame adapters |
+| **`obsidianflow-audio`** | Multi-track audio mixing, FFmpeg sidechain dialogue ducking, and volume curves |
 
 ---
 
