@@ -1,7 +1,7 @@
 {
   "name": "obsidianflow-monorepo",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AI-native video rendering framework and CLI for deterministic MP4 videos from HTML/CSS",
   "author": "BIDKAR RAMOS <bidkar@gulp.wtf>",
   "license": "Apache-2.0",

@@ -1,12 +1,13 @@
 {
   "name": "@obsidianflow/engine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Headless Puppeteer frame-by-frame deterministic capture engine for OBSIDIAN FLOW",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "publishConfig": {
     "access": "public"
@@ -40,7 +41,7 @@
     "test": "node --test dist/**/*.test.js || true"
   },
   "dependencies": {
-    "@obsidianflow/core": "^0.1.0",
+    "@obsidianflow/core": "^0.1.1",
     "puppeteer": "^24.4.0"
   },
   "devDependencies": {

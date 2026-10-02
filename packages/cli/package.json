@@ -1,6 +1,6 @@
 {
   "name": "obsidianflow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CLI tool for OBSIDIAN FLOW - Deterministic AI-native video rendering from HTML/CSS",
   "type": "module",
   "bin": {
@@ -9,7 +9,8 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "publishConfig": {
     "access": "public"
@@ -41,9 +42,9 @@
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "dependencies": {
-    "@obsidianflow/core": "^0.1.0",
-    "@obsidianflow/engine": "^0.1.0",
-    "@obsidianflow/producer": "^0.1.0",
+    "@obsidianflow/core": "^0.1.1",
+    "@obsidianflow/engine": "^0.1.1",
+    "@obsidianflow/producer": "^0.1.1",
     "commander": "^13.1.0",
     "picocolors": "^1.1.1",
     "ora": "^8.2.0"

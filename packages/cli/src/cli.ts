@@ -12,7 +12,7 @@ const program = new Command();
 program
   .name('obsidianflow')
   .description('🌋 OBSIDIAN FLOW — Deterministic AI-Native Video Rendering Engine from HTML & CSS')
-  .version('0.1.0');
+  .version('0.1.1');
 
 program
   .command('skill [action]')

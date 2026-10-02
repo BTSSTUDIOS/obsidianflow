@@ -1,12 +1,13 @@
 {
   "name": "@obsidianflow/producer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "FFmpeg video encoding and audio mixing pipeline for OBSIDIAN FLOW",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "publishConfig": {
     "access": "public"
@@ -40,8 +41,8 @@
     "test": "node --test dist/**/*.test.js || true"
   },
   "dependencies": {
-    "@obsidianflow/core": "^0.1.0",
-    "@obsidianflow/engine": "^0.1.0"
+    "@obsidianflow/core": "^0.1.1",
+    "@obsidianflow/engine": "^0.1.1"
   },
   "devDependencies": {
     "@types/node": "^22.10.1",
