@@ -1,21 +1,49 @@
 {
   "name": "obsidianflow",
   "version": "0.1.0",
-  "description": "CLI tool for ObsidianFlow - Deterministic AI-native video rendering from HTML/CSS",
+  "description": "CLI tool for OBSIDIAN FLOW - Deterministic AI-native video rendering from HTML/CSS",
   "type": "module",
   "bin": {
     "obsidianflow": "./dist/cli.js"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/btsstudios/obsidianflow.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/btsstudios/obsidianflow#readme",
+  "bugs": {
+    "url": "https://github.com/btsstudios/obsidianflow/issues"
+  },
+  "keywords": [
+    "obsidianflow",
+    "cli",
+    "video",
+    "rendering",
+    "html",
+    "css",
+    "ffmpeg",
+    "puppeteer",
+    "agent-skills",
+    "remotion",
+    "hyperframes"
+  ],
   "scripts": {
     "build": "tsc && chmod +x ./dist/cli.js",
     "clean": "rm -rf dist tsconfig.tsbuildinfo"
   },
   "dependencies": {
-    "@obsidianflow/core": "*",
-    "@obsidianflow/engine": "*",
-    "@obsidianflow/producer": "*",
+    "@obsidianflow/core": "^0.1.0",
+    "@obsidianflow/engine": "^0.1.0",
+    "@obsidianflow/producer": "^0.1.0",
     "commander": "^13.1.0",
     "picocolors": "^1.1.1",
     "ora": "^8.2.0"

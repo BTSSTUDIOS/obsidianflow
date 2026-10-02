@@ -16,7 +16,8 @@
     "build": "npm run --workspaces --if-present build",
     "test": "npm run --workspaces --if-present test",
     "lint": "npm run --workspaces --if-present lint",
-    "clean": "npm run --workspaces --if-present clean"
+    "clean": "npm run --workspaces --if-present clean",
+    "publish:packages": "npm publish --workspace=packages/core --access public && npm publish --workspace=packages/engine --access public && npm publish --workspace=packages/producer --access public && npm publish --workspace=packages/cli --access public"
   },
   "devDependencies": {
     "turbo": "^2.4.0",

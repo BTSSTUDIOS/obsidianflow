@@ -1,10 +1,36 @@
 {
   "name": "@obsidianflow/core",
   "version": "0.1.0",
-  "description": "Core composition parser, linter, seekable runtime, and adapters for ObsidianFlow",
+  "description": "Core composition parser, linter, seekable runtime, and adapters for OBSIDIAN FLOW",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/btsstudios/obsidianflow.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/btsstudios/obsidianflow#readme",
+  "bugs": {
+    "url": "https://github.com/btsstudios/obsidianflow/issues"
+  },
+  "keywords": [
+    "obsidianflow",
+    "video",
+    "rendering",
+    "agent-skills",
+    "html",
+    "css",
+    "animation",
+    "remotion",
+    "hyperframes"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",

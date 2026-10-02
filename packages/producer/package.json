@@ -1,10 +1,33 @@
 {
   "name": "@obsidianflow/producer",
   "version": "0.1.0",
-  "description": "FFmpeg video encoding and audio mixing pipeline for ObsidianFlow",
+  "description": "FFmpeg video encoding and audio mixing pipeline for OBSIDIAN FLOW",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/btsstudios/obsidianflow.git",
+    "directory": "packages/producer"
+  },
+  "homepage": "https://github.com/btsstudios/obsidianflow#readme",
+  "bugs": {
+    "url": "https://github.com/btsstudios/obsidianflow/issues"
+  },
+  "keywords": [
+    "obsidianflow",
+    "producer",
+    "ffmpeg",
+    "encoder",
+    "audio-mixing",
+    "sidechain-ducking"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -17,8 +40,8 @@
     "test": "node --test dist/**/*.test.js || true"
   },
   "dependencies": {
-    "@obsidianflow/core": "*",
-    "@obsidianflow/engine": "*"
+    "@obsidianflow/core": "^0.1.0",
+    "@obsidianflow/engine": "^0.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.1",

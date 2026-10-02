@@ -1,10 +1,33 @@
 {
   "name": "@obsidianflow/engine",
   "version": "0.1.0",
-  "description": "Headless Puppeteer frame-by-frame deterministic capture engine for ObsidianFlow",
+  "description": "Headless Puppeteer frame-by-frame deterministic capture engine for OBSIDIAN FLOW",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/btsstudios/obsidianflow.git",
+    "directory": "packages/engine"
+  },
+  "homepage": "https://github.com/btsstudios/obsidianflow#readme",
+  "bugs": {
+    "url": "https://github.com/btsstudios/obsidianflow/issues"
+  },
+  "keywords": [
+    "obsidianflow",
+    "engine",
+    "puppeteer",
+    "deterministic",
+    "video",
+    "capture"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -17,7 +40,7 @@
     "test": "node --test dist/**/*.test.js || true"
   },
   "dependencies": {
-    "@obsidianflow/core": "*",
+    "@obsidianflow/core": "^0.1.0",
     "puppeteer": "^24.4.0"
   },
   "devDependencies": {

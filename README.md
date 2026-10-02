@@ -8,8 +8,8 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/obsidianflow"><img src="https://img.shields.io/npm/v/obsidianflow?style=flat&color=f97316&label=npm" alt="npm version" /></a>
-  <a href="https://www.npmjs.com/package/obsidianflow"><img src="https://img.shields.io/npm/dm/obsidianflow?style=flat&color=22c55e&label=downloads" alt="npm downloads" /></a>
+  <a href="https://www.npmjs.com/package/obsidianflow"><img src="https://img.shields.io/badge/npm-v0.1.0-f97316?style=flat&logo=npm" alt="npm version" /></a>
+  <a href="https://github.com/btsstudios/obsidianflow/releases"><img src="https://img.shields.io/badge/release-v0.1.0-22c55e?style=flat" alt="release" /></a>
   <a href="https://github.com/btsstudios/obsidianflow/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-3b82f6?style=flat" alt="license" /></a>
   <img src="https://img.shields.io/badge/node-%3E%3D20-22c55e?style=flat" alt="node version" />
   <a href="https://discord.gg/dgwcQrmqF"><img src="https://img.shields.io/badge/Discord-Join-5865F2?style=flat&logo=discord&logoColor=white" alt="Discord" /></a>
