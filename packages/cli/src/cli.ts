@@ -6,13 +6,14 @@ import { lintCommand } from './commands/lint.js';
 import { checkCommand } from './commands/check.js';
 import { renderCommand } from './commands/render.js';
 import { skillCommand } from './commands/skill.js';
+import { mcpCommand } from './commands/mcp.js';
 
 const program = new Command();
 
 program
   .name('obsidianflow')
   .description('🌋 OBSIDIAN FLOW — Deterministic AI-Native Video Rendering Engine from HTML & CSS')
-  .version('0.1.1');
+  .version('0.1.2');
 
 program
   .command('skill [action]')
@@ -57,6 +58,12 @@ program
   .option('--browser <path>', 'Custom Chrome/Chromium executable path')
   .option('--json', 'Output render result as machine-readable JSON')
   .action(renderCommand);
+
+program
+  .command('mcp')
+  .description('Start the OBSIDIAN FLOW Model Context Protocol (MCP) server over stdio for AI agents')
+  .option('--debug', 'Enable debug logging to stderr')
+  .action(mcpCommand);
 
 program.parse(process.argv);
 

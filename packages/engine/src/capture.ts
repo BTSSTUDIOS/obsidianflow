@@ -116,3 +116,78 @@ export async function captureFrames(options: CaptureOptions): Promise<void> {
     await browser.close().catch(() => {});
   }
 }
+
+export interface SingleFrameOptions {
+  compositionPath: string;
+  timeInSeconds: number;
+  width?: number;
+  height?: number;
+  browserExecutablePath?: string;
+}
+
+/**
+ * Captures a single deterministic frame at a specific timestamp.
+ */
+export async function captureSingleFrame(options: SingleFrameOptions): Promise<Buffer> {
+  const {
+    compositionPath,
+    timeInSeconds,
+    width = 1920,
+    height = 1080,
+    browserExecutablePath,
+  } = options;
+
+  const browser = await launchBrowser({
+    width,
+    height,
+    executablePath: browserExecutablePath,
+  });
+
+  try {
+    const page = await browser.newPage();
+    await page.setViewport({
+      width,
+      height,
+      deviceScaleFactor: 1,
+    });
+
+    const url = compositionPath.startsWith('http://') || compositionPath.startsWith('https://')
+      ? compositionPath
+      : `file://${path.resolve(compositionPath)}`;
+
+    await page.goto(url, {
+      waitUntil: ['load', 'networkidle0'],
+      timeout: 30000,
+    });
+
+    await page.evaluate(async (t: number) => {
+      if (window.__obsidianflow && typeof window.__obsidianflow.seek === 'function') {
+        await window.__obsidianflow.seek(t);
+      } else if (window.__timelines) {
+        for (const tl of Object.values(window.__timelines)) {
+          if (tl && typeof tl.seek === 'function') {
+            tl.seek(t);
+          }
+        }
+      }
+      if (document.body) {
+        void document.body.offsetHeight;
+      }
+    }, timeInSeconds);
+
+    const screenshot = (await page.screenshot({
+      type: 'png',
+      omitBackground: false,
+      clip: {
+        x: 0,
+        y: 0,
+        width,
+        height,
+      },
+    })) as Buffer;
+
+    return screenshot;
+  } finally {
+    await browser.close().catch(() => {});
+  }
+}

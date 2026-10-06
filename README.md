@@ -63,6 +63,47 @@ npx obsidianflow skill install
 
 ---
 
+## 🔌 Model Context Protocol (MCP) Server
+
+Connect **OBSIDIAN FLOW** directly to your AI agent (**Cursor**, **Claude Desktop**, **Claude Code**, **Antigravity**, **Windsurf**). The built-in MCP server gives agents instant frame vision (`render_frame`), timeline inspection, and playbook resources over `stdio`:
+
+### Connect in Cursor (`~/.cursor/mcp.json`):
+```json
+{
+  "mcpServers": {
+    "obsidianflow": {
+      "command": "npx",
+      "args": ["-y", "obsidianflow", "mcp"]
+    }
+  }
+}
+```
+
+### Connect in Claude Desktop (`claude_desktop_config.json`):
+```json
+{
+  "mcpServers": {
+    "obsidianflow": {
+      "command": "npx",
+      "args": ["-y", "obsidianflow", "mcp"]
+    }
+  }
+}
+```
+
+### Tools exposed to AI agents:
+| Tool | Access | Description |
+| :--- | :---: | :--- |
+| `render_frame` | Read-only | Captures a single crisp PNG frame in &lt;300ms so the AI can inspect typography and layout in chat |
+| `extract_frame` | Read-only | Extracts first or last frame as a visual anchor for generative video models (Veo, Kling, Runway) |
+| `inspect_timeline` | Read-only | Returns structured JSON manifest of all clips, tracks, durations, and audio stems |
+| `lint_composition` | Read-only | Runs 30+ static deterministic rules for timing, safe zones, and ducking |
+| `get_guide` | Read-only | Retrieves official playbook chapters (`rules`, `composition`, `audio`, `smpte-wipes`) |
+| `render_video` | Action | Initiates background MP4 rendering with async job tracking |
+| `get_job_status` | Read-only | Polls rendering progress and retrieves finished video file path |
+
+---
+
 ## 🌟 Video Creation in the Agent Era
 
 OBSIDIAN FLOW is an open-source, AI-native framework for turning standard web technologies (HTML, CSS, SVG, WebGL, animations) into deterministic, frame-accurate MP4 videos.
