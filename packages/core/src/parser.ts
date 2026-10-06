@@ -5,6 +5,7 @@ import type {
   MediaSource,
   AudioGroup,
   AudioTrack,
+  VolumeKeyframe,
   TransitionDef,
   CompositionVariable,
 } from './types.js';
@@ -239,10 +240,33 @@ function parseAudioTrack(aEl: any, index: number, fps: number): AudioTrack {
   const volume = aEl.hasAttribute('data-volume')
     ? parseFloat(aEl.getAttribute('data-volume')!)
     : 1.0;
-  const ducking = aEl.getAttribute('data-ducking') || undefined;
-  const duckingAmount = aEl.hasAttribute('data-ducking-amount')
-    ? parseFloat(aEl.getAttribute('data-ducking-amount')!)
-    : undefined;
+  
+  // Support both data-duck and data-ducking aliases
+  const ducking = aEl.getAttribute('data-duck') || aEl.getAttribute('data-ducking') || undefined;
+  const rawDuckingAmount = aEl.getAttribute('data-duck-ratio') || aEl.getAttribute('data-ducking-amount');
+  const duckingAmount = rawDuckingAmount ? parseFloat(rawDuckingAmount) : undefined;
+
+  // Support manual volume keyframes: "0s:1.0, 2s:0.25, 4.5s:0.25, 5s:1.0" or JSON
+  const rawKeyframes = aEl.getAttribute('data-volume-keyframes');
+  let volumeKeyframes: VolumeKeyframe[] | undefined = undefined;
+  if (rawKeyframes) {
+    try {
+      if (rawKeyframes.trim().startsWith('[')) {
+        volumeKeyframes = JSON.parse(rawKeyframes);
+      } else {
+        volumeKeyframes = rawKeyframes.split(',').map((pair: string) => {
+          const [tStr, vStr] = pair.trim().split(':');
+          return {
+            time: parseTime(tStr, fps),
+            volume: parseFloat(vStr),
+          };
+        }).filter((k: any) => !isNaN(k.time) && !isNaN(k.volume));
+      }
+    } catch {
+      // ignore malformed keyframes
+    }
+  }
+
   const fadeIn = aEl.hasAttribute('data-fade-in')
     ? parseTime(aEl.getAttribute('data-fade-in'), fps)
     : undefined;
@@ -259,6 +283,7 @@ function parseAudioTrack(aEl: any, index: number, fps: number): AudioTrack {
     volume: isNaN(volume) ? 1.0 : Math.max(0, Math.min(1, volume)),
     ducking,
     duckingAmount,
+    volumeKeyframes,
     fadeIn,
     fadeOut,
     generatedBy: aEl.getAttribute('data-generated-by') || undefined,
@@ -274,6 +299,12 @@ function parseTransitions(container: any, fps: number): TransitionDef[] {
 
   return transitionEls.map((tEl) => {
     const type = tEl.getAttribute('type') || 'fade';
+    const smpteCode = tEl.hasAttribute('data-smpte') || tEl.hasAttribute('code')
+      ? parseInt(tEl.getAttribute('data-smpte') || tEl.getAttribute('code')!, 10)
+      : undefined;
+    const softness = tEl.hasAttribute('data-softness')
+      ? parseFloat(tEl.getAttribute('data-softness')!)
+      : undefined;
     const startTime = parseTime(tEl.getAttribute('data-start') || '0s', fps);
     const duration = parseTime(tEl.getAttribute('data-duration') || '1s', fps);
     const from = tEl.getAttribute('data-from') || undefined;
@@ -290,6 +321,8 @@ function parseTransitions(container: any, fps: number): TransitionDef[] {
 
     return {
       type,
+      smpteCode,
+      softness,
       startTime,
       duration,
       from,

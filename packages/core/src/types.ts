@@ -51,6 +51,16 @@ export interface AudioGroup {
   tracks: AudioTrack[];
 }
 
+export interface VolumeKeyframe {
+  time: number;       // seconds on timeline
+  volume: number;     // 0.0 to 1.0 (or level)
+}
+
+export interface RationalRate {
+  numerator: number;
+  denominator: number;
+}
+
 export interface AudioTrack {
   id: string;
   src: string;
@@ -59,7 +69,8 @@ export interface AudioTrack {
   duration: number;       // seconds
   volume: number;         // 0.0 to 1.0
   ducking?: string;       // track name that triggers ducking
-  duckingAmount?: number; // duck attenuation (e.g. 0.3)
+  duckingAmount?: number; // duck attenuation ratio (e.g. 0.25)
+  volumeKeyframes?: VolumeKeyframe[];
   fadeIn?: number;        // fade in duration in seconds
   fadeOut?: number;       // fade out duration in seconds
   generatedBy?: string;   // AI model attribution
@@ -67,7 +78,9 @@ export interface AudioTrack {
 }
 
 export interface TransitionDef {
-  type: string;           // 'lava-flow', 'obsidian-shatter', 'fade', 'wipe', etc.
+  type: string;           // 'lava-flow', 'obsidian-shatter', 'fade', 'wipe', 'smpte-wipe', etc.
+  smpteCode?: number;     // SMPTE 258M wipe code (e.g. 1=horizontal, 2=vertical, 21=barn door, 101=circle iris, 201=clock)
+  softness?: number;      // 0 to 100 percentage edge feather
   startTime: number;      // timeline seconds
   duration: number;       // seconds
   from?: string;          // clip ID or selector

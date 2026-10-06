@@ -86,9 +86,9 @@ if (window.NativeTimelineAdapter) {
 
 ---
 
-## 4. Multi-Track Audio & Sidechain Ducking
+## 4. Multi-Track Audio, Ducking & Volume Keyframes
 
-OBSIDIAN FLOW features built-in FFmpeg sidechain audio ducking:
+OBSIDIAN FLOW features built-in FFmpeg sidechain audio ducking, manual volume keyframing, and automatic EBU R128 (-14 LUFS) broadcast loudness normalization:
 
 ```html
 <!-- Voiceover Track (Dialogue Group) -->
@@ -97,22 +97,50 @@ OBSIDIAN FLOW features built-in FFmpeg sidechain audio ducking:
   data-track="dialogue"
   data-start="1s"
   data-duration="8s"
-  data-duck-group="dialogue"
   data-volume="1.0"
 ></audio>
 
-<!-- Background Music Track (Auto-ducked) -->
+<!-- Background Music Track (Auto-ducked by dialogue to 20% volume) -->
 <audio
   src="assets/ambient.mp3"
-  data-track="bgm"
+  data-track="music"
   data-start="0s"
   data-duration="10s"
   data-volume="0.7"
-  data-duck="true"
-  data-duck-group="dialogue"
+  data-duck="dialogue"
   data-duck-ratio="0.2"
 ></audio>
+
+<!-- Manual Rubber-Band Volume Keyframing -->
+<audio
+  src="assets/sfx-riser.mp3"
+  data-track="sfx"
+  data-start="2s"
+  data-duration="6s"
+  data-volume-keyframes="0s:0.0, 2s:0.5, 4s:1.0, 6s:0.0"
+></audio>
 ```
+
+---
+
+## 5. SMPTE Transition Wipes
+
+Use standard SMPTE 258M / 287M transition wipe codes between scenes:
+
+```html
+<!-- SMPTE Wipe 1: Horizontal wipe (left-to-right) with 15% edge softness -->
+<of-transition
+  type="smpte-wipe"
+  code="1"
+  data-softness="15"
+  data-start="4.5s"
+  data-duration="1.0s"
+  data-from="#scene-1"
+  data-to="#scene-2"
+></of-transition>
+```
+
+Supported codes: `1` (horizontal line), `2` (vertical line), `21-26` (barn door / box), `101-104` (circle iris), `201-204` (clock sweep).
 
 ---
 
