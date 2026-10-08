@@ -10,11 +10,23 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/obsidianflow"><img src="https://img.shields.io/npm/v/obsidianflow?style=flat&color=f97316&label=npm" alt="npm version" /></a>
   <a href="https://github.com/btsstudios/obsidianflow/actions/workflows/ci.yml"><img src="https://github.com/btsstudios/obsidianflow/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
-  <a href="https://github.com/btsstudios/obsidianflow/releases"><img src="https://img.shields.io/badge/release-v0.1.1-22c55e?style=flat" alt="release" /></a>
+  <a href="https://github.com/btsstudios/obsidianflow/releases"><img src="https://img.shields.io/badge/release-v0.1.2-22c55e?style=flat" alt="release" /></a>
   <a href="https://github.com/btsstudios/obsidianflow/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-3b82f6?style=flat" alt="license" /></a>
-  <img src="https://img.shields.io/badge/node-%3E%3D20-22c55e?style=flat" alt="node version" />
-  <a href="https://discord.gg/dgwcQrmqF"><img src="https://img.shields.io/badge/Discord-Join-5865F2?style=flat&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="#-install-ai-agent-skills"><img src="https://img.shields.io/badge/Skills-Add%20to%20Agents-f97316?style=flat&logo=openai&logoColor=white" alt="Install Skills" /></a>
+  <img src="https://img.shields.io/badge/node-%3E%3D20-22c55e?style=flat&logo=node.js&logoColor=white" alt="node version" />
+  <img src="https://img.shields.io/badge/TypeScript-5.7-3178c6?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />
+</p>
+<p align="center">
+  <a href="#-model-context-protocol-mcp-server"><img src="https://img.shields.io/badge/MCP-Model%20Context%20Protocol-8b5cf6?style=flat&logo=anthropic&logoColor=white" alt="MCP Server" /></a>
+  <img src="https://img.shields.io/badge/timebase-254B%20ticks%2Fs-blue?style=flat" alt="254B Tick Timebase" />
+  <img src="https://img.shields.io/badge/loudness-EBU%20R128%20(-14LUFS)-success?style=flat" alt="EBU R128 Loudness" />
+  <img src="https://img.shields.io/badge/transitions-SMPTE%20258M-orange?style=flat" alt="SMPTE Wipes" />
+  <img src="https://img.shields.io/badge/engine-Headless%20Chrome%20%2B%20FFmpeg-red?style=flat" alt="Chrome and FFmpeg" />
+</p>
+<p align="center">
+  <a href="https://discord.gg/dgwcQrmqF"><img src="https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=flat&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="#-install-ai-agent-skills"><img src="https://img.shields.io/badge/Skills-Agent%20Native-f97316?style=flat&logo=openai&logoColor=white" alt="Install Skills" /></a>
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat" alt="PRs Welcome" />
+  <a href="https://github.com/btsstudios/obsidianflow"><img src="https://img.shields.io/github/stars/btsstudios/obsidianflow?style=flat&color=yellow" alt="GitHub Stars" /></a>
 </p>
 
 <p align="center">
@@ -90,6 +102,18 @@ Connect **OBSIDIAN FLOW** directly to your AI agent (**Cursor**, **Claude Deskto
   }
 }
 ```
+
+### Connect in Claude Code (CLI):
+```bash
+claude mcp add obsidianflow npx -y obsidianflow mcp
+```
+
+### Connect in ChatGPT (Developer Mode):
+1. Enable **Developer Mode** in **Settings → Security**.
+2. Open **Plugins / Connectors** → **Create MCP App**.
+3. Name it **OBSIDIAN FLOW** and connect via local stdio or studio URL.
+
+> 🚀 **OBSIDIAN Studio (`obsidian.video`)**: The upcoming web-native NLE is powered by the OBSIDIAN FLOW rendering engine under the hood. Any AI connector can seamlessly bridge local compositions into studio timelines.
 
 ### Tools exposed to AI agents:
 | Tool | Access | Description |
