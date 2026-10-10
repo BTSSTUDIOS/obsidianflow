@@ -14,7 +14,7 @@ const program = new Command();
 program
   .name('obsidianflow')
   .description('🌋 OBSIDIAN FLOW MCP — The Official Video Production MCP Server & Deterministic Cinema Engine')
-  .version('0.1.2')
+  .version('0.1.3')
   .addHelpText('before', getVolcanoBanner());
 
 program

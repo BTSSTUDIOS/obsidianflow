@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.1.3] - 2026-10-10
+
+### 🌋 Volcanic Pixel HUD Banner & Brandable Skills
+- **Pixel Volcano HUD (`banner.ts`)**: Added pixelated volcanic terminal banner with 24-bit TrueColor ANSI gradients, matching Google Antigravity aesthetic.
+- **Brandable MCP Skill Installer**: Added `npx obsidianflow mcp install` and `npx obsidianflow skill install` commands.
+- **Topological Build Ordering**: Fixed monorepo build pipeline in root `package.json` ensuring core libraries compile sequentially before CLI.
+- **Enhanced Publisher Feedback**: Clear post-publish terminal instructions highlighting MCP stdio server and skills.
+
+---
+
 ## [0.1.2] - 2026-10-08
 
 ### ⚡ Exact Time Math & SMPTE 258M Timebase

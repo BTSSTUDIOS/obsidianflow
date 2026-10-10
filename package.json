@@ -1,7 +1,7 @@
 {
   "name": "obsidianflow-monorepo",
   "private": true,
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "OBSIDIAN FLOW MCP — The Official Video Production MCP Server & Deterministic Cinema Engine for AI Agents. Forged in volcanic fire. Inspired by Remotion and HyperFrames.",
   "author": "BIDKAR RAMOS <bidkar@gulp.wtf>",
   "license": "Apache-2.0",
