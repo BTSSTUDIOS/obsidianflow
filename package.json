@@ -13,7 +13,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run --workspaces --if-present build",
+    "build": "npm run --workspace=packages/core build && npm run --workspace=packages/engine build && npm run --workspace=packages/producer build && npm run --workspace=packages/cli build",
     "test": "npm run --workspaces --if-present test",
     "lint": "npm run --workspaces --if-present lint",
     "clean": "npm run --workspaces --if-present clean",
