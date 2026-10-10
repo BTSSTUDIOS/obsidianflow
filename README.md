@@ -25,6 +25,7 @@
 <p align="center">
   <a href="https://discord.gg/dgwcQrmqF"><img src="https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=flat&logo=discord&logoColor=white" alt="Discord" /></a>
   <a href="#-install-ai-agent-skills"><img src="https://img.shields.io/badge/Skills-Agent%20Native-f97316?style=flat&logo=openai&logoColor=white" alt="Install Skills" /></a>
+  <img src="https://img.shields.io/badge/status-young%20and%20moving%20fast-7952d2?style=flat" alt="Status" />
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat" alt="PRs Welcome" />
   <a href="https://github.com/btsstudios/obsidianflow"><img src="https://img.shields.io/github/stars/btsstudios/obsidianflow?style=flat&color=yellow" alt="GitHub Stars" /></a>
 </p>
@@ -44,6 +45,7 @@
   <a href="#-the-composition-format">Format</a> •
   <a href="#-cli-commands">CLI</a> •
   <a href="#-static-linter-rules-of001---of039">Linter</a> •
+  <a href="CHANGELOG.md">Changelog</a> •
   <a href="https://discord.gg/dgwcQrmqF">Discord</a>
 </p>
 
@@ -72,6 +74,18 @@ npx obsidianflow skill install
 | **`obsidianflow`** | Master skill for autonomous video generation, HTML/CSS layout, deterministic animations & render commands |
 | **`obsidianflow-core`** | Composition AST, timing attributes (`data-*`), seekable master clocks, and frame adapters |
 | **`obsidianflow-audio`** | Multi-track audio mixing, FFmpeg sidechain dialogue ducking, and volume curves |
+
+### 🧠 Teach Your AI Agent to Drive OBSIDIAN FLOW (One-Shot Prompt)
+Copy and paste this instruction directly into your AI coding assistant (**Claude Code**, **Cursor**, **Windsurf**, **ChatGPT**, or **Antigravity**):
+
+```markdown
+Help me install OBSIDIAN FLOW from BTS Studios (https://github.com/btsstudios/obsidianflow) and teach yourself to drive it:
+1. First, install the CLI or skills: run `npm install -g obsidianflow` or load the official agent skills via `npx skills add btsstudios/obsidianflow --full-depth`.
+2. OBSIDIAN FLOW comes with a built-in Model Context Protocol server (its `obsidianflow mcp` command). Connect it to your MCP tools so you have direct frame vision, timeline inspection, and broadcast linter tools.
+3. Every repo has an AGENTS.md and built-in playbook chapters (access them via `obsidianflow://guide/rules` or `npx obsidianflow guide`). Read them and save what matters as a reusable rule.
+4. Finish with one small test: scaffold a 5-second sample composition (`npx obsidianflow init test-video --template blank`), add background music with dialogue auto-ducking, run `npx obsidianflow lint`, and render a single frame with `render_frame` to verify visual layout.
+5. If a step doesn't work on my system, tell me and do the closest thing that does.
+```
 
 ---
 
@@ -125,6 +139,19 @@ claude mcp add obsidianflow npx -y obsidianflow mcp
 | `get_guide` | Read-only | Retrieves official playbook chapters (`rules`, `composition`, `audio`, `smpte-wipes`) |
 | `render_video` | Action | Initiates background MP4 rendering with async job tracking |
 | `get_job_status` | Read-only | Polls rendering progress and retrieves finished video file path |
+
+### 🎬 Higgsfield-Style Creative Workflow Prompts:
+Exposed via the standard MCP `prompts/list` & `prompts/get` protocol (type `/` in Claude or ChatGPT to invoke):
+
+| Prompt | Category | Description |
+| :--- | :--- | :--- |
+| `/vox-video-essay` | Editorial / Documentary | Generates a Vox-style explainer with archival image zoom, yellow highlighter text, and ducked audio |
+| `/ad-hook-multiplier` | Performance Ads | Generates 3 distinct 3-second opening hook variations (A/B testing) for TikTok & Reels |
+| `/vertical-reel-resizer` | Social Media | Reframes 16:9 compositions to 9:16 vertical video with automatic safe zone margins |
+| `/saas-product-walkthrough` | Motion Design | Generates a dark-mode browser mockup with simulated mouse clicks and animated feature badges |
+| `/project-sorter` | Post-Production | Scans assets directory, classifies stems (VO, SFX, AMB, MX), and scaffolds clean timeline |
+| `/headline-multiplier` | Typography | Generates 5 animated kinetic typography styles for marketing copy tests |
+| `/social-ad-localizer` | Localization | Re-times subtitles and dialogue stems for international markets with broadcast loudness |
 
 ---
 

@@ -87,6 +87,117 @@ Runs 30+ static rules checking:
 - Blank frames: check font loading and stylesheet relative paths`,
 };
 
+const WORKFLOW_PROMPTS = [
+  {
+    name: 'vox-video-essay',
+    description: 'Create a Vox-style mixed-media video essay with archival cutouts, animated yellow highlighter, and ducked audio',
+    arguments: [
+      { name: 'topic', description: 'The subject or story of the video essay', required: true },
+      { name: 'duration', description: 'Target duration in seconds (e.g. 15s or 30s)', required: false },
+    ],
+    template: (args: any) => `You are an expert motion designer and video essayist creating a Vox-style mixed-media composition using OBSIDIAN FLOW.
+Topic: ${args?.topic || 'Documentary Story'}
+Target Duration: ${args?.duration || '20s'}
+
+Follow these OBSIDIAN FLOW rules:
+1. Use a textured paper or dark documentary background.
+2. Animate headlines with animated CSS yellow highlight bars (linear-gradient or pseudo-elements).
+3. Include pan-and-zoom (Ken Burns effect) on archival images.
+4. Add background music with auto-ducking under narration:
+   <audio src="music.mp3" data-track="music" data-duck="dialogue" data-duck-ratio="0.2"></audio>
+   <audio src="voiceover.mp3" data-track="dialogue" data-start="1s" data-duration="15s"></audio>
+5. Use SMPTE 258M wipes or smooth fades between scenes.
+6. Run 'obsidianflow lint' to verify 30+ static rules before rendering.`,
+  },
+  {
+    name: 'ad-hook-multiplier',
+    description: 'Generate 3 high-converting opening video hooks for TikTok/Reels paid advertising',
+    arguments: [
+      { name: 'product', description: 'Name and description of the product', required: true },
+      { name: 'targetAudience', description: 'Target audience or persona', required: false },
+    ],
+    template: (args: any) => `You are a performance creative director creating 3 distinct opening hook variations for a paid video ad using OBSIDIAN FLOW.
+Product: ${args?.product || 'Product'}
+Target Audience: ${args?.targetAudience || 'Consumers'}
+
+Create 3 distinct 3-second hook scenes:
+- Hook A (Problem/Agitation): Bold question confronting the pain point.
+- Hook B (Curiosity/Secret): "The reason nobody talks about X..."
+- Hook C (Direct Benefit/Proof): Immediate visual demonstration.
+Ensure text overlays stay within TikTok 9:16 safe zones (keep bottom > 220px, right > 120px).`,
+  },
+  {
+    name: 'saas-product-walkthrough',
+    description: 'Create a sleek modern SaaS UI demo with browser frames, cursor clicks, and feature callouts',
+    arguments: [
+      { name: 'feature', description: 'The SaaS feature to highlight', required: true },
+    ],
+    template: (args: any) => `You are creating a polished SaaS product launch video using OBSIDIAN FLOW.
+Feature: ${args?.feature || 'New Feature'}
+Layout: 1920x1080 60fps.
+1. Render a sleek dark-mode browser mockup with window dots and subtle box-shadow.
+2. Animate floating feature badges with CSS springs and GSAP timelines.
+3. Include modern UI click animations and zoom-ins on key metrics.
+4. Mix an upbeat electronic background track with sound effects for clicks and UI pops.`,
+  },
+  {
+    name: 'vertical-reel-resizer',
+    description: 'Adapt an existing horizontal video composition to 9:16 vertical for TikTok, Reels, and YouTube Shorts',
+    arguments: [
+      { name: 'inputFile', description: 'Path to horizontal index.html', required: true },
+    ],
+    template: (args: any) => `You are converting a 16:9 composition to a mobile-first 9:16 vertical video in OBSIDIAN FLOW.
+Input File: ${args?.inputFile || 'index.html'}
+Rules:
+1. Change data-width="1080" and data-height="1920".
+2. Stack video elements vertically (Split-screen or blurred video background with centered hero).
+3. Check Rule OF050 (Safe Zones): Ensure text and captions are kept out of the bottom 220px and right 120px dead zones.`,
+  },
+  {
+    name: 'project-sorter',
+    description: 'Inspect assets directory, classify footage/images and audio stems (dialogue, sfx, ambience, music), and scaffold a structured OBSIDIAN FLOW composition',
+    arguments: [
+      { name: 'assetsDir', description: 'Directory containing source footage and audio stems', required: false },
+    ],
+    template: (args: any) => `You are a post-production assistant organizing a project in OBSIDIAN FLOW.
+Assets Directory: ${args?.assetsDir || './assets'}
+1. Scan the assets directory and classify files into video clips, background music (data-track="music"), sound effects (data-track="sfx"), and dialogue (data-track="dialogue").
+2. Build an index.html timeline scaffold laying out clips chronologically.
+3. Apply auto-ducking to music tracks under dialogue and add rubber-band keyframes if needed.
+4. Run obsidianflow lint to verify track integrity.`,
+  },
+  {
+    name: 'headline-multiplier',
+    description: 'Create 5 animated kinetic typography headline variations for marketing A/B tests',
+    arguments: [
+      { name: 'hookText', description: 'Core value proposition or headline', required: true },
+    ],
+    template: (args: any) => `You are a motion typography specialist creating 5 kinetic headline variations in OBSIDIAN FLOW.
+Headline: ${args?.hookText || 'Transform Your Workflow'}
+Generate 5 CSS animation styles:
+- Style 1: Staggered word fade & slide-up with custom cubic-bezier ease.
+- Style 2: High-energy TikTok bold pop with scale bounce.
+- Style 3: Elegant editorial serif with yellow highlight stroke sweep.
+- Style 4: Modern minimal typewriter with blinking cursor.
+- Style 5: Split-color gradient mask reveal.`,
+  },
+  {
+    name: 'social-ad-localizer',
+    description: 'Adapt a video composition for international markets with synchronized subtitles and localized dialogue stems',
+    arguments: [
+      { name: 'targetLanguage', description: 'Target language code (e.g. es, de, ja, fr)', required: true },
+      { name: 'dialogueAudio', description: 'Path to translated dialogue audio stem', required: true },
+    ],
+    template: (args: any) => `You are localizing an OBSIDIAN FLOW video for international delivery.
+Target Language: ${args?.targetLanguage || 'es'}
+Translated Audio: ${args?.dialogueAudio || 'dialogue_es.mp3'}
+1. Replace or overlay the dialogue track with the localized audio stem.
+2. Synchronize animated subtitle cards formatted in the target language.
+3. Verify that auto-ducking against the new dialogue track matches the new audio duration.
+4. Export with EBU R128 loudness normalization compliant with broadcast standards.`,
+  },
+];
+
 export async function mcpCommand(options: { debug?: boolean }) {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -142,6 +253,7 @@ export async function mcpCommand(options: { debug?: boolean }) {
             capabilities: {
               tools: {},
               resources: {},
+              prompts: {},
             },
           });
           break;
@@ -154,6 +266,39 @@ export async function mcpCommand(options: { debug?: boolean }) {
 
         case 'ping': {
           respond({});
+          break;
+        }
+
+        case 'prompts/list': {
+          const prompts = WORKFLOW_PROMPTS.map((p) => ({
+            name: p.name,
+            description: p.description,
+            arguments: p.arguments,
+          }));
+          respond({ prompts });
+          break;
+        }
+
+        case 'prompts/get': {
+          const promptName = params?.name as string;
+          const promptArgs = params?.arguments || {};
+          const matched = WORKFLOW_PROMPTS.find((p) => p.name === promptName);
+          if (matched) {
+            respond({
+              description: matched.description,
+              messages: [
+                {
+                  role: 'user',
+                  content: {
+                    type: 'text',
+                    text: matched.template(promptArgs),
+                  },
+                },
+              ],
+            });
+          } else {
+            respondError(-32602, `Prompt not found: ${promptName}`);
+          }
           break;
         }
 

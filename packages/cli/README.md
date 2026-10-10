@@ -1,80 +1,183 @@
-# OBSIDIAN FLOW
+<p align="center">
+  <br />
+  <img src="https://raw.githubusercontent.com/btsstudios/obsidianflow/main/assets/obsidianflow-logo.svg" width="100" alt="OBSIDIAN FLOW Logo" />
+  <h1 align="center">OBSIDIAN FLOW</h1>
+  <p align="center">
+    <strong>Deterministic AI-Native Video Rendering Engine from HTML &amp; CSS</strong>
+  </p>
+</p>
 
-> **Deterministic AI-Native Video Rendering Engine from HTML & CSS**
+<p align="center">
+  <a href="https://www.npmjs.com/package/obsidianflow"><img src="https://img.shields.io/npm/v/obsidianflow?style=flat&color=f97316&label=npm" alt="npm version" /></a>
+  <a href="https://github.com/btsstudios/obsidianflow/actions/workflows/ci.yml"><img src="https://github.com/btsstudios/obsidianflow/actions/workflows/ci.yml/badge.svg" alt="CI Status" /></a>
+  <a href="https://github.com/btsstudios/obsidianflow/releases"><img src="https://img.shields.io/badge/release-v0.1.2-22c55e?style=flat" alt="release" /></a>
+  <a href="https://github.com/btsstudios/obsidianflow/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-Apache%202.0-3b82f6?style=flat" alt="license" /></a>
+  <img src="https://img.shields.io/badge/node-%3E%3D20-22c55e?style=flat&logo=node.js&logoColor=white" alt="node version" />
+  <img src="https://img.shields.io/badge/TypeScript-5.7-3178c6?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />
+</p>
+<p align="center">
+  <a href="#-model-context-protocol-mcp-server"><img src="https://img.shields.io/badge/MCP-Model%20Context%20Protocol-8b5cf6?style=flat&logo=anthropic&logoColor=white" alt="MCP Server" /></a>
+  <img src="https://img.shields.io/badge/timebase-254B%20ticks%2Fs-blue?style=flat" alt="254B Tick Timebase" />
+  <img src="https://img.shields.io/badge/loudness-EBU%20R128%20(-14LUFS)-success?style=flat" alt="EBU R128 Loudness" />
+  <img src="https://img.shields.io/badge/transitions-SMPTE%20258M-orange?style=flat" alt="SMPTE Wipes" />
+  <img src="https://img.shields.io/badge/engine-Headless%20Chrome%20%2B%20FFmpeg-red?style=flat" alt="Chrome and FFmpeg" />
+</p>
+<p align="center">
+  <a href="https://discord.gg/dgwcQrmqF"><img src="https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=flat&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="#-install-ai-agent-skills"><img src="https://img.shields.io/badge/Skills-Agent%20Native-f97316?style=flat&logo=openai&logoColor=white" alt="Install Skills" /></a>
+  <img src="https://img.shields.io/badge/status-young%20and%20moving%20fast-7952d2?style=flat" alt="Status" />
+  <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat" alt="PRs Welcome" />
+  <a href="https://github.com/btsstudios/obsidianflow"><img src="https://img.shields.io/github/stars/btsstudios/obsidianflow?style=flat&color=yellow" alt="GitHub Stars" /></a>
+</p>
 
-[![npm version](https://img.shields.io/npm/v/obsidianflow?style=flat&color=f97316&label=npm)](https://www.npmjs.com/package/obsidianflow)
-[![license](https://img.shields.io/badge/license-Apache%202.0-3b82f6?style=flat)](https://github.com/btsstudios/obsidianflow/blob/main/LICENSE)
-[![node version](https://img.shields.io/badge/node-%3E%3D20-22c55e?style=flat)](https://nodejs.org)
-[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=flat&logo=discord&logoColor=white)](https://discord.gg/dgwcQrmqF)
+<p align="center">
+  <strong>Write HTML. Render video. Built for the agent era.</strong>
+</p>
 
-**Write HTML. Render video. Built for the agent era.**
+<p align="center">
+  <code>$ npx skills add btsstudios/obsidianflow --full-depth</code>
+</p>
+
+<p align="center">
+  <a href="#-install-ai-agent-skills">Agent Skills</a> •
+  <a href="#-quickstart">Quickstart</a> •
+  <a href="#-video-creation">Video Creation</a> •
+  <a href="#-the-composition-format">Format</a> •
+  <a href="#-cli-commands">CLI</a> •
+  <a href="#-static-linter-rules-of001---of039">Linter</a> •
+  <a href="https://github.com/btsstudios/obsidianflow/blob/main/CHANGELOG.md">Changelog</a> •
+  <a href="https://discord.gg/dgwcQrmqF">Discord</a>
+</p>
 
 ---
 
-## ⚡ Quickstart
+## 🤖 Install AI Agent Skills
 
-### Install the CLI directly:
-```bash
-npx obsidianflow init my-video
-cd my-video
-npx obsidianflow check ./index.html
-npx obsidianflow render ./index.html -o final.mp4
-```
-
-### Or install the AI agent skills:
-Install the official **OBSIDIAN FLOW** skills into your AI coding assistant (**Claude Code**, **Cursor**, **Antigravity**, **Windsurf**, **GitHub Copilot**, **Cline**, **OpenHands**):
+Let AI agents compose deterministic videos by writing code. Install the official **OBSIDIAN FLOW** skills into your AI coding assistant (**Claude Code**, **Cursor**, **Antigravity**, **Windsurf**, **GitHub Copilot**, **Cline**, **OpenHands**) with one command:
 
 ```bash
 npx skills add btsstudios/obsidianflow --full-depth
 ```
 
----
-
-## 🌟 Why OBSIDIAN FLOW?
-
-- **HTML5 & CSS Native**: Zero framework lock-in. No React JSX required. LLMs author standard web code naturally.
-- **Deterministic Rendering**: Headless Chrome frame-by-frame capture with direct FFmpeg `image2pipe` streaming. No dropped frames, no wall-clock timing jitter.
-- **Multi-Track Audio Ducking**: Built-in FFmpeg sidechain filtergraph automatically ducks background music under dialogue.
-- **30+ Pre-Render Linter Checks**: Static analysis rules catch timing overflows and non-deterministic timers before invoking the renderer.
-- **100% Open Source**: Apache 2.0 license. Free for commercial and enterprise use.
-
----
-
-## ⚔️ Comparison
-
-| Capability | **OBSIDIAN FLOW** 🌋 | **Remotion** ⚛️ | **HeyGen HyperFrames** ⚡ |
-| :--- | :--- | :--- | :--- |
-| **Composition Language** | **Native HTML5 + `data-*`** | React JSX only | HTML + GSAP |
-| **AI Agent Native** | **100% Native** | Complex React hooks | Script + GSAP |
-| **Audio Mixing** | **Built-in FFmpeg sidechain ducking** | Manual `<Audio>` | Audio filtergraph |
-| **License** | **Apache 2.0 (Free)** | **Paid company license** | Apache 2.0 |
-
----
-
-## 🛠 CLI Commands
+Or install directly via the OBSIDIAN FLOW CLI:
 
 ```bash
-# Scaffold a new video project
-npx obsidianflow init my-video --template blank
+npx obsidianflow skill install
+```
 
-# Validate composition structure & tracks
-npx obsidianflow check ./index.html
+| Skill | Description |
+| :--- | :--- |
+| **`obsidianflow`** | Master skill for autonomous video generation, HTML/CSS layout, deterministic animations & render commands |
+| **`obsidianflow-core`** | Composition AST, timing attributes (`data-*`), seekable master clocks, and frame adapters |
+| **`obsidianflow-audio`** | Multi-track audio mixing, FFmpeg sidechain dialogue ducking, and volume curves |
 
-# Run 30+ static lint analysis rules
-npx obsidianflow lint ./index.html
+### 🧠 Teach Your AI Agent to Drive OBSIDIAN FLOW (One-Shot Prompt)
+Copy and paste this instruction directly into your AI coding assistant (**Claude Code**, **Cursor**, **Windsurf**, **ChatGPT**, or **Antigravity**):
 
-# Render to deterministic MP4 video
-npx obsidianflow render ./index.html -o final.mp4 --fps 30 --bitrate 10M
-
-# Manage AI agent skills
-npx obsidianflow skill
+```markdown
+Help me install OBSIDIAN FLOW from BTS Studios (https://github.com/btsstudios/obsidianflow) and teach yourself to drive it:
+1. First, install the CLI or skills: run `npm install -g obsidianflow` or load the official agent skills via `npx skills add btsstudios/obsidianflow --full-depth`.
+2. OBSIDIAN FLOW comes with a built-in Model Context Protocol server (its `obsidianflow mcp` command). Connect it to your MCP tools so you have direct frame vision, timeline inspection, and broadcast linter tools.
+3. Every repo has an AGENTS.md and built-in playbook chapters (access them via `obsidianflow://guide/rules` or `npx obsidianflow guide`). Read them and save what matters as a reusable rule.
+4. Finish with one small test: scaffold a 5-second sample composition (`npx obsidianflow init test-video --template blank`), add background music with dialogue auto-ducking, run `npx obsidianflow lint`, and render a single frame with `render_frame` to verify visual layout.
+5. If a step doesn't work on my system, tell me and do the closest thing that does.
 ```
 
 ---
 
-## 📖 Links & Community
+## 🔌 Model Context Protocol (MCP) Server
 
-- **GitHub Repository**: [https://github.com/btsstudios/obsidianflow](https://github.com/btsstudios/obsidianflow)
-- **Discord Community**: [https://discord.gg/dgwcQrmqF](https://discord.gg/dgwcQrmqF)
-- **Author**: BIDKAR RAMOS ([bidkar@gulp.wtf](mailto:bidkar@gulp.wtf))
+Connect **OBSIDIAN FLOW** directly to your AI agent (**Cursor**, **Claude Desktop**, **Claude Code**, **Antigravity**, **Windsurf**). The built-in MCP server gives agents instant frame vision (`render_frame`), timeline inspection, and playbook resources over `stdio`:
+
+### Connect in Cursor (`~/.cursor/mcp.json`):
+```json
+{
+  "mcpServers": {
+    "obsidianflow": {
+      "command": "npx",
+      "args": ["-y", "obsidianflow", "mcp"]
+    }
+  }
+}
+```
+
+### Connect in Claude Desktop (`claude_desktop_config.json`):
+```json
+{
+  "mcpServers": {
+    "obsidianflow": {
+      "command": "npx",
+      "args": ["-y", "obsidianflow", "mcp"]
+    }
+  }
+}
+```
+
+### Connect in Claude Code (CLI):
+```bash
+claude mcp add obsidianflow npx -y obsidianflow mcp
+```
+
+### Connect in ChatGPT (Developer Mode):
+1. Enable **Developer Mode** in **Settings → Security**.
+2. Open **Plugins / Connectors** → **Create MCP App**.
+3. Name it **OBSIDIAN FLOW** and connect via local stdio or studio URL.
+
+> 🚀 **OBSIDIAN Studio (`obsidian.video`)**: The upcoming web-native NLE is powered by the OBSIDIAN FLOW rendering engine under the hood. Any AI connector can seamlessly bridge local compositions into studio timelines.
+
+### Tools exposed to AI agents:
+| Tool | Access | Description |
+| :--- | :---: | :--- |
+| `render_frame` | Read-only | Captures a single crisp PNG frame in &lt;300ms so the AI can inspect typography and layout in chat |
+| `extract_frame` | Read-only | Extracts first or last frame as a visual anchor for generative video models (Veo, Kling, Runway) |
+| `inspect_timeline` | Read-only | Returns structured JSON manifest of all clips, tracks, durations, and audio stems |
+| `lint_composition` | Read-only | Runs 30+ static deterministic rules for timing, safe zones, and ducking |
+| `get_guide` | Read-only | Retrieves official playbook chapters (`rules`, `composition`, `audio`, `smpte-wipes`) |
+| `render_video` | Action | Initiates background MP4 rendering with async job tracking |
+| `get_job_status` | Read-only | Polls rendering progress and retrieves finished video file path |
+
+### 🎬 Creative Workflow Prompts:
+Exposed via the standard MCP `prompts/list` & `prompts/get` protocol (type `/` in Claude or ChatGPT to invoke):
+
+| Prompt | Category | Description |
+| :--- | :--- | :--- |
+| `/vox-video-essay` | Editorial / Documentary | Generates a Vox-style explainer with archival image zoom, yellow highlighter text, and ducked audio |
+| `/ad-hook-multiplier` | Performance Ads | Generates 3 distinct 3-second opening hook variations (A/B testing) for TikTok & Reels |
+| `/vertical-reel-resizer` | Social Media | Reframes 16:9 compositions to 9:16 vertical video with automatic safe zone margins |
+| `/saas-product-walkthrough` | Motion Design | Generates a dark-mode browser mockup with simulated mouse clicks and animated feature badges |
+| `/project-sorter` | Post-Production | Scans assets directory, classifies stems (VO, SFX, AMB, MX), and scaffolds clean timeline |
+| `/headline-multiplier` | Typography | Generates 5 animated kinetic typography styles for marketing copy tests |
+| `/social-ad-localizer` | Localization | Re-times subtitles and dialogue stems for international markets with broadcast loudness |
+
+---
+
+## 🌟 Video Creation in the Agent Era
+
+OBSIDIAN FLOW is an open-source, AI-native framework for turning standard web technologies (HTML, CSS, SVG, WebGL, animations) into deterministic, frame-accurate MP4 videos.
+
+- **Make videos agentically**: LLMs author HTML and CSS natively. AI coding agents (Claude, Cursor, Antigravity) script, animate, and generate complete video productions using built-in agent skills.
+- **Render deterministically**: Frame-by-frame timeline seeking via headless Chrome and direct FFmpeg `image2pipe` streaming. No dropped frames, no wall-clock timing jitter.
+- **Compose with standard web tech**: Use CSS keyframes, SVG, WebGL, and seekable timelines (Native, GSAP, WAAPI) with simple HTML `data-*` attributes.
+- **Validate before rendering**: Over 30 static analysis checks catch timing overflows, non-deterministic timers, and missing media before invoking the renderer.
+
+---
+
+## ⚡ CLI Commands
+
+| Command | Description | Example |
+| :--- | :--- | :--- |
+| `obsidianflow init <name>` | Scaffold a project from starter templates (`blank`, `short-drama`) | `npx obsidianflow init promo --template short-drama` |
+| `obsidianflow lint <file>` | Run 30+ static rules for timing, determinism, and media | `npx obsidianflow lint ./index.html --json` |
+| `obsidianflow check <file>` | Inspect composition dimensions, frames, tracks, and metadata | `npx obsidianflow check ./index.html` |
+| `obsidianflow render <file>` | Execute headless Chrome capture and FFmpeg encode | `npx obsidianflow render ./index.html -o video.mp4 --fps 30` |
+| `obsidianflow mcp` | Launch local Model Context Protocol stdio server | `npx obsidianflow mcp` |
+
+---
+
+## 📜 License & Attribution
+
 - **License**: Apache 2.0
+- **Author**: BIDKAR RAMOS (`bidkar@gulp.wtf`)
+- **Organization**: BTS Studios
+- **Repository**: [https://github.com/btsstudios/obsidianflow](https://github.com/btsstudios/obsidianflow)
+- **Discord**: [https://discord.gg/dgwcQrmqF](https://discord.gg/dgwcQrmqF)
