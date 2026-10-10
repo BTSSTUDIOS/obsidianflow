@@ -1,11 +1,11 @@
 ---
 name: obsidianflow-core
-description: Authoring deterministic HTML/CSS compositions, clip tracks, and seekable animations for the ObsidianFlow video rendering engine.
+description: Authoring deterministic HTML/CSS compositions, clip tracks, and seekable animations for the OBSIDIAN FLOW MCP cinema engine.
 ---
 
-# ObsidianFlow Core Composition Skill
+# OBSIDIAN FLOW MCP Core Composition Skill
 
-This skill teaches AI agents how to author valid, deterministic video compositions for the **ObsidianFlow** video rendering engine.
+This skill teaches AI agents how to author valid, deterministic video compositions for the **OBSIDIAN FLOW MCP** cinema rendering engine.
 
 ## 1. Composition Document Structure
 

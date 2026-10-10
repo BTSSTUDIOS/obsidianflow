@@ -1,11 +1,11 @@
 ---
 name: obsidianflow
-description: Let AI agents compose deterministic videos by writing standard HTML & CSS with the OBSIDIAN FLOW rendering engine.
+description: Direct and compose frame-accurate video productions using the OBSIDIAN FLOW MCP server and deterministic cinema rendering engine.
 ---
 
-# OBSIDIAN FLOW Video Composition Skill
+# OBSIDIAN FLOW MCP Cinema Production Skill
 
-This skill guides AI coding agents (Claude, Cursor, Antigravity, Windsurf, Copilot) in authoring frame-accurate, deterministic video productions using **OBSIDIAN FLOW**.
+This skill guides AI coding agents (Claude, Cursor, Antigravity, Windsurf, Copilot) in authoring frame-accurate, deterministic video productions using **OBSIDIAN FLOW MCP**.
 
 ## 1. Core Principles
 
@@ -144,11 +144,28 @@ Supported codes: `1` (horizontal line), `2` (vertical line), `21-26` (barn door 
 
 ---
 
-## 5. CLI Commands for AI Agents
+## 6. OBSIDIAN FLOW MCP Tools for AI Agents
+
+When connected via Model Context Protocol (`npx -y obsidianflow mcp`), the agent has native access to:
+- `render_frame`: Capture a single PNG frame at any timecode in &lt;300ms for visual layout and typography verification directly in chat.
+- `extract_frame`: Extract first/last frames for video generative anchor prompting (Veo, Kling, Runway).
+- `inspect_timeline`: Retrieve full JSON breakdown of all video tracks, durations, audio stems, and ducking rules.
+- `lint_composition`: Run 30+ static deterministic lint checks before rendering.
+- `render_video`: Trigger background FFmpeg rendering with async job tracking.
+
+---
+
+## 7. CLI Commands for AI Agents
 
 Validate and render compositions:
 
 ```bash
+# Start MCP server over stdio
+obsidianflow mcp
+
+# Install MCP skills across agent environments
+npx obsidianflow mcp install
+
 # Structure check
 obsidianflow check ./index.html --json
 

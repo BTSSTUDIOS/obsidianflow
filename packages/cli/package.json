@@ -1,7 +1,7 @@
 {
   "name": "obsidianflow",
   "version": "0.1.2",
-  "description": "CLI tool for OBSIDIAN FLOW - Deterministic AI-native video rendering from HTML/CSS",
+  "description": "OBSIDIAN FLOW MCP — The Official Video Production MCP Server & Deterministic Cinema Engine for AI Agents. Forged in volcanic fire. Inspired by Remotion and HyperFrames.",
   "type": "module",
   "bin": {
     "obsidianflow": "./dist/cli.js"
@@ -26,6 +26,11 @@
   },
   "keywords": [
     "obsidianflow",
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "video-production",
+    "cinema-engine",
     "cli",
     "video",
     "rendering",

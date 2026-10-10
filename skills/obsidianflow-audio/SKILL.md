@@ -1,11 +1,11 @@
 ---
 name: obsidianflow-audio
-description: Multi-track audio mixing, ducking, volume curves, and audio grouping for ObsidianFlow compositions.
+description: Multi-track audio mixing, ducking, volume curves, and audio grouping for OBSIDIAN FLOW MCP compositions.
 ---
 
-# ObsidianFlow Audio Mixing Skill
+# OBSIDIAN FLOW MCP Audio Mixing Skill
 
-This skill guides AI agents in authoring synchronized audio, background soundtracks, voiceovers, sound effects, and automated volume ducking in ObsidianFlow compositions.
+This skill guides AI agents in authoring synchronized audio, background soundtracks, voiceovers, sound effects, and automated volume ducking in OBSIDIAN FLOW MCP compositions.
 
 ## 1. Audio Groups & Tracks
 

@@ -7,17 +7,20 @@ import { checkCommand } from './commands/check.js';
 import { renderCommand } from './commands/render.js';
 import { skillCommand } from './commands/skill.js';
 import { mcpCommand } from './commands/mcp.js';
+import { getVolcanoBanner } from './banner.js';
 
 const program = new Command();
 
 program
   .name('obsidianflow')
-  .description('🌋 OBSIDIAN FLOW — Deterministic AI-Native Video Rendering Engine from HTML & CSS')
-  .version('0.1.2');
+  .description('🌋 OBSIDIAN FLOW MCP — The Official Video Production MCP Server & Deterministic Cinema Engine')
+  .version('0.1.2')
+  .addHelpText('before', getVolcanoBanner());
 
 program
   .command('skill [action]')
-  .description('Manage OBSIDIAN FLOW skills for AI agents (Claude, Cursor, Antigravity)')
+  .alias('skills')
+  .description('Manage OBSIDIAN FLOW MCP skills for AI agents (Claude, Cursor, Antigravity, Windsurf)')
   .option('-i, --install', 'Install skills via npx skills add')
   .option('-g, --global', 'Install globally for all projects')
   .option('-a, --agent <agent>', 'Target specific AI agent')
@@ -60,10 +63,16 @@ program
   .action(renderCommand);
 
 program
-  .command('mcp')
-  .description('Start the OBSIDIAN FLOW Model Context Protocol (MCP) server over stdio for AI agents')
+  .command('mcp [action]')
+  .description('Start or configure the OBSIDIAN FLOW Model Context Protocol (MCP) server for AI agents')
+  .option('-i, --install', 'Install OBSIDIAN FLOW MCP skills and server into agent environments')
   .option('--debug', 'Enable debug logging to stderr')
-  .action(mcpCommand);
+  .action((action, options) => {
+    if (action === 'install' || options.install) {
+      return skillCommand('install', options);
+    }
+    return mcpCommand(options);
+  });
 
 program.parse(process.argv);
 

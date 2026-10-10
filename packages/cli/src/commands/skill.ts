@@ -1,6 +1,7 @@
 import { execSync } from 'child_process';
 import path from 'path';
 import fs from 'fs';
+import { getVolcanoBanner } from '../banner.js';
 
 interface SkillOptions {
   install?: boolean;
@@ -14,7 +15,8 @@ export async function skillCommand(action: string = 'info', options: SkillOption
   const fullCommand = `npx skills add ${repo} --full-depth`;
 
   if (action === 'install' || options.install) {
-    console.log(`\n🌋 Installing OBSIDIAN FLOW skills via:`);
+    console.log(getVolcanoBanner());
+    console.log(`🌋 Installing OBSIDIAN FLOW MCP skills into AI agent environment...`);
     console.log(`   $ ${fullCommand}\n`);
     try {
       const args = ['skills', 'add', repo, '--full-depth'];
@@ -23,7 +25,8 @@ export async function skillCommand(action: string = 'info', options: SkillOption
       if (options.json) args.push('--json');
 
       execSync(`npx ${args.join(' ')}`, { stdio: 'inherit' });
-      console.log(`\n✔ OBSIDIAN FLOW skills installed successfully!`);
+      console.log(`\n✔ OBSIDIAN FLOW MCP skills installed successfully!`);
+      console.log(`  Your agent now has frame vision (<300ms), 254B tick timeline inspection, and broadcast video rendering.\n`);
     } catch (err: any) {
       console.error(`\n❌ Failed to install skill automatically: ${err.message}`);
       console.log(`\nYou can install manually by running:`);
@@ -43,23 +46,20 @@ export async function skillCommand(action: string = 'info', options: SkillOption
     return;
   }
 
+  console.log(getVolcanoBanner());
   console.log(`
-┌────────────────────────────────────────────────────────────────────────┐
-│  🌋 OBSIDIAN FLOW — Agent Skills                                      │
-│  Let AI agents compose deterministic videos by writing HTML & CSS      │
-└────────────────────────────────────────────────────────────────────────┘
-
-Install all OBSIDIAN FLOW skills into your AI agent (Claude Code, Cursor,
-Antigravity, Windsurf, Copilot, etc.) with one command:
+Install all OBSIDIAN FLOW MCP skills & tools into your AI agent (Claude Code,
+Cursor, Antigravity, Windsurf, Copilot, etc.) with one command:
 
   $ ${fullCommand}
 
-Available Skills:
-  • obsidianflow        Unified video generation, HTML/CSS layout & rendering
-  • obsidianflow-core   Composition AST, timing attributes, and frame adapters
-  • obsidianflow-audio  Multi-track audio mixing, sidechain ducking, and filters
-
-Or install directly with the CLI:
+Or install directly via CLI:
+  $ npx obsidianflow mcp install
   $ npx obsidianflow skill install
+
+Available MCP Skills & Toolsets:
+  • obsidianflow        Unified video generation, HTML/CSS layout & MP4 rendering
+  • obsidianflow-core   Composition AST, 254B tick timing & frame adapters
+  • obsidianflow-audio  Multi-track audio mixing, EBU R128 loudness & ducking
 `);
 }
