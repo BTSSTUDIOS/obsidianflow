@@ -65,8 +65,11 @@ async function main() {
   }
 
   console.log('\n🎉 ALL OBSIDIAN FLOW PACKAGES PUBLISHED SUCCESSFULLY!\n');
-  console.log('You can now install the CLI anywhere:');
-  console.log('   $ npx obsidianflow init my-video\n');
+  console.log('You can now use OBSIDIAN FLOW anywhere:');
+  console.log('   • Start MCP Server:       $ npx obsidianflow mcp');
+  console.log('   • Install Agent Skills:   $ npx obsidianflow mcp install');
+  console.log('   • Scaffold New Video:     $ npx obsidianflow init my-video');
+  console.log('   • Render Deterministic:   $ npx obsidianflow render ./index.html -o out.mp4\n');
 }
 
 main().catch((err) => {
