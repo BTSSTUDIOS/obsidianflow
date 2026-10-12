@@ -1,6 +1,6 @@
 {
   "name": "@obsidianflow/core",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Core composition parser, linter, seekable runtime, and adapters for OBSIDIAN FLOW",
   "type": "module",
   "main": "./dist/index.js",

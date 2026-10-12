@@ -34,7 +34,7 @@ export function getVolcanoBanner(): string {
     `      ${c6('█████         █████')}         ${dim('Inspired by Remotion and HyperFrames.')}`,
     `     ${c7('█████           █████')}        ${rgb(180, 200, 255, 'Built for AI agents. Owned by you.')}`,
     `   ${c8('▄█████▄           ▄█████▄')}`,
-    `  ${c9('█████████         █████████')}      ${dim('v0.1.3  •  254B Tick Timebase  •  EBU R128')}`,
+    `  ${c9('█████████         █████████')}      ${dim('v0.1.4  •  254B Tick Timebase  •  EBU R128')}`,
   ];
 
   return '\n' + lines.join('\n') + '\n';

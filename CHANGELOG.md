@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.1.4] - 2026-10-12
+
+### 🎬 Cinematography Directing Suite & Badge Polish
+- **24 Cinematography Directing Techniques**: Added comprehensive director grammar to MCP guide (`obsidianflow://guide/cinematography`) and agent skills, covering Camera Movements (01-08: Pan, Tilt, Dolly In, Zoom In, Tracking, Orbit, Crane Up, Dolly Zoom Vertigo), Shot Styles & Time Manipulation (09-16: Rack Focus, Handheld, FPV Drone, Dutch Angle, Slow Motion, Speed Ramps, Time-lapse, Freeze Frames), and Editorial Cuts (17-24: Jump Cut, Match Cut, Whip Pan, Cross Dissolve, SMPTE Wipes, Smash Cut, J-Cuts, L-Cuts).
+- **`/cinematic-director` Workflow Prompt**: New MCP workflow prompt guiding agents to orchestrate cinematic multi-shot sequences adhering to the `[Duration · Speed · Subject]` precision rule.
+- **Badge Polish**: Fixed shields.io double-dash syntax for EBU R128 loudness badge; updated engine badge to cloud infrastructure Sky Blue.
+
+---
+
 ## [0.1.3] - 2026-10-10
 
 ### 🌋 Volcanic Pixel HUD Banner & Brandable Skills
