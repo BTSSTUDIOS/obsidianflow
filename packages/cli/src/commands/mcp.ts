@@ -85,9 +85,92 @@ Runs 30+ static rules checking:
 - Chrome not found: pass --browser /path/to/chrome
 - Audio not ducking: ensure voiceover track has data-track="dialogue"
 - Blank frames: check font loading and stylesheet relative paths`,
+
+  cinematography: `# OBSIDIAN FLOW — 24 Cinematography Directing Techniques
+Master director cheat sheet for AI agents authoring HTML/CSS video.
+Rule of Precision: Always pair camera moves with [Duration · Speed · Subject] (e.g. "Over 3s / slowly / towards subject").
+
+## 🎥 Category 1: Camera Movements (01-08)
+01. PAN: Horizontal camera swivel on stationary tripod.
+    CSS: transform: translate3d(-15%, 0, 0); easing: cubic-bezier(0.25, 1, 0.5, 1).
+02. TILT: Vertical camera swivel up or down.
+    CSS: transform: translate3d(0, -12%, 0); with subtle vertical perspective pitch.
+03. DOLLY IN: Physical camera movement travelling closer to subject with true parallax depth.
+    CSS: transform: scale(1.35) translate3d(0, 0, 50px); (foreground layers scale faster than background).
+04. ZOOM IN: Optical focal length magnification (camera stationary).
+    CSS: transform: scale(1.25); transform-origin: 50% 40%; (no parallax differential).
+05. TRACKING SHOT: Camera moves alongside subject at matching velocity.
+    CSS: Subject element pinned center; background track translates linearly across viewport.
+06. ORBIT (ARC SHOT): Camera circles around subject in 3D arc.
+    CSS: transform: perspective(1000px) rotateY(25deg); with cylindrical background wrap.
+07. CRANE UP: Camera ascends vertically into the air (jib/boom arm).
+    CSS: transform: translateY(-35%) rotateX(10deg); expanding visual horizon.
+08. DOLLY ZOOM (VERTIGO / ZOLLY): Dolly in while zooming out simultaneously.
+    CSS: Foreground subject stays fixed scale(1.0); background element scales from 0.8 to 1.8.
+
+## ⏱️ Category 2: Shooting Style & Time Manipulation (09-16)
+09. RACK FOCUS: Shifting focal plane between foreground and background.
+    CSS: Foreground filter: blur(0px) -> blur(10px); background filter: blur(12px) -> blur(0px).
+10. HANDHELD: Organic operator micro-shake for realistic documentary energy.
+    CSS: Deterministic multi-keyframe shake: rotate(±0.4deg) translate(±2px, ±3px); master clock synced.
+11. FPV DRONE: Dynamic high-velocity traversal with banked roll turns.
+    CSS: Rapid forward scaling with dramatic z-axis rotation: transform: rotateZ(-18deg) scale(1.5).
+12. DUTCH ANGLE: Canted camera roll creating psychological tension or stylized drama.
+    CSS: transform: rotate(-12deg) scale(1.15); (scale 1.15 eliminates edge clipping).
+13. SLOW MOTION: Overcranked temporal expansion (e.g. 120fps played at 24fps).
+    HTML: data-speed="0.25" on clip or video media.
+14. SPEED RAMP: Variable speed acceleration/deceleration within a single shot.
+    HTML: data-speed-curve="0s:1.0, 1.5s:0.2, 3s:1.0" (fast -> slow-mo impact -> fast).
+15. TIME-LAPSE: Extreme temporal compression showing elapsed hours in seconds.
+    HTML: data-speed="8.0" with rhythmic temporal cadence.
+16. FREEZE FRAME: Video pauses abruptly on hero moment while audio and title cards continue.
+    HTML: <video data-freeze-at="2.5s" data-freeze-duration="2.0s"></video>.
+
+## ✂️ Category 3: Editorial Transitions & Cuts (17-24)
+17. JUMP CUT: Direct cut within the same shot skipping forward in time.
+18. MATCH CUT: Kinetic or graphic match between two shapes, colors, or actions.
+19. WHIP PAN: High-velocity blur transition bridging two scenes.
+    HTML: <of-transition type="whip-pan" data-direction="left" data-duration="0.35s"></of-transition>.
+20. CROSS DISSOLVE: Smooth linear opacity blend between scenes.
+    HTML: <of-transition type="fade" data-duration="0.8s"></of-transition>.
+21. WIPE: Edge wiping across screen (including SMPTE 258M codes 1-204).
+    HTML: <of-transition type="smpte-wipe" code="1" data-softness="15" data-duration="0.5s"></of-transition>.
+22. SMASH CUT: Sudden abrupt cut with dramatic visual and audio volume contrast.
+23. J-CUT (AUDIO LEADS): Audio of next scene starts playing before video cuts.
+    HTML:
+    <div class="clip" id="scene-1" data-start="0s" data-duration="5s">...</div>
+    <div class="clip" id="scene-2" data-start="5s" data-duration="5s">...</div>
+    <!-- Scene 2 audio begins 1.5s early underneath Scene 1 -->
+    <audio src="scene2-vo.mp3" data-track="dialogue" data-start="3.5s" data-duration="6s"></audio>
+24. L-CUT (AUDIO LINGERS): Audio of outgoing scene continues playing after video has cut.
+    HTML:
+    <!-- Scene 1 dialogue lingers 2s into Scene 2 -->
+    <audio src="scene1-dialogue.mp3" data-track="dialogue" data-start="2s" data-duration="5s"></audio>
+    <div class="clip" id="scene-2" data-start="5s" data-duration="5s">...</div>`,
 };
 
 const WORKFLOW_PROMPTS = [
+  {
+    name: 'cinematic-director',
+    description: 'Direct a multi-shot sequence using the 24 professional camera movements, speed ramps, and J/L-cuts',
+    arguments: [
+      { name: 'sceneDescription', description: 'Story or concept for the cinematic sequence', required: true },
+      { name: 'cameraMoves', description: 'Desired camera techniques (e.g. Dolly Zoom, Whip Pan, J-Cut, Dutch Angle)', required: false },
+      { name: 'duration', description: 'Target total duration (e.g. 15s or 30s)', required: false },
+    ],
+    template: (args: any) => `You are a master cinematic director composing a frame-accurate video sequence in OBSIDIAN FLOW.
+Scene: ${args?.sceneDescription || 'Cinematic Sequence'}
+Selected Camera Techniques: ${args?.cameraMoves || 'Dolly In, J-Cut, Rack Focus, Speed Ramp'}
+Duration: ${args?.duration || '15s'}
+
+Rules for Cinematic Directing in OBSIDIAN FLOW:
+1. Always pair camera moves with [Duration · Speed · Subject] for maximum precision.
+2. Structure multi-shot scenes with J-cuts or L-cuts to achieve professional Hollywood editorial flow.
+3. Use CSS transforms with perspective(1000px) and overscan scale (1.15) for Dutch angles and handheld camera shake.
+4. Implement rack focus via synchronized CSS blur filters between foreground and background.
+5. Auto-duck background music under dialogue stems: data-duck="dialogue" data-duck-ratio="0.2".
+6. Validate with 'obsidianflow lint' before rendering.`,
+  },
   {
     name: 'vox-video-essay',
     description: 'Create a Vox-style mixed-media video essay with archival cutouts, animated yellow highlighter, and ducked audio',
@@ -353,6 +436,7 @@ export async function mcpCommand(options: { debug?: boolean }) {
                         'timing',
                         'transitions',
                         'smpte-wipes',
+                        'cinematography',
                         'linting',
                         'troubleshooting',
                       ],

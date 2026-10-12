@@ -144,7 +144,48 @@ Supported codes: `1` (horizontal line), `2` (vertical line), `21-26` (barn door 
 
 ---
 
-## 6. OBSIDIAN FLOW MCP Tools for AI Agents
+## 6. Cinematography & Camera Work (24 Directing Techniques)
+
+AI agents can orchestrate cinematic motion using native CSS transforms, filters, and audio timeline offsets. Always specify **[Duration · Speed · Subject]** (e.g. *"Over 3s / slowly / towards subject"*) for precision.
+
+### A. Camera Movements (01-08)
+- **Pan (01)**: Horizontal swivel (`transform: translate3d(-15%, 0, 0)`).
+- **Tilt (02)**: Vertical swivel (`transform: translate3d(0, -12%, 0)` with perspective pitch).
+- **Dolly In (03)**: Physical forward motion with true parallax depth (`transform: scale(1.35) translate3d(0, 0, 50px)`).
+- **Zoom In (04)**: Optical lens magnification (`transform: scale(1.25); transform-origin: 50% 40%`).
+- **Tracking Shot (05)**: Subject pinned center while background translates across viewport.
+- **Orbit / Arc Shot (06)**: 3D arc around subject (`transform: perspective(1000px) rotateY(25deg)`).
+- **Crane Up (07)**: Ascending boom arm (`transform: translateY(-35%) rotateX(10deg)`).
+- **Dolly Zoom / Vertigo (08)**: Subject fixed (`scale(1.0)`), background expands (`scale(1.8)`).
+
+### B. Shot Style & Time Manipulation (09-16)
+- **Rack Focus (09)**: Shifting focus plane (`filter: blur(0px) -> blur(10px)` on foreground, inverse on background).
+- **Handheld (10)**: Organic deterministic micro-shake keyframes (`rotate(±0.4deg) translate(±2px, ±3px)`).
+- **FPV Drone (11)**: High-speed dynamic traversal with banked roll (`rotateZ(-18deg) scale(1.5)`).
+- **Dutch Angle (12)**: Stylized psychological roll tilt (`transform: rotate(-12deg) scale(1.15)`).
+- **Slow Motion (13)**: Overcranked playback (`data-speed="0.25"`).
+- **Speed Ramp (14)**: Piecewise acceleration (`data-speed-curve="0s:1.0, 1.5s:0.2, 3s:1.0"`).
+- **Time-lapse (15)**: Extreme temporal speedup (`data-speed="8.0"`).
+- **Freeze Frame (16)**: Time stops on hero moment (`data-freeze-at="2.5s" data-freeze-duration="2s"`).
+
+### C. Editorial Cuts & Split Audio (17-24)
+- **Jump Cut (17)**: Direct cut advancing time within same framing.
+- **Match Cut (18)**: Graphic/kinetic match connecting two scenes.
+- **Whip Pan (19)**: Directional high-speed blur transition (`<of-transition type="whip-pan">`).
+- **Cross Dissolve (20)**: Linear opacity dissolve between scenes.
+- **Wipe (21)**: Edge boundary wipe (SMPTE 258M codes 1-204).
+- **Smash Cut (22)**: Abrupt hard cut with contrasting audio and visual intensity.
+- **J-Cut (23)**: Audio leads video — Scene 2 audio begins playing 1.5s before Scene 1 video cuts:
+  ```html
+  <div class="clip" id="scene-1" data-start="0s" data-duration="5s">...</div>
+  <audio src="scene2-vo.mp3" data-track="dialogue" data-start="3.5s" data-duration="6s"></audio>
+  <div class="clip" id="scene-2" data-start="5s" data-duration="5s">...</div>
+  ```
+- **L-Cut (24)**: Audio lingers — Scene 1 dialogue continues playing underneath the start of Scene 2 video.
+
+---
+
+## 7. OBSIDIAN FLOW MCP Tools for AI Agents
 
 When connected via Model Context Protocol (`npx -y obsidianflow mcp`), the agent has native access to:
 - `render_frame`: Capture a single PNG frame at any timecode in &lt;300ms for visual layout and typography verification directly in chat.

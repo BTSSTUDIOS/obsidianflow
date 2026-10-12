@@ -20,9 +20,9 @@
 <p align="center">
   <a href="#-obsidian-flow-mcp-server"><img src="https://img.shields.io/badge/MCP-Official%20Video%20Server-8b5cf6?style=flat&logo=anthropic&logoColor=white" alt="MCP Server" /></a>
   <img src="https://img.shields.io/badge/timebase-254B%20ticks%2Fs-blue?style=flat" alt="254B Tick Timebase" />
-  <img src="https://img.shields.io/badge/loudness-EBU_R128_%2D14LUFS-22c55e?style=flat" alt="EBU R128 Loudness" />
+  <img src="https://img.shields.io/badge/loudness-EBU_R128_--14LUFS-22c55e?style=flat" alt="EBU R128 Loudness" />
   <img src="https://img.shields.io/badge/transitions-SMPTE%20258M-orange?style=flat" alt="SMPTE Wipes" />
-  <img src="https://img.shields.io/badge/engine-Headless%20Chrome%20%2B%20FFmpeg-red?style=flat" alt="Chrome and FFmpeg" />
+  <img src="https://img.shields.io/badge/engine-Headless_Chrome_+_FFmpeg-0ea5e9?style=flat" alt="Chrome and FFmpeg" />
 </p>
 <p align="center">
   <a href="https://discord.gg/dgwcQrmqF"><img src="https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=flat&logo=discord&logoColor=white" alt="Discord" /></a>
