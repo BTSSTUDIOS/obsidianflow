@@ -5,7 +5,7 @@
   <p align="center">
     <strong>The Official Video Production MCP Server &amp; Deterministic Cinema Engine</strong><br />
     <em>Real-time frame vision (&lt;300ms), timeline inspection, broadcast audio ducking (EBU R128), and MP4 rendering from HTML &amp; CSS for Claude, Cursor, and AI agents.</em><br />
-    <sub>Forged in volcanic fire. Inspired by Remotion and HyperFrames. Built for AI agents. Owned by you.</sub>
+    <sub>Made by real filmmakers, driven by AI agents. Inspired by Remotion and HyperFrames. Owned by you. Forged in volcanic fire.</sub>
   </p>
 </p>
 
@@ -35,7 +35,7 @@
 
 <p align="center">
   <strong>Write HTML. Render video. Built for the agent era.</strong><br />
-  <em>Forged in volcanic fire. Made by real filmmakers, driven by AI agents. Owned by you.</em>
+  <em>Made by real filmmakers, driven by AI agents. Owned by you. Forged in volcanic fire.</em>
 </p>
 
 <p align="center">
@@ -53,12 +53,26 @@
   <a href="https://discord.gg/dgwcQrmqF">Discord</a>
 </p>
 
-> 🎬 **Engineered by Real Filmmakers. Driven by AI Agents.**  
-> Unlike generic AI clones and synthetic toy wrappers (ArtCraft, etc.), **OBSIDIAN FLOW MCP** is built on decades of real Hollywood editing wisdom, broadcast loudness standards (EBU R128), and frontline vertical drama retention engineering. Connect it to **Claude**, **Cursor**, **ChatGPT**, or **Windsurf** to give your agent instant **frame vision** (`render_frame` in <300ms), structured **timeline inspection**, automated **dialogue audio ducking**, a **254-billion tick timebase**, and deterministic **MP4 rendering** directly from HTML/CSS code.
+> 🎬 **Made by Real Filmmakers. Driven by AI Agents. Forged in Volcanic Fire.**  
+> Unlike generic AI clones and synthetic toy wrappers (ArtCraft, etc.), **OBSIDIAN FLOW MCP** is built on decades of real Hollywood editing wisdom, broadcast loudness standards (EBU R128), and frontline vertical drama retention engineering. Co-founded by working Hollywood editors and directors actively cutting for platforms like ReelShort, our engine doesn't just guess at video — it encodes proven cinematic grammar directly into AI agent prompts, static linter rules, and sub-300ms frame vision. Connect it to **Claude**, **Cursor**, **ChatGPT**, or **Windsurf** to give your agent true editorial taste and deterministic rendering directly from HTML & CSS.
 
 <p align="center">
   <img src="./assets/showcase.gif" width="100%" alt="OBSIDIAN FLOW Showcase Demo" style="border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.7);" />
 </p>
+
+---
+
+## 🎬 Built by Real Filmmakers vs. Generic AI Clones
+
+| Dimension | Generic AI Clones (ArtCraft, etc.) | 🌋 OBSIDIAN FLOW MCP |
+| :--- | :--- | :--- |
+| **Editorial DNA** | Prompt wrappers with random cuts | Co-founded by working Hollywood & ReelShort editors |
+| **Retention Engineering** | None (viewers bounce in 1.5s) | 3-second hook density, micro-tension curves & paywall cliffhanger pacing |
+| **Audio Standards** | Uncontrolled clipping / loudness jumps | EBU R128 (-14 LUFS / -23 LUFS) & automatic dialogue ducking |
+| **Pacing & Grammar** | Abrupt cuts, floating point drift | 254-billion tick master timebase, J-cuts, L-cuts, and SMPTE 258M wipes |
+| **Camera Language** | Generic pan/zoom prompts | 24 directional camera movements with strict speed ramps |
+| **Agent Feedback** | Blind rendering (wait 2 mins to see fail) | Sub-300ms frame vision (`render_frame`) for instant agent correction |
+| **Ownership** | Locked to proprietary cloud tokens | 100% open-source, local execution, Apache-2.0. Owned by you. |
 
 ---
 

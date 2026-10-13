@@ -1,7 +1,7 @@
 {
   "name": "obsidianflow",
   "version": "0.1.4",
-  "description": "OBSIDIAN FLOW MCP — The Official Video Production MCP Server & Deterministic Cinema Engine for AI Agents. Forged in volcanic fire. Inspired by Remotion and HyperFrames.",
+  "description": "OBSIDIAN FLOW MCP — The Official Video Production MCP Server & Deterministic Cinema Engine. Made by real filmmakers, driven by AI agents. Owned by you. Forged in volcanic fire.",
   "type": "module",
   "bin": {
     "obsidianflow": "./dist/cli.js"

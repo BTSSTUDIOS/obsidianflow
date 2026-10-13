@@ -30,9 +30,9 @@ export function getVolcanoBanner(): string {
     `          ${c2('▄███████▄')}            ${bold('The Official Video Production MCP Server')}`,
     `         ${c3('███████████')}           ${dim('& Deterministic Cinema Engine')}`,
     `        ${c4('█████▀   ▀█████')}`,
-    `       ${c5('█████       █████')}          ${rgb(255, 140, 0, 'Forged in volcanic fire.')}`,
-    `      ${c6('█████         █████')}         ${dim('Inspired by Remotion and HyperFrames.')}`,
-    `     ${c7('█████           █████')}        ${rgb(180, 200, 255, 'Built for AI agents. Owned by you.')}`,
+    `       ${c5('█████       █████')}          ${rgb(225, 29, 72, 'Made by real filmmakers, driven by AI agents.')}`,
+    `      ${c6('█████         █████')}         ${dim('Inspired by Remotion and HyperFrames. Owned by you.')}`,
+    `     ${c7('█████           █████')}        ${bold(rgb(255, 106, 0, 'Forged in volcanic fire.'))}`,
     `   ${c8('▄█████▄           ▄█████▄')}`,
     `  ${c9('█████████         █████████')}      ${dim('v0.1.4  •  254B Tick Timebase  •  EBU R128')}`,
   ];
