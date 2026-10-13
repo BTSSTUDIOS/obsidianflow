@@ -27,6 +27,7 @@
 <p align="center">
   <a href="https://discord.gg/dgwcQrmqF"><img src="https://img.shields.io/badge/Discord-Join%20Community-5865F2?style=flat&logo=discord&logoColor=white" alt="Discord" /></a>
   <a href="#-install-ai-agent-skills"><img src="https://img.shields.io/badge/Skills-Agent%20Native-f97316?style=flat&logo=openai&logoColor=white" alt="Install Skills" /></a>
+  <img src="https://img.shields.io/badge/craft-Made%20by%20Real%20Filmmakers-e11d48?style=flat" alt="Made by Real Filmmakers" />
   <img src="https://img.shields.io/badge/status-young%20and%20moving%20fast-7952d2?style=flat" alt="Status" />
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat" alt="PRs Welcome" />
   <a href="https://github.com/btsstudios/obsidianflow"><img src="https://github.com/btsstudios/obsidianflow?style=flat&color=yellow" alt="GitHub Stars" /></a>
@@ -34,7 +35,7 @@
 
 <p align="center">
   <strong>Write HTML. Render video. Built for the agent era.</strong><br />
-  <em>Forged in volcanic fire. Inspired by Remotion and HyperFrames. Built for AI agents. Owned by you.</em>
+  <em>Forged in volcanic fire. Made by real filmmakers, driven by AI agents. Owned by you.</em>
 </p>
 
 <p align="center">
@@ -52,8 +53,8 @@
   <a href="https://discord.gg/dgwcQrmqF">Discord</a>
 </p>
 
-> 🔌 **The First Full-Stack Video Production MCP for AI Agents**  
-> Connect **OBSIDIAN FLOW MCP** to **Claude**, **Cursor**, **ChatGPT**, or **Windsurf**. Your agent gains instant **frame vision** (`render_frame` in <300ms), structured **timeline inspection**, automated **dialogue audio ducking**, a **254-billion tick timebase**, and deterministic **MP4 rendering** directly from HTML/CSS code.
+> 🎬 **Engineered by Real Filmmakers. Driven by AI Agents.**  
+> Unlike generic AI clones and synthetic toy wrappers (ArtCraft, etc.), **OBSIDIAN FLOW MCP** is built on decades of real Hollywood editing wisdom, broadcast loudness standards (EBU R128), and frontline vertical drama retention engineering. Connect it to **Claude**, **Cursor**, **ChatGPT**, or **Windsurf** to give your agent instant **frame vision** (`render_frame` in <300ms), structured **timeline inspection**, automated **dialogue audio ducking**, a **254-billion tick timebase**, and deterministic **MP4 rendering** directly from HTML/CSS code.
 
 ---
 
