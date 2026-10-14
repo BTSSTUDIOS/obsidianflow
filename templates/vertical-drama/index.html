@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-composition-id="vertical-drama-reversal"
+  data-width="1080"
+  data-height="1920"
+  data-fps="30"
+  data-duration="15s"
+>
+<head>
+  <meta charset="utf-8" />
+  <title>The Reversal: Dragon King Awakening</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="../../packages/core/dist/runtime.js"></script>
+</head>
+<body>
+  <!-- Safe Zone Guide Overlay (9:16 Mobile UI Safe Area) -->
+  <div class="safe-zone-overlay">
+    <div class="safe-zone-box"></div>
+  </div>
+
+  <!-- Audio Stems Architecture (EBU R128 Compliant) -->
+  <audio
+    id="track-dialogue"
+    data-track="vo"
+    data-start="0s"
+    data-duration="15s"
+    src="assets/dialogue.mp3"
+  ></audio>
+
+  <audio
+    id="track-sfx"
+    data-track="sfx"
+    data-start="0s"
+    data-duration="15s"
+    src="assets/sfx.mp3"
+  ></audio>
+
+  <!-- Sidechain Ducked Background Score (-14 LUFS standard) -->
+  <audio
+    id="track-score"
+    data-track="mx"
+    data-start="0s"
+    data-duration="15s"
+    data-duck="true"
+    data-duck-ratio="0.15"
+    src="assets/score.mp3"
+  ></audio>
+
+  <!-- ========================================== -->
+  <!-- SHOT 1: The Humiliation & Hook (0.0s - 5.0s) -->
+  <!-- Fast-cut confrontation, crash zoom, high stakes -->
+  <!-- ========================================== -->
+  <div class="clip shot" id="shot-1-humiliation" data-start="0s" data-duration="5s" data-track="video-main">
+    <div class="camera-rig crash-zoom">
+      <div class="scene-backdrop wedding-hall">
+        <div class="ambient-vignette"></div>
+        <div class="spotlight"></div>
+      </div>
+      
+      <!-- Character Frame: Disdainful Mother-in-Law -->
+      <div class="actor-card antagonist">
+        <div class="actor-tag">MADAME ZHANG • HEAD OF HOUSEHOLD</div>
+        <div class="quote-bubble">
+          <p class="dialogue-speaker">MADAME ZHANG</p>
+          <p class="dialogue-text">“Marry my daughter without a villa or black card? Take this hundred dollars and get out!”</p>
+        </div>
+      </div>
+
+      <!-- Hook Visual: Paper Slam Effect -->
+      <div class="paper-slam-fx">
+        <div class="contract-doc">DIVORCE AGREEMENT</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transition 1: Fast Whip Pan -->
+  <of-transition
+    type="whip-pan"
+    data-start="4.8s"
+    data-duration="0.4s"
+    data-from="shot-1-humiliation"
+    data-to="shot-2-turn"
+  ></of-transition>
+
+  <!-- ========================================== -->
+  <!-- SHOT 2: The Turn & Smirk (5.0s - 10.0s)    -->
+  <!-- Low-angle Dutch tilt, helicopter rotor cue -->
+  <!-- ========================================== -->
+  <div class="clip shot" id="shot-2-turn" data-start="5s" data-duration="5s" data-track="video-main">
+    <div class="camera-rig dutch-tilt">
+      <div class="scene-backdrop stormy-exterior">
+        <div class="rain-overlay"></div>
+        <div class="rotor-wash-lights"></div>
+      </div>
+
+      <!-- Character Frame: The Groom Revealing Power -->
+      <div class="actor-card protagonist">
+        <div class="actor-tag">CHEN LU • THE HEIR APPARENT</div>
+        <div class="quote-bubble">
+          <p class="dialogue-speaker">CHEN LU</p>
+          <p class="dialogue-text">“You want to cancel the union? Be careful what you wish for.”</p>
+        </div>
+        <div class="torn-paper-fx"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transition 2: White Flash Impact -->
+  <of-transition
+    type="fade"
+    data-start="9.7s"
+    data-duration="0.5s"
+    data-from="shot-2-turn"
+    data-to="shot-3-climax"
+  ></of-transition>
+
+  <!-- ========================================== -->
+  <!-- SHOT 3: The Climax & Cliffhanger (10s - 15s)-->
+  <!-- Butler arrives, black card reveal, paywall -->
+  <!-- ========================================== -->
+  <div class="clip shot" id="shot-3-climax" data-start="10s" data-duration="5s" data-track="video-main">
+    <div class="camera-rig slow-push">
+      <div class="scene-backdrop red-carpet-convoy">
+        <div class="golden-sparkles"></div>
+      </div>
+
+      <!-- The Grand Reveal -->
+      <div class="reveal-card">
+        <div class="butler-bow">
+          <div class="actor-tag">ELDER HUANG • ROYAL STEWARD</div>
+          <p class="dialogue-speaker">ELDER HUANG</p>
+          <p class="dialogue-text">“Welcome back, Young Master! Your trillion-dollar trust has been released!”</p>
+        </div>
+        <div class="black-card-graphic">
+          <div class="card-chip"></div>
+          <div class="card-brand">DRAGON SOVEREIGN CARD</div>
+        </div>
+      </div>
+
+      <!-- Paywall Micro-Cliffhanger Banner (Final 2.5s) -->
+      <div class="cliffhanger-cta" data-start="12.5s" data-duration="2.5s">
+        <div class="cliffhanger-pill">EPISODE 2 UNLOCKS NEXT</div>
+        <p class="cliffhanger-prompt">Will Madame Zhang beg for mercy?</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

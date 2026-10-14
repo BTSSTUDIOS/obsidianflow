@@ -87,7 +87,16 @@ Unlike prompt-wrapper clones and closed frameworks (ArtCraft, HeyGen HyperFrames
 │   ├── blank/                   # Minimal 1080p 10s composition
 │   │   ├── index.html
 │   │   └── styles.css
-│   └── short-drama/             # Multi-scene AI drama with dialogue and title card
+│   ├── short-drama/             # Multi-scene AI drama with dialogue and title card
+│   │   ├── index.html
+│   │   └── styles.css
+│   ├── vertical-drama/          # 9:16 15s high-retention micro-drama (Humiliation, Turn, Cliffhanger)
+│   │   ├── index.html
+│   │   └── styles.css
+│   ├── cinematic-action/        # 16:9 15s 24fps Kurosawa/Villeneuve duel (Dolly zoom, Crane, Katana cut)
+│   │   ├── index.html
+│   │   └── styles.css
+│   └── commercial-product/      # 9:16 12s 60fps luxury brand showcase (360 Turntable Orbit, Macro Mist)
 │       ├── index.html
 │       └── styles.css
 │

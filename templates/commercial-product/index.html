@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-composition-id="commercial-luxury-perfume"
+  data-width="1080"
+  data-height="1920"
+  data-fps="60"
+  data-duration="12s"
+>
+<head>
+  <meta charset="utf-8" />
+  <title>OBSIDIAN NOIR: Luxury Fragrance Showcase</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="../../packages/core/dist/runtime.js"></script>
+</head>
+<body>
+  <!-- Safe Zone Guide Overlay -->
+  <div class="safe-zone-overlay">
+    <div class="safe-zone-box"></div>
+  </div>
+
+  <!-- Audio Stems Architecture (-14 LUFS Broadcast Mobile Standard) -->
+  <audio
+    id="track-voiceover"
+    data-track="vo"
+    data-start="0s"
+    data-duration="12s"
+    src="assets/female-voiceover.mp3"
+  ></audio>
+
+  <audio
+    id="track-chime"
+    data-track="sfx"
+    data-start="0s"
+    data-duration="12s"
+    src="assets/crystal-chime.mp3"
+  ></audio>
+
+  <!-- Sidechain Ducked Ambient Score -->
+  <audio
+    id="track-score"
+    data-track="mx"
+    data-start="0s"
+    data-duration="12s"
+    data-duck="true"
+    data-duck-ratio="0.18"
+    src="assets/ambient-luxe.mp3"
+  ></audio>
+
+  <!-- ========================================== -->
+  <!-- SHOT 1: Macro Turntable Orbit (0s - 4s)    -->
+  <!-- 360 specular sweep, floating gold dust     -->
+  <!-- ========================================== -->
+  <div class="clip shot" id="shot-1-orbit" data-start="0s" data-duration="4s" data-track="video-main">
+    <div class="camera-rig turntable-orbit">
+      <div class="backdrop luxury-studio">
+        <div class="specular-light-leak"></div>
+      </div>
+      <div class="product-stage">
+        <div class="perfume-bottle">
+          <div class="bottle-cap"></div>
+          <div class="bottle-neck"></div>
+          <div class="bottle-body">
+            <div class="amber-liquid"></div>
+            <div class="gold-label">
+              <span class="label-brand">OBSIDIAN</span>
+              <span class="label-sub">EAU DE PARFUM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="commercial-callout" data-start="1s" data-duration="3s">
+        <p class="tagline">FORGED FROM VOLCANIC ESSENCE</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transition 1: Bokeh Dissolve -->
+  <of-transition
+    type="fade"
+    data-start="3.6s"
+    data-duration="0.8s"
+    data-from="shot-1-orbit"
+    data-to="shot-2-macro-drop"
+  ></of-transition>
+
+  <!-- ========================================== -->
+  <!-- SHOT 2: Macro Mist & Light Caustics (4s-8s)-->
+  <!-- Backlit aerosol dispersion, kinetic copy   -->
+  <!-- ========================================== -->
+  <div class="clip shot" id="shot-2-macro-drop" data-start="4s" data-duration="4s" data-track="video-main">
+    <div class="camera-rig macro-drift">
+      <div class="backdrop warm-amber-glow">
+        <div class="caustic-sweep"></div>
+      </div>
+      <div class="notes-pyramid">
+        <div class="note-item top">TOP: BLACK PEPPER &amp; BERGAMOT</div>
+        <div class="note-item heart">HEART: SMOKY VOLCANIC BIRCH</div>
+        <div class="note-item base">BASE: OBSIDIAN AMBER &amp; VETIVER</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transition 2: Elegant Wipe -->
+  <of-transition
+    type="whip-pan"
+    data-start="7.6s"
+    data-duration="0.6s"
+    data-from="shot-2-macro-drop"
+    data-to="shot-3-cta"
+  ></of-transition>
+
+  <!-- ========================================== -->
+  <!-- SHOT 3: Brand Lockup & Call To Action(8-12s)-->
+  <!-- Center bottle lockup, gold foil emblem glow -->
+  <!-- ========================================== -->
+  <div class="clip shot" id="shot-3-cta" data-start="8s" data-duration="4s" data-track="video-main">
+    <div class="camera-rig center-lockup">
+      <div class="backdrop dark-marble"></div>
+      <div class="final-hero">
+        <h1 class="hero-brand">OBSIDIAN NOIR</h1>
+        <p class="hero-sub">LIMITED FIRST EDITION</p>
+        <div class="cta-button">EXPLORE THE COLLECTION</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

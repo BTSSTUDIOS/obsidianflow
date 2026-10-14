@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-composition-id="cinematic-action-duel"
+  data-width="1920"
+  data-height="1080"
+  data-fps="24"
+  data-duration="15s"
+>
+<head>
+  <meta charset="utf-8" />
+  <title>The Ridge: Samurai at Sunset</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="../../packages/core/dist/runtime.js"></script>
+</head>
+<body>
+  <!-- Letterbox Framing (2.39:1 Anamorphic Scope) -->
+  <div class="letterbox top"></div>
+  <div class="letterbox bottom"></div>
+
+  <!-- Audio Stems Architecture (-24 LUFS EBU R128 Cinema Spec) -->
+  <audio
+    id="track-dialogue"
+    data-track="vo"
+    data-start="0s"
+    data-duration="15s"
+    src="assets/dialogue.mp3"
+  ></audio>
+
+  <audio
+    id="track-sfx"
+    data-track="sfx"
+    data-start="0s"
+    data-duration="15s"
+    src="assets/blade-draw.mp3"
+  ></audio>
+
+  <!-- Sidechain Ducked Background Orchestral Score -->
+  <audio
+    id="track-score"
+    data-track="mx"
+    data-start="0s"
+    data-duration="15s"
+    data-duck="true"
+    data-duck-ratio="0.2"
+    src="assets/taiko-tension.mp3"
+  ></audio>
+
+  <!-- ========================================== -->
+  <!-- SHOT 1: Low-Angle Wide Establishing (0s - 4s)-->
+  <!-- Lone samurai silhouette, blood-red sunset, wind -->
+  <!-- ========================================== -->
+  <div class="clip shot" id="shot-1-silhouette" data-start="0s" data-duration="4s" data-track="video-main">
+    <div class="camera-rig static-wide">
+      <div class="backdrop sunset-ridge">
+        <div class="blood-sun"></div>
+        <div class="windswept-grass"></div>
+      </div>
+      <div class="subject-silhouette lone-samurai"></div>
+      <div class="shot-metadata">
+        <span class="scene-tag">SCENE 01 • EXT. WINDSWEPT RIDGE — DUSK</span>
+        <h2 class="shot-title">THE STAND</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transition 1: Hitchcock Vertigo Cut -->
+  <of-transition
+    type="fade"
+    data-start="3.8s"
+    data-duration="0.4s"
+    data-from="shot-1-silhouette"
+    data-to="shot-2-vertigo"
+  ></of-transition>
+
+  <!-- ========================================== -->
+  <!-- SHOT 2: Vertigo Dolly Zoom (4s - 8s)       -->
+  <!-- Foreground locked, background warps, heartbeat -->
+  <!-- ========================================== -->
+  <div class="clip shot" id="shot-2-vertigo" data-start="4s" data-duration="4s" data-track="video-main">
+    <div class="camera-rig dolly-zoom-effect">
+      <div class="backdrop warped-mountains">
+        <div class="heat-haze"></div>
+      </div>
+      <div class="subject-close face-intense">
+        <div class="eyes-focus"></div>
+      </div>
+      <div class="shot-metadata">
+        <span class="scene-tag">CAMERA FX: VERTIGO DOLLY ZOOM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transition 2: 180-Degree Whip Pan -->
+  <of-transition
+    type="whip-pan"
+    data-start="7.8s"
+    data-duration="0.4s"
+    data-from="shot-2-vertigo"
+    data-to="shot-3-crane-army"
+  ></of-transition>
+
+  <!-- ========================================== -->
+  <!-- SHOT 3: Sweeping Crane Reveal (8s - 12s)   -->
+  <!-- Rising above ridge, army of torches below   -->
+  <!-- ========================================== -->
+  <div class="clip shot" id="shot-3-crane-army" data-start="8s" data-duration="4s" data-track="video-main">
+    <div class="camera-rig crane-pedestal-up">
+      <div class="backdrop valley-smoke">
+        <div class="torch-army">
+          <div class="torch t1"></div>
+          <div class="torch t2"></div>
+          <div class="torch t3"></div>
+          <div class="torch t4"></div>
+          <div class="torch t5"></div>
+        </div>
+      </div>
+      <div class="shot-metadata">
+        <span class="scene-tag">CAMERA FX: CRANE PEDESTAL UP</span>
+        <h2 class="shot-title">A THOUSAND TORCHES</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transition 3: Hard Snap Cut -->
+  <of-transition
+    type="fade"
+    data-start="11.8s"
+    data-duration="0.2s"
+    data-from="shot-3-crane-army"
+    data-to="shot-4-katana-draw"
+  ></of-transition>
+
+  <!-- ========================================== -->
+  <!-- SHOT 4: Katana Snap Cut & Silence (12s - 15s)-->
+  <!-- White knuckles, blade draw chime, black    -->
+  <!-- ========================================== -->
+  <div class="clip shot" id="shot-4-katana-draw" data-start="12s" data-duration="3s" data-track="video-main">
+    <div class="camera-rig extreme-macro">
+      <div class="backdrop steel-shadow"></div>
+      <div class="katana-hilt-frame">
+        <div class="hand-grip"></div>
+        <div class="blade-flash"></div>
+      </div>
+      <div class="climax-stinger">
+        <p class="final-cue">DEAD SILENCE</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

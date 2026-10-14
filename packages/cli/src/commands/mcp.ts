@@ -147,9 +147,56 @@ Rule of Precision: Always pair camera moves with [Duration · Speed · Subject] 
     <!-- Scene 1 dialogue lingers 2s into Scene 2 -->
     <audio src="scene1-dialogue.mp3" data-track="dialogue" data-start="2s" data-duration="5s"></audio>
     <div class="clip" id="scene-2" data-start="5s" data-duration="5s">...</div>`,
+
+  templates: `# OBSIDIAN FLOW — Starter Templates & Presets (Higgsfield & Seedance Style)
+Scaffold complete productions instantly with:
+$ npx obsidianflow init <name> --template <template-id>
+
+Available Production Presets & Templates:
+1. 'blank' (16:9, 10s, 1920x1080)
+   Minimal starter composition with native animation clock.
+2. 'short-drama' (16:9, 15s, 1920x1080)
+   Multi-scene sci-fi narrative with dialogue cards and volcanic wipe transitions.
+3. 'vertical-drama' (9:16, 15s, 1080x1920) [Seedance / Micro-Drama Blueprint]
+   Viral 3-shot high-retention narrative structure:
+   - Shot 1 (0-5s): The Humiliation & 3-Second Hook (Crash Zoom)
+   - Shot 2 (5-10s): The Turn & Helicopter Audio Cue (Dutch Angle Tilt)
+   - Shot 3 (10-15s): The Reveal & Paywall Cliffhanger (Slow Push)
+   - Full EBU R128 audio ducking against dialogue + TikTok safe-zone guides.
+4. 'cinematic-action' (16:9, 15s, 1920x1080, 24fps) [Kurosawa / Villeneuve Duel]
+   2.39:1 Anamorphic scope letterboxed sequence:
+   - Shot 1 (0-4s): Low-Angle Wide Establishing (Blood Sunset & Thunder)
+   - Shot 2 (4-8s): Vertigo Dolly Zoom & Micro-Expression Focus
+   - Shot 3 (8-12s): Sweeping Crane Pedestal Up (Thousand Torches Reveal)
+   - Shot 4 (12-15s): Katana Draw Snap Cut & Climax to Dead Silence.
+5. 'commercial-product' (9:16, 12s, 1080x1920, 60fps) [Higgsfield Luxury Showcase]
+   Luxury brand and product commercial:
+   - Shot 1 (0-4s): 360 Turntable Orbit Pan with Specular Sweep
+   - Shot 2 (4-8s): Macro Liquid Mist Dispersion & Fragrance Notes
+   - Shot 3 (8-12s): Brand Lockup & Call To Action Banner.`,
 };
 
 const WORKFLOW_PROMPTS = [
+  {
+    name: 'template-scaffold',
+    description: 'Scaffold a production from an official preset (vertical-drama, cinematic-action, commercial-product, short-drama)',
+    arguments: [
+      { name: 'template', description: 'Template ID (vertical-drama, cinematic-action, commercial-product, short-drama, blank)', required: true },
+      { name: 'projectName', description: 'Target project name', required: false },
+      { name: 'customStory', description: 'Custom script, narrative, or product details to inject', required: false },
+    ],
+    template: (args: any) => `You are an AI cinema engineer scaffolding an OBSIDIAN FLOW composition from an official preset.
+Template: ${args?.template || 'vertical-drama'}
+Project Name: ${args?.projectName || 'my-production'}
+Custom Narrative/Details: ${args?.customStory || 'Apply high-tension narrative with professional camera and audio ducking'}
+
+Directives:
+1. Initialize with: 'npx obsidianflow init ${args?.projectName || 'my-production'} --template ${args?.template || 'vertical-drama'}'
+2. Maintain time-coded shot chains (e.g. [0-5s] Hook, [5-10s] The Turn, [10-15s] Climax / Cliffhanger).
+3. Ensure all audio stems adhere to EBU R128 (-14 LUFS for mobile, -24 LUFS for cinema) with auto-ducking.
+4. Integrate appropriate Higgsfield camera movements (Crash Zoom, Vertigo Dolly Zoom, 360 Turntable Orbit, Dutch Angle).
+5. Verify timing and compliance with 'obsidianflow lint ./index.html'.`,
+  },
   {
     name: 'cinematic-director',
     description: 'Direct a multi-shot sequence using the 24 professional camera movements, speed ramps, and J/L-cuts',
@@ -437,6 +484,7 @@ export async function mcpCommand(options: { debug?: boolean }) {
                         'transitions',
                         'smpte-wipes',
                         'cinematography',
+                        'templates',
                         'linting',
                         'troubleshooting',
                       ],

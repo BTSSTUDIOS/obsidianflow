@@ -216,3 +216,21 @@ obsidianflow lint ./index.html --json
 # Render deterministic MP4 video
 obsidianflow render ./index.html -o output.mp4 --fps 30 --bitrate 10M
 ```
+
+---
+
+## 8. Official Production Starter Templates (Higgsfield & Seedance Presets)
+
+Scaffold complete battle-tested productions using:
+```bash
+npx obsidianflow init <project-name> --template <template-id>
+```
+
+| Template ID | Aspect Ratio | Duration | FPS | Genre & Formula |
+| :--- | :--- | :--- | :--- | :--- |
+| `vertical-drama` | 9:16 (1080x1920) | 15s | 30 | High-retention micro-drama hook (Crash Zoom, Dutch Tilt, Helicopter Cue, Paywall Cliffhanger) |
+| `cinematic-action`| 16:9 (1920x1080) | 15s | 24 | Kurosawa / Villeneuve duel (2.39:1 Anamorphic, Vertigo Dolly Zoom, Crane Pedestal Up, Katana Snap Cut) |
+| `commercial-product`| 9:16 (1080x1920) | 12s | 60 | Luxury brand & product commercial (Higgsfield 360 Turntable Orbit, Macro Liquid Mist, Audio Ducking) |
+| `short-drama` | 16:9 (1920x1080) | 15s | 30 | Narrative multi-scene drama with dialogue cards and volcanic wipe transitions |
+| `blank` | 16:9 (1920x1080) | 10s | 30 | Minimal clean canvas with native master clock animation rig |
+

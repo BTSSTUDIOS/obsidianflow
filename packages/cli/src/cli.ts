@@ -31,7 +31,7 @@ program
   .command('init')
   .description('Scaffold a new ObsidianFlow video composition project')
   .argument('<name>', 'Project directory name')
-  .option('-t, --template <name>', 'Starter template (blank, short-drama)', 'blank')
+  .option('-t, --template <name>', 'Starter template (blank, short-drama, vertical-drama, cinematic-action, commercial-product)', 'blank')
   .action(initCommand);
 
 program

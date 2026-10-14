@@ -40,9 +40,10 @@ export async function initCommand(projectName: string, options: InitOptions = {}
   }
 
   if (templateDir) {
+    console.log(pc.cyan(`📦 Scaffolding from template: ${pc.bold(pc.yellow(templateName))}`));
     copyDirectory(templateDir, targetDir);
   } else {
-    // Generate default template fallback
+    console.log(pc.yellow(`Template "${templateName}" not found. Generating default blank template.`));
     generateDefaultTemplate(targetDir, projectName);
   }
 

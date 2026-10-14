@@ -193,7 +193,7 @@ OBSIDIAN FLOW is an open-source, AI-native framework for turning standard web te
 
 | Command | Description | Example |
 | :--- | :--- | :--- |
-| `obsidianflow init <name>` | Scaffold a project from starter templates (`blank`, `short-drama`) | `npx obsidianflow init promo --template short-drama` |
+| `obsidianflow init <name>` | Scaffold a project from starter templates (`vertical-drama`, `cinematic-action`, `commercial-product`, `short-drama`, `blank`) | `npx obsidianflow init my-video --template vertical-drama` |
 | `obsidianflow lint <file>` | Run 30+ static rules for timing, determinism, and media | `npx obsidianflow lint ./index.html --json` |
 | `obsidianflow check <file>` | Inspect composition dimensions, frames, tracks, and metadata | `npx obsidianflow check ./index.html` |
 | `obsidianflow mcp` | Launch local Model Context Protocol stdio server | `npx obsidianflow mcp` |

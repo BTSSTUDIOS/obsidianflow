@@ -240,7 +240,10 @@ A direct comparison of how **OBSIDIAN FLOW** improves upon existing programmatic
 │
 ├── templates/
 │   ├── blank/                   # Minimal 1080p 10s composition
-│   └── short-drama/             # Multi-scene AI drama with dialogue and transitions
+│   ├── short-drama/             # Multi-scene AI drama with dialogue and transitions
+│   ├── vertical-drama/          # 9:16 15s high-retention micro-drama (Humiliation, Turn, Cliffhanger)
+│   ├── cinematic-action/        # 16:9 15s 24fps Kurosawa/Villeneuve duel (Dolly Zoom, Katana snap cut)
+│   └── commercial-product/      # 9:16 12s 60fps luxury brand showcase (360 Turntable Orbit, Macro Mist)
 │
 └── skills/                      # AI Agent Skills (Claude, Cursor, Antigravity)
     ├── obsidianflow-core/       # Composition authoring skill
@@ -277,7 +280,8 @@ npm run build
 ### 2. Scaffold a New Video Project
 
 ```bash
-npx obsidianflow init my-video --template blank
+# Available templates: vertical-drama, cinematic-action, commercial-product, short-drama, blank
+npx obsidianflow init my-video --template vertical-drama
 cd my-video
 ```
 

@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1920px;
+  height: 1080px;
+  background: #020202;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 2.39:1 Anamorphic Scope Letterbox Bars */
+.letterbox {
+  position: absolute;
+  width: 100%;
+  height: 140px;
+  background: #000000;
+  z-index: 1000;
+}
+.letterbox.top { top: 0; }
+.letterbox.bottom { bottom: 0; }
+
+.clip.shot {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.camera-rig {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Camera Motion Profiles */
+.static-wide {
+  transform: scale(1.02);
+}
+
+.dolly-zoom-effect {
+  animation: vertigoDollyZoom 4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes vertigoDollyZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.25); }
+}
+
+.crane-pedestal-up {
+  animation: craneUpKeyframes 4s ease-out forwards;
+}
+@keyframes craneUpKeyframes {
+  0% { transform: translateY(40px) scale(1.05); }
+  100% { transform: translateY(-30px) scale(1); }
+}
+
+.extreme-macro {
+  animation: macroJitter 3s ease-out forwards;
+}
+@keyframes macroJitter {
+  0% { transform: scale(1.1); }
+  100% { transform: scale(1.15) translate(-5px, -3px); }
+}
+
+/* Backdrops */
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sunset-ridge {
+  background: radial-gradient(circle at 65% 55%, #bd2c12 0%, #4a0c02 45%, #0d0200 85%);
+}
+.blood-sun {
+  position: absolute;
+  right: 28%;
+  top: 25%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, #ff5722 0%, #c41c00 70%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(2px) drop-shadow(0 0 50px #ff3300);
+}
+
+.warped-mountains {
+  background: radial-gradient(circle at 50% 50%, #4a1208 0%, #170402 60%, #030000 100%);
+}
+
+.valley-smoke {
+  background: radial-gradient(circle at 50% 70%, #1f1a10 0%, #0a0805 60%, #000000 100%);
+}
+
+.steel-shadow {
+  background: radial-gradient(circle at 40% 40%, #1c232b 0%, #07090c 70%, #000000 100%);
+}
+
+/* Subjects & Silhouettes */
+.lone-samurai {
+  position: absolute;
+  left: 20%;
+  bottom: 140px;
+  width: 180px;
+  height: 480px;
+  background: #000000;
+  clip-path: polygon(45% 0%, 55% 0%, 65% 20%, 80% 40%, 65% 50%, 90% 100%, 10% 100%, 35% 50%, 20% 40%, 35% 20%);
+  filter: drop-shadow(0 0 20px rgba(0,0,0,0.9));
+}
+
+.face-intense {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  width: 30%;
+  height: 60%;
+  background: radial-gradient(circle at 50% 45%, #3d1c14 0%, transparent 70%);
+}
+
+/* Torch Army Particles */
+.torch-army {
+  position: absolute;
+  bottom: 200px;
+  left: 10%;
+  right: 10%;
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.torch {
+  width: 8px;
+  height: 8px;
+  background: #ffaa00;
+  border-radius: 50%;
+  box-shadow: 0 0 16px 8px #ff4400;
+  animation: flicker 0.4s infinite alternate;
+}
+@keyframes flicker {
+  from { opacity: 0.7; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(-4px); }
+}
+
+/* Metadata Overlays */
+.shot-metadata {
+  position: absolute;
+  bottom: 170px;
+  left: 120px;
+  z-index: 200;
+}
+.scene-tag {
+  font-size: 16px;
+  letter-spacing: 0.3em;
+  color: #f97316;
+  font-weight: 700;
+}
+.shot-title {
+  font-size: 48px;
+  letter-spacing: 0.15em;
+  font-weight: 900;
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+.climax-stinger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.final-cue {
+  font-size: 32px;
+  letter-spacing: 0.5em;
+  color: #e11d48;
+  font-weight: 900;
+}
