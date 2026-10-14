@@ -54,7 +54,7 @@
 </p>
 
 > 🎬 **Made by Real Filmmakers. Driven by AI Agents. Forged in Volcanic Fire.**  
-> Unlike generic AI clones and synthetic toy wrappers (ArtCraft, etc.), **OBSIDIAN FLOW MCP** is built on decades of battle-tested cinema craft, broadcast loudness standards (EBU R128), and frontline retention engineering. Co-founded by a veteran producer and photographer with a lifetime of accumulating esoteric editing skills, a working Hollywood narrative editor who cut his teeth on productions racking up millions of views right now across major platforms, and a digital artist founder bringing virtual-world and 3D spatial expertise — our founding team has worn every hat across physical and virtual sets for decades. Together, we encode true cinematic grammar directly into AI agent prompts, static linter rules, and sub-300ms frame vision. Connect it to **Antigravity**, **Claude**, **Cursor**, **ChatGPT**, or **Windsurf** to give your agent real editorial taste and deterministic rendering directly from HTML & CSS.
+> Unlike generic AI clones, synthetic prompt wrappers, and developer-only frameworks (ArtCraft, HeyGen HyperFrames, Remotion), **OBSIDIAN FLOW MCP** is built on decades of battle-tested cinema craft, broadcast loudness standards (EBU R128), and frontline retention engineering. Co-founded by a veteran producer and photographer with a lifetime of accumulating esoteric editing skills, a working Hollywood narrative editor who cut his teeth on productions racking up millions of views right now across major platforms, and a digital artist founder bringing virtual-world and 3D spatial expertise — our founding team has worn every hat across physical and virtual sets for decades. Together, we encode true cinematic grammar directly into AI agent prompts, static linter rules, and sub-300ms frame vision. Connect it to **Antigravity**, **Claude**, **Cursor**, **ChatGPT**, or **Windsurf** to give your agent real editorial taste and deterministic rendering directly from HTML & CSS.
 
 <p align="center">
   <img src="./assets/showcase.gif" width="100%" alt="OBSIDIAN FLOW Showcase Demo" style="border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.7);" />
@@ -62,9 +62,9 @@
 
 ---
 
-## 🎬 Built by Real Filmmakers vs. Generic AI Clones
+## 🎬 Built by Real Filmmakers vs. Generic AI Clones & Web Frameworks
 
-| Dimension | Generic AI Clones (ArtCraft, etc.) | 🌋 OBSIDIAN FLOW MCP |
+| Dimension | Generic Clones & Frameworks (ArtCraft, HyperFrames, Remotion) | 🌋 OBSIDIAN FLOW MCP |
 | :--- | :--- | :--- |
 | **Editorial DNA** | Prompt wrappers with random cuts | Co-founded by a veteran producer & photographer with a lifetime of esoteric editing skills, a working editor cutting narrative hits getting millions of views right now, and a virtual-world artist founder |
 | **Retention Engineering** | None (viewers bounce in 1.5s) | 3-second hook density, micro-tension curves & paywall cliffhanger pacing |
