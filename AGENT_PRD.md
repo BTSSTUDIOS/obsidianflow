@@ -25,11 +25,11 @@
 > **Identity:** Built by real filmmakers, driven by AI agents. Owned by you. Forged in volcanic fire.
 
 Unlike prompt-wrapper clones (ArtCraft, etc.) that treat video as disjointed synthetic hallucination:
-- **Codified Editorial Craft:** Co-founded by working Hollywood editors and vertical drama directors cutting for ReelShort.
+- **Codified Editorial Craft:** Co-founded by a veteran producer and photographer with a lifetime of accumulating esoteric editing skills, alongside working Hollywood editors and directors who have worked for every major vertical drama platform and studio in the industry.
 - **Micro-Drama Retention & Hook Density:** Built-in rules for 3-second hook metrics, eye-trace matching, and paywall cliffhanger pacing.
 - **Audio Master Clock & EBU R128:** Picture follows audio, with standard broadcast loudness (-14 LUFS / -23 LUFS) and automated 50ms attack / 350ms release sidechain ducking.
 - **Cinematic Pacing:** J-cuts, L-cuts, SMPTE 258M transitions, and 24 directional camera movements with Bézier speed ramping.
-- **Sub-300ms Agent Feedback:** Instant `render_frame` MCP tool enables autonomous visual correction before expensive full renders.
+- **Sub-300ms Agent Feedback:** Instant `render_frame` MCP tool enables autonomous visual correction before expensive full renders across Antigravity, Claude, Cursor, and ChatGPT.
 
 ---
 
