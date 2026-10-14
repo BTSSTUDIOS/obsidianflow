@@ -54,7 +54,7 @@
 </p>
 
 > 🎬 **Made by Real Filmmakers. Driven by AI Agents. Forged in Volcanic Fire.**  
-> Unlike generic AI clones and synthetic toy wrappers (ArtCraft, etc.), **OBSIDIAN FLOW MCP** is built on decades of real Hollywood editing wisdom, broadcast loudness standards (EBU R128), and frontline vertical drama retention engineering. Co-founded by a veteran producer and photographer with a lifetime of accumulating esoteric editing skills alongside working Hollywood editors and directors who have cut for every major vertical drama platform and studio in the industry, our engine doesn't just guess at video — it encodes proven cinematic grammar directly into AI agent prompts, static linter rules, and sub-300ms frame vision. Connect it to **Antigravity**, **Claude**, **Cursor**, **ChatGPT**, or **Windsurf** to give your agent true editorial taste and deterministic rendering directly from HTML & CSS.
+> Unlike generic AI clones and synthetic toy wrappers (ArtCraft, etc.), **OBSIDIAN FLOW MCP** is built on decades of battle-tested cinema craft, broadcast loudness standards (EBU R128), and frontline retention engineering. Co-founded by a veteran producer and photographer with a lifetime of accumulating esoteric editing skills, a working Hollywood narrative editor who cut his teeth on productions racking up millions of views right now across major platforms, and a digital artist founder bringing virtual-world and 3D spatial expertise — our founding team has worn every hat across physical and virtual sets for decades. Together, we encode true cinematic grammar directly into AI agent prompts, static linter rules, and sub-300ms frame vision. Connect it to **Antigravity**, **Claude**, **Cursor**, **ChatGPT**, or **Windsurf** to give your agent real editorial taste and deterministic rendering directly from HTML & CSS.
 
 <p align="center">
   <img src="./assets/showcase.gif" width="100%" alt="OBSIDIAN FLOW Showcase Demo" style="border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.7);" />
@@ -66,7 +66,7 @@
 
 | Dimension | Generic AI Clones (ArtCraft, etc.) | 🌋 OBSIDIAN FLOW MCP |
 | :--- | :--- | :--- |
-| **Editorial DNA** | Prompt wrappers with random cuts | Co-founded by a veteran producer & photographer with a lifetime of esoteric editing mastery, alongside Hollywood & vertical-drama editors who have worked for every major player in the industry |
+| **Editorial DNA** | Prompt wrappers with random cuts | Co-founded by a veteran producer & photographer with a lifetime of esoteric editing skills, a working editor cutting narrative hits getting millions of views right now, and a virtual-world artist founder |
 | **Retention Engineering** | None (viewers bounce in 1.5s) | 3-second hook density, micro-tension curves & paywall cliffhanger pacing |
 | **Audio Standards** | Uncontrolled clipping / loudness jumps | EBU R128 (-14 LUFS / -23 LUFS) & automatic dialogue ducking |
 | **Pacing & Grammar** | Abrupt cuts, floating point drift | 254-billion tick master timebase, J-cuts, L-cuts, and SMPTE 258M wipes |
