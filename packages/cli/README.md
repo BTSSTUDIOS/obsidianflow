@@ -119,7 +119,8 @@ claude mcp add obsidianflow npx -y obsidianflow mcp
 | `extract_frame` | Read-only | Extracts first or last frame as a visual anchor for generative video models (Veo, Kling, Runway) |
 | `inspect_timeline` | Read-only | Returns structured JSON manifest of all clips, tracks, durations, and audio stems |
 | `lint_composition` | Read-only | Runs 30+ static deterministic rules for timing, safe zones, and ducking |
-| `get_guide` | Read-only | Retrieves official playbook chapters (`rules`, `composition`, `audio`, `smpte-wipes`) |
+| `score_composition` | Read-only | Scores a composition on cinema retention, pacing, audio ducking, and SMPTE precision (0-100) |
+| `get_guide` | Read-only | Retrieves official playbook chapters (`rules`, `composition`, `audio`, `smpte-wipes`, `templates`) |
 | `render_video` | Action | Initiates background MP4 rendering with async job tracking |
 | `get_job_status` | Read-only | Polls rendering progress and retrieves finished video file path |
 
@@ -131,6 +132,8 @@ Exposed via the standard MCP `prompts/list` & `prompts/get` protocol (type `/` i
 
 | Prompt | Category | Description |
 | :--- | :--- | :--- |
+| `/upstage` | Developer Marketing | Generates an 18-second viral developer launch video from any repo or product concept (Steal the scene, upstage everyone) |
+| `/template-scaffold` | Production Scaffolding | Scaffolds from official presets (`upstage`, `vertical-drama`, `cinematic-action`, `commercial-product`) |
 | `/vox-video-essay` | Editorial / Documentary | Generates a Vox-style explainer with archival image zoom, yellow highlighter text, and ducked audio |
 | `/ad-hook-multiplier` | Performance Ads | Generates 3 distinct 3-second opening hook variations (A/B testing) for TikTok & Reels |
 | `/vertical-reel-resizer` | Social Media | Reframes 16:9 compositions to 9:16 vertical video with automatic safe zone margins |
@@ -193,9 +196,11 @@ OBSIDIAN FLOW is an open-source, AI-native framework for turning standard web te
 
 | Command | Description | Example |
 | :--- | :--- | :--- |
-| `obsidianflow init <name>` | Scaffold a project from starter templates (`vertical-drama`, `cinematic-action`, `commercial-product`, `short-drama`, `blank`) | `npx obsidianflow init my-video --template vertical-drama` |
+| `obsidianflow init <name>` | Scaffold a project from starter templates (`upstage`, `vertical-drama`, `cinematic-action`, `commercial-product`, `short-drama`, `blank`) | `npx obsidianflow init my-video --template upstage` |
+| `obsidianflow score <file>` | Score composition on cinema retention, pacing velocity, EBU R128 audio, and SMPTE precision (0-100) | `npx obsidianflow score ./index.html` |
 | `obsidianflow lint <file>` | Run 30+ static rules for timing, determinism, and media | `npx obsidianflow lint ./index.html --json` |
 | `obsidianflow check <file>` | Inspect composition dimensions, frames, tracks, and metadata | `npx obsidianflow check ./index.html` |
+| `obsidianflow setup` | Audit and configure rendering tools (FFmpeg, Chrome, fonts) with permission-first prompts | `npx obsidianflow setup --check-only` |
 | `obsidianflow mcp` | Launch local Model Context Protocol stdio server | `npx obsidianflow mcp` |
 | `obsidianflow mcp install` | Install agent skills suite across Cursor, Claude, Antigravity | `npx obsidianflow mcp install` |
 

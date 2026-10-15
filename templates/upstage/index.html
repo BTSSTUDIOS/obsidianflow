@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"
+      data-composition-id="upstage-launch-template"
+      data-width="1920"
+      data-height="1080"
+      data-fps="24"
+      data-duration="18s"
+      data-background="#0a0a0c">
+<head>
+  <meta charset="UTF-8">
+  <title>OBSIDIAN FLOW — UPSTAGE Launch Template</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Inter:wght@400;700;900&family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Audio Stems with EBU R128 Auto-Ducking -->
+  <audio id="music-stem"
+         src="./assets/synth-pulse.mp3"
+         data-track="music"
+         data-start="0s"
+         data-duration="18s"
+         data-volume="0.75"
+         data-fade-in="0.5s"
+         data-fade-out="1.5s"></audio>
+
+  <audio id="sfx-typing"
+         src="./assets/typewriter.mp3"
+         data-track="sfx"
+         data-start="0.5s"
+         data-duration="2.5s"
+         data-volume="0.45"></audio>
+
+  <audio id="sfx-impact"
+         src="./assets/bass-impact.mp3"
+         data-track="sfx"
+         data-start="8s"
+         data-duration="4s"
+         data-volume="0.85"></audio>
+
+  <!-- SHOT 1: THE TERMINAL HOOK (0s - 3s) -->
+  <div class="clip shot" id="shot-1-terminal" data-start="0s" data-duration="3s">
+    <div class="scanlines"></div>
+    <div class="terminal-window">
+      <div class="terminal-bar">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">bash — obsidianflow launch</span>
+      </div>
+      <div class="terminal-body">
+        <p class="term-prompt"><span class="user-host">dev@studio</span>:<span class="path">~/projects</span>$ <span class="typing-text">npx obsidianflow init my-cinema-app</span><span class="cursor">█</span></p>
+        <p class="term-status">[✔] Scaffolding deterministic broadcast cinema pipeline...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOT 2: THE 3D HERO PRODUCT CARD (3s - 8s) -->
+  <div class="clip shot" id="shot-2-hero" data-start="3s" data-duration="5s">
+    <div class="ambient-glow"></div>
+    <div class="card-3d-wrapper">
+      <div class="hero-card">
+        <div class="card-glass-shine"></div>
+        <div class="card-header">
+          <span class="brand-tag">OBSIDIAN FLOW</span>
+          <span class="badge-pill">v0.1.4 PRODUCTION READY</span>
+        </div>
+        <div class="card-code">
+          <pre><code><span class="k">&lt;html</span> <span class="p">data-fps=</span><span class="s">"24"</span> <span class="p">data-duration=</span><span class="s">"18s"</span><span class="k">&gt;</span>
+  <span class="k">&lt;audio</span> <span class="p">data-duck=</span><span class="s">"0.18"</span> <span class="p">data-track=</span><span class="s">"dialogue"</span><span class="k">&gt;&lt;/audio&gt;</span>
+  <span class="k">&lt;div</span> <span class="p">class=</span><span class="s">"clip crash-zoom"</span> <span class="p">data-start=</span><span class="s">"0s"</span><span class="k">&gt;&lt;/div&gt;</span>
+<span class="k">&lt;/html&gt;</span></code></pre>
+        </div>
+        <div class="card-footer">
+          <span class="metric">⚡ &lt;300ms Frame Capture</span>
+          <span class="metric">🎯 0.00ms Clock Drift</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOT 3: KINETIC VALUE PILLARS (8s - 13s) -->
+  <div class="clip shot" id="shot-3-pillars" data-start="8s" data-duration="5s">
+    <div class="kinetic-container">
+      <div class="kinetic-headline pillar-1">
+        <span class="number">01</span>
+        <span class="highlight">DETERMINISTIC</span> HTML/CSS
+      </div>
+      <div class="kinetic-headline pillar-2">
+        <span class="number">02</span>
+        <span class="highlight">BROADCAST EBU R128</span> AUDIO
+      </div>
+      <div class="kinetic-headline pillar-3">
+        <span class="number">03</span>
+        <span class="highlight">ZERO SUB-FRAME</span> DRIFT
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOT 4: THE LAUNCH CALL TO ACTION (13s - 18s) -->
+  <div class="clip shot" id="shot-4-outro" data-start="13s" data-duration="5s">
+    <div class="volcano-flares"></div>
+    <div class="outro-content">
+      <div class="pedigree-badge">
+        <span class="pedigree-star">★</span>
+        <span>MADE BY REAL FILMMAKERS</span>
+        <span class="pedigree-star">★</span>
+      </div>
+      <h1 class="hero-title">OBSIDIAN FLOW</h1>
+      <p class="hero-tagline">The Cinema Engine for AI Agents</p>
+      <div class="cta-box">
+        <span class="cmd-pill">npx obsidianflow init</span>
+        <span class="star-badge">⭐ Star on GitHub</span>
+      </div>
+      <p class="punchline-text">FORGED IN VOLCANIC FIRE.</p>
+    </div>
+  </div>
+
+</body>
+</html>

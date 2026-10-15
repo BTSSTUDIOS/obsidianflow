@@ -6,3 +6,4 @@ export * from './runtime.js';
 export * from './adapters/gsap.js';
 export * from './adapters/waapi.js';
 export * from './adapters/native.js';
+export * from './scorer.js';

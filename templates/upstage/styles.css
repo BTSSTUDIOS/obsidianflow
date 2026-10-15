@@ -1,0 +1,364 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1920px;
+  height: 1080px;
+  background-color: #0a0a0c;
+  color: #f0f0f5;
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+.clip.shot {
+  position: absolute;
+  inset: 0;
+  width: 1920px;
+  height: 1080px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Timeline visibility */
+#shot-1-terminal { animation: showShot1 3s step-end forwards; }
+#shot-2-hero     { animation: showShot2 5s 3s step-end forwards; }
+#shot-3-pillars  { animation: showShot3 5s 8s step-end forwards; }
+#shot-4-outro    { animation: showShot4 5s 13s step-end forwards; }
+
+@keyframes showShot1 { 0%, 99.9% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes showShot2 { 0%, 99.9% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes showShot3 { 0%, 99.9% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes showShot4 { 0%, 100%  { opacity: 1; } }
+
+/* ========================================================
+   SHOT 1: TERMINAL HOOK
+   ======================================================== */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+
+.terminal-window {
+  width: 1000px;
+  background: #111116;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(99, 102, 241, 0.15);
+  font-family: 'Fira Code', monospace;
+  overflow: hidden;
+  animation: termPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes termPop {
+  0% { transform: scale(0.92); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  background: #1a1a22;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.terminal-title {
+  font-size: 13px;
+  color: #71717a;
+  margin-left: 12px;
+  font-weight: 500;
+}
+
+.terminal-body {
+  padding: 36px 40px;
+  font-size: 22px;
+  line-height: 1.8;
+}
+
+.user-host { color: #10b981; font-weight: 600; }
+.path { color: #6366f1; font-weight: 600; }
+
+.typing-text {
+  color: #f4f4f5;
+  font-weight: 600;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 1.8s steps(32, end) forwards;
+}
+
+@keyframes typing {
+  from { max-width: 0; }
+  to { max-width: 100%; }
+}
+
+.cursor {
+  color: #10b981;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.term-status {
+  color: #a1a1aa;
+  font-size: 16px;
+  margin-top: 24px;
+  opacity: 0;
+  animation: fadeInStatus 0.4s 2s forwards;
+}
+
+@keyframes fadeInStatus {
+  to { opacity: 1; }
+}
+
+/* ========================================================
+   SHOT 2: 3D HERO CARD
+   ======================================================== */
+.card-3d-wrapper {
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+.hero-card {
+  width: 900px;
+  background: rgba(18, 18, 24, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9), 0 0 60px rgba(239, 68, 68, 0.2);
+  transform: rotateX(8deg) rotateY(-10deg);
+  animation: cardFloat 5s ease-in-out infinite alternate;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes cardFloat {
+  0% { transform: rotateX(8deg) rotateY(-10deg) translateY(0); }
+  100% { transform: rotateX(4deg) rotateY(6deg) translateY(-15px); }
+}
+
+.card-glass-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 55%
+  );
+  animation: shinePass 3.5s ease-in-out infinite;
+}
+
+@keyframes shinePass {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.brand-tag {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: #ef4444;
+}
+
+.badge-pill {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.card-code {
+  font-family: 'Fira Code', monospace;
+  font-size: 18px;
+  line-height: 1.6;
+  background: #0d0d12;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-code .k { color: #f43f5e; }
+.card-code .p { color: #38bdf8; }
+.card-code .s { color: #fbbf24; }
+
+.card-footer {
+  display: flex;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.metric {
+  font-size: 14px;
+  font-weight: 600;
+  color: #a1a1aa;
+}
+
+/* ========================================================
+   SHOT 3: KINETIC VALUE PILLARS
+   ======================================================== */
+.kinetic-container {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: center;
+}
+
+.kinetic-headline {
+  font-size: 54px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.kinetic-headline .number {
+  font-family: 'Fira Code', monospace;
+  font-size: 36px;
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.kinetic-headline .highlight {
+  background: #fbbf24;
+  color: #000000;
+  padding: 4px 14px;
+  border-radius: 4px;
+}
+
+.pillar-1 { animation: pillarIn 0.5s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.pillar-2 { animation: pillarIn 0.5s 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.pillar-3 { animation: pillarIn 0.5s 3.0s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes pillarIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================================
+   SHOT 4: LAUNCH CALL TO ACTION
+   ======================================================== */
+.outro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.pedigree-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(245, 158, 11, 0.05));
+  border: 1px solid rgba(251, 191, 36, 0.6);
+  color: #fbbf24;
+  padding: 8px 18px;
+  border-radius: 999px;
+  animation: badgeGlow 2s infinite alternate;
+}
+
+@keyframes badgeGlow {
+  0% { box-shadow: 0 0 10px rgba(251, 191, 36, 0.2); }
+  100% { box-shadow: 0 0 25px rgba(251, 191, 36, 0.5); }
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  text-shadow: 0 0 40px rgba(239, 68, 68, 0.6);
+}
+
+.hero-tagline {
+  font-size: 24px;
+  color: #a1a1aa;
+  letter-spacing: 0.02em;
+}
+
+.cta-box {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.cmd-pill {
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
+  background: #18181b;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: #38bdf8;
+}
+
+.star-badge {
+  font-size: 16px;
+  font-weight: 700;
+  background: #ef4444;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+}
+
+.punchline-text {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  color: #71717a;
+  margin-top: 28px;
+}

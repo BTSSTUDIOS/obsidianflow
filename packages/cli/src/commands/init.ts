@@ -26,8 +26,10 @@ export async function initCommand(projectName: string, options: InitOptions = {}
 
   // Locate templates directory
   const possibleTemplateDirs = [
+    path.resolve(__dirname, '../../../../templates', templateName),
     path.resolve(__dirname, '../../../templates', templateName),
     path.resolve(__dirname, '../../templates', templateName),
+    path.resolve(__dirname, '../templates', templateName),
     path.resolve(process.cwd(), 'templates', templateName),
   ];
 

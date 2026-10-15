@@ -231,6 +231,24 @@ npx obsidianflow init <project-name> --template <template-id>
 | `vertical-drama` | 9:16 (1080x1920) | 15s | 30 | High-retention micro-drama hook (Crash Zoom, Dutch Tilt, Helicopter Cue, Paywall Cliffhanger) |
 | `cinematic-action`| 16:9 (1920x1080) | 15s | 24 | Kurosawa / Villeneuve duel (2.39:1 Anamorphic, Vertigo Dolly Zoom, Crane Pedestal Up, Katana Snap Cut) |
 | `commercial-product`| 9:16 (1080x1920) | 12s | 60 | Luxury brand & product commercial (360 Turntable Orbit, Macro Liquid Mist, Audio Ducking) |
+| `upstage` | 16:9 (1920x1080) | 18s | 24 | The Scene-Stealer developer & repo launch video (Terminal Hook, 3D Hero Card, Kinetic Highlights, Star CTA) |
 | `short-drama` | 16:9 (1920x1080) | 15s | 30 | Narrative multi-scene drama with dialogue cards and volcanic wipe transitions |
 | `blank` | 16:9 (1920x1080) | 10s | 30 | Minimal clean canvas with native master clock animation rig |
+
+---
+
+## 9. Quality Scoring & Environment Setup
+
+### Cinematic Scoring Engine
+Audit any composition for hook velocity, shot pacing, SMPTE precision, and EBU R128 audio ducking:
+```bash
+npx obsidianflow score ./index.html
+```
+
+### Permission-Gated Setup
+Audit and verify local rendering engines with zero unexpected global installs:
+```bash
+npx obsidianflow setup --check-only
+```
+
 

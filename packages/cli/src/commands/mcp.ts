@@ -4,6 +4,7 @@ import path from 'path';
 import {
   parseComposition,
   lintComposition,
+  scoreComposition,
   parseTime,
   formatTimecode,
   TICKS_PER_SECOND,
@@ -173,15 +174,43 @@ Available Production Presets & Templates:
    Luxury brand and product commercial:
    - Shot 1 (0-4s): 360 Turntable Orbit Pan with Specular Sweep
    - Shot 2 (4-8s): Macro Liquid Mist Dispersion & Fragrance Notes
-   - Shot 3 (8-12s): Brand Lockup & Call To Action Banner.`,
+   - Shot 3 (8-12s): Brand Lockup & Call To Action Banner.
+6. 'upstage' (16:9, 18s, 1920x1080, 24fps) [The Scene-Stealer Developer Launch Film]
+   Punchy viral launch video for developer tools and repos (Steal the scene, upstage everyone):
+   - Shot 1 (0-3s): Monospace terminal typing hook with typewriter audio.
+   - Shot 2 (3-8s): 3D floating glass hero card with code preview and live metrics.
+   - Shot 3 (8-13s): 3 kinetic pillar speedcuts with yellow highlighter tags.
+   - Shot 4 (13-18s): GitHub star counter, founding pedigree badge, and bass drop outro.`,
 };
 
 const WORKFLOW_PROMPTS = [
   {
-    name: 'template-scaffold',
-    description: 'Scaffold a production from an official preset (vertical-drama, cinematic-action, commercial-product, short-drama)',
+    name: 'upstage',
+    description: 'Generate an 18-second viral developer launch video from any repo or product concept (Steal the scene, upstage everyone)',
     arguments: [
-      { name: 'template', description: 'Template ID (vertical-drama, cinematic-action, commercial-product, short-drama, blank)', required: true },
+      { name: 'productName', description: 'Name of the product or repo', required: true },
+      { name: 'tagline', description: 'Punchy product one-liner', required: false },
+      { name: 'threeFeatures', description: 'Comma-separated 3 key capabilities', required: false },
+      { name: 'cliCommand', description: 'CLI launch command (e.g. npx obsidianflow init)', required: false },
+    ],
+    template: (args: any) => `You are an AI cinema engineer generating an 18-second viral developer launch video for ${args?.productName || 'My Product'}.
+Tagline: ${args?.tagline || 'The fastest way to build on the modern web'}
+3 Features: ${args?.threeFeatures || 'Deterministic, Broadcast Grade, Zero Drift'}
+Command: ${args?.cliCommand || 'npx my-app init'}
+
+Directives:
+1. Initialize with: 'npx obsidianflow init ${args?.productName?.toLowerCase().replace(/\s+/g, '-') || 'launch-video'} --template upstage'
+2. Shot 1 [0-3s]: Terminal Hook typing '${args?.cliCommand || 'npx my-app init'}' with typewriter click sound.
+3. Shot 2 [3-8s]: 3D Glass Hero Card with code snippet and live metrics.
+4. Shot 3 [8-13s]: 3 Rapid Pillar cuts with electric yellow highlighter tags for each feature.
+5. Shot 4 [13-18s]: Star CTA & Outro with GitHub star counter and punchline.
+6. Verify quality with 'obsidianflow score ./index.html' (ensure score >= 85).`,
+  },
+  {
+    name: 'template-scaffold',
+    description: 'Scaffold a production from an official preset (vertical-drama, cinematic-action, commercial-product, upstage, short-drama)',
+    arguments: [
+      { name: 'template', description: 'Template ID (vertical-drama, cinematic-action, commercial-product, upstage, short-drama, blank)', required: true },
       { name: 'projectName', description: 'Target project name', required: false },
       { name: 'customStory', description: 'Custom script, narrative, or product details to inject', required: false },
     ],
@@ -195,7 +224,7 @@ Directives:
 2. Maintain time-coded shot chains (e.g. [0-5s] Hook, [5-10s] The Turn, [10-15s] Climax / Cliffhanger).
 3. Ensure all audio stems adhere to EBU R128 (-14 LUFS for mobile, -24 LUFS for cinema) with auto-ducking.
 4. Integrate appropriate cinematic camera movements (Crash Zoom, Vertigo Dolly Zoom, 360 Turntable Orbit, Dutch Angle).
-5. Verify timing and compliance with 'obsidianflow lint ./index.html'.`,
+5. Verify timing and compliance with 'obsidianflow lint ./index.html' and 'obsidianflow score ./index.html'.`,
   },
   {
     name: 'cinematic-director',
@@ -575,6 +604,21 @@ export async function mcpCommand(options: { debug?: boolean }) {
                 },
               },
               {
+                name: 'score_composition',
+                description: 'Score a composition on cinema retention, pacing velocity, EBU R128 audio, and SMPTE precision (0-100)',
+                readOnlyHint: true,
+                inputSchema: {
+                  type: 'object',
+                  properties: {
+                    input: {
+                      type: 'string',
+                      description: 'Path to composition index.html file',
+                    },
+                  },
+                  required: ['input'],
+                },
+              },
+              {
                 name: 'render_video',
                 description: 'Render a composition to a deterministic MP4 video in the background and return a tracking jobId',
                 inputSchema: {
@@ -675,6 +719,25 @@ export async function mcpCommand(options: { debug?: boolean }) {
                   {
                     type: 'text',
                     text: JSON.stringify(lintResults, null, 2),
+                  },
+                ],
+              });
+              break;
+            }
+
+            case 'score_composition': {
+              const inputPath = path.resolve(process.cwd(), args.input);
+              if (!fs.existsSync(inputPath)) {
+                respondError(-32602, `Composition file not found: ${inputPath}`);
+                return;
+              }
+              const html = fs.readFileSync(inputPath, 'utf-8');
+              const score = scoreComposition(html);
+              respond({
+                content: [
+                  {
+                    type: 'text',
+                    text: JSON.stringify(score, null, 2),
                   },
                 ],
               });

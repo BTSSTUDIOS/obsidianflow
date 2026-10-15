@@ -182,3 +182,24 @@ export interface CaptureOptions {
   onFrame: (frameData: Buffer, frameIndex: number, totalFrames: number) => Promise<void>;
   onProgress?: (percent: number, currentFrame: number, totalFrames: number) => void;
 }
+
+export interface ScoreDimension {
+  name: string;
+  score: number;
+  maxScore: number;
+  weight: number;
+  details: string;
+}
+
+export interface CompositionScore {
+  totalScore: number;
+  grade: 'A+' | 'A' | 'B' | 'C' | 'D' | 'F';
+  dimensions: {
+    hookVelocity: ScoreDimension;
+    pacingRhythm: ScoreDimension;
+    audioArchitecture: ScoreDimension;
+    smptePrecision: ScoreDimension;
+    visualCinematics: ScoreDimension;
+  };
+  feedback: string[];
+}

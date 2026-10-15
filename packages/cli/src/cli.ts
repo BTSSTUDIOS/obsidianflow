@@ -5,6 +5,8 @@ import { initCommand } from './commands/init.js';
 import { lintCommand } from './commands/lint.js';
 import { checkCommand } from './commands/check.js';
 import { renderCommand } from './commands/render.js';
+import { scoreCommand } from './commands/score.js';
+import { setupCommand } from './commands/setup.js';
 import { skillCommand } from './commands/skill.js';
 import { mcpCommand } from './commands/mcp.js';
 import { getVolcanoBanner } from './banner.js';
@@ -16,6 +18,12 @@ program
   .description('🌋 OBSIDIAN FLOW MCP — The Official Video Production MCP Server & Deterministic Cinema Engine')
   .version('0.1.4')
   .addHelpText('before', getVolcanoBanner());
+
+program
+  .command('setup')
+  .description('Audit local cinema rendering tools (FFmpeg, Chrome, fonts) with permission-gated confirmation')
+  .option('--check-only', 'Audit installed tools without prompting for installation')
+  .action(setupCommand);
 
 program
   .command('skill [action]')
@@ -31,8 +39,15 @@ program
   .command('init')
   .description('Scaffold a new ObsidianFlow video composition project')
   .argument('<name>', 'Project directory name')
-  .option('-t, --template <name>', 'Starter template (blank, short-drama, vertical-drama, cinematic-action, commercial-product)', 'blank')
+  .option('-t, --template <name>', 'Starter template (blank, short-drama, vertical-drama, cinematic-action, commercial-product, upstage)', 'blank')
   .action(initCommand);
+
+program
+  .command('score')
+  .description('Score a composition on cinema retention, pacing velocity, EBU R128 audio, and SMPTE precision (0-100)')
+  .argument('<file>', 'Path to composition index.html')
+  .option('--json', 'Output score breakdown as machine-readable JSON')
+  .action(scoreCommand);
 
 program
   .command('lint')
