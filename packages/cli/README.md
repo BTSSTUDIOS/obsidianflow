@@ -30,7 +30,7 @@
   <img src="https://img.shields.io/badge/craft-Made%20by%20Real%20Filmmakers-e11d48?style=flat" alt="Made by Real Filmmakers" />
   <img src="https://img.shields.io/badge/status-young%20and%20moving%20fast-7952d2?style=flat" alt="Status" />
   <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat" alt="PRs Welcome" />
-  <a href="https://github.com/btsstudios/obsidianflow"><img src="https://github.com/btsstudios/obsidianflow?style=flat&color=yellow" alt="GitHub Stars" /></a>
+  <a href="https://github.com/btsstudios/obsidianflow"><img src="https://img.shields.io/github/stars/btsstudios/obsidianflow?style=flat&color=yellow" alt="GitHub Stars" /></a>
 </p>
 
 <p align="center">
