@@ -407,7 +407,7 @@ export async function mcpCommand(options: { debug?: boolean }) {
             protocolVersion: '2024-11-05',
             serverInfo: {
               name: 'obsidianflow-mcp',
-              version: '0.1.4',
+              version: '0.1.5',
             },
             capabilities: {
               tools: {},
