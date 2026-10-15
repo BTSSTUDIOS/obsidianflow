@@ -148,7 +148,7 @@ Rule of Precision: Always pair camera moves with [Duration · Speed · Subject] 
     <audio src="scene1-dialogue.mp3" data-track="dialogue" data-start="2s" data-duration="5s"></audio>
     <div class="clip" id="scene-2" data-start="5s" data-duration="5s">...</div>`,
 
-  templates: `# OBSIDIAN FLOW — Starter Templates & Presets (Higgsfield & Seedance Style)
+  templates: `# OBSIDIAN FLOW — Starter Templates & Presets (Cinematic & Micro-Drama Blueprints)
 Scaffold complete productions instantly with:
 $ npx obsidianflow init <name> --template <template-id>
 
@@ -157,7 +157,7 @@ Available Production Presets & Templates:
    Minimal starter composition with native animation clock.
 2. 'short-drama' (16:9, 15s, 1920x1080)
    Multi-scene sci-fi narrative with dialogue cards and volcanic wipe transitions.
-3. 'vertical-drama' (9:16, 15s, 1080x1920) [Seedance / Micro-Drama Blueprint]
+3. 'vertical-drama' (9:16, 15s, 1080x1920) [Micro-Drama Blueprint]
    Viral 3-shot high-retention narrative structure:
    - Shot 1 (0-5s): The Humiliation & 3-Second Hook (Crash Zoom)
    - Shot 2 (5-10s): The Turn & Helicopter Audio Cue (Dutch Angle Tilt)
@@ -169,7 +169,7 @@ Available Production Presets & Templates:
    - Shot 2 (4-8s): Vertigo Dolly Zoom & Micro-Expression Focus
    - Shot 3 (8-12s): Sweeping Crane Pedestal Up (Thousand Torches Reveal)
    - Shot 4 (12-15s): Katana Draw Snap Cut & Climax to Dead Silence.
-5. 'commercial-product' (9:16, 12s, 1080x1920, 60fps) [Higgsfield Luxury Showcase]
+5. 'commercial-product' (9:16, 12s, 1080x1920, 60fps) [Luxury Product Showcase]
    Luxury brand and product commercial:
    - Shot 1 (0-4s): 360 Turntable Orbit Pan with Specular Sweep
    - Shot 2 (4-8s): Macro Liquid Mist Dispersion & Fragrance Notes
@@ -194,7 +194,7 @@ Directives:
 1. Initialize with: 'npx obsidianflow init ${args?.projectName || 'my-production'} --template ${args?.template || 'vertical-drama'}'
 2. Maintain time-coded shot chains (e.g. [0-5s] Hook, [5-10s] The Turn, [10-15s] Climax / Cliffhanger).
 3. Ensure all audio stems adhere to EBU R128 (-14 LUFS for mobile, -24 LUFS for cinema) with auto-ducking.
-4. Integrate appropriate Higgsfield camera movements (Crash Zoom, Vertigo Dolly Zoom, 360 Turntable Orbit, Dutch Angle).
+4. Integrate appropriate cinematic camera movements (Crash Zoom, Vertigo Dolly Zoom, 360 Turntable Orbit, Dutch Angle).
 5. Verify timing and compliance with 'obsidianflow lint ./index.html'.`,
   },
   {

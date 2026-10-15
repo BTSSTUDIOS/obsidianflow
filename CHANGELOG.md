@@ -50,7 +50,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `obsidianflow mcp` stdio server implementing JSON-RPC 2.0:
   - **Tools**: `render_frame` (&lt;300ms PNG capture), `extract_frame`, `inspect_timeline`, `lint_composition`, `get_guide`, `render_video`, `get_job_status`.
   - **Resources**: `obsidianflow://guide/*` documentation chapters.
-  - **Workflow Prompts (`prompts/list`, `prompts/get`)**: Added 7 Higgsfield-style slash-command workflows:
+  - **Workflow Prompts (`prompts/list`, `prompts/get`)**: Added 7 high-impact slash-command workflows:
     - `/vox-video-essay` (Editorial documentary motion graphics)
     - `/ad-hook-multiplier` (3 TikTok/Reels viral hook A/B variations)
     - `/vertical-reel-resizer` (16:9 to 9:16 vertical re-framing with safe zones)
